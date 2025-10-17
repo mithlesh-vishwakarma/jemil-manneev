@@ -20,6 +20,10 @@ const AppRoutes: React.FC = () => {
       <Footer />
     </div>
   );
+
+
+
+  
 };
 
 export default AppRoutes;
