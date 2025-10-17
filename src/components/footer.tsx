@@ -4,18 +4,24 @@ import Logo from "../assets/logo-manneev.png";
 
 const Footer: React.FC = () => {
   return (
-     <footer className="bg-purple-900 text-white py-12 px-6">
+     <footer className="bg-[#1E1B4B] text-white py-12 pb-2 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                
-                <img src={Logo} alt="Logo" className="w-12 h-12" />  
-               
-                <span className="font-bold text-xl">MANNEEV</span>
-              </div>
-              <p className="text-white">Building excellence, one material at a time.</p>
+               <div className="flex items-center gap-2">
+            <img
+              src={Logo}
+              alt="Logo"
+              className="w-12 h-12 shadow-md"
+            />
+            <div className="flex flex-col ml-1">
+              <span className="hidden sm:inline font-semibold text-white text-2xl tracking-tight">
+                MANNEEV ENTERPRISES
+              </span>
+              <span className="hidden sm:inline font-light text-white text-sm">
+                The Built Up Solution
+              </span>
             </div>
+          </div>
             <div className="space-y-3">
               <h4 className="font-bold">Quick Links</h4>
               <ul className="space-y-2 text-white text-sm">
@@ -33,7 +39,7 @@ const Footer: React.FC = () => {
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+          <div className="border-t border-gray-800 pt-2 text-center text-gray-400 text-sm">
             <p>&copy; 2024 MANNEEV. All rights reserved.</p>
           </div>
         </div>

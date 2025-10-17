@@ -1,0 +1,3 @@
+- [x] Update overlay opacity in src/Home.tsx from bg-white/70 to bg-white/80
+- [x] Update src/routes.tsx to route /contact to contactUs component
+- [x] Add Link to "Request a Quote Now" button in src/Home.tsx to navigate to /contact

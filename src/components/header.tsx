@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Logo from "../assets/logo-manneev.png";
 // import { Facebook, Instagram, MessageCircle } from "lucide-react";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 
 
 const Header = () => {
@@ -11,12 +13,8 @@ const Header = () => {
     "Tiles",
     "Granites",
     "Marbles",
-    "Italian Marbles",
-    "Slabs",
-    "Sinks",
-    "Sanitary Ware",
-    "Construction Chemicals",
-    "CP Fittings",
+    "Natural Stones",
+    "Other Materials",
   ];
 
   const menuItems = [
@@ -29,48 +27,59 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/30 backdrop-blur-xl border-b border-white/40 shadow-lg">
-      <div className="bg-purple-700/90 px-4 py-2 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          {/* Left Section - Contact Text */}
-          <div className="text-sm flex items-center gap-4 text-white">
-            <span className="hidden sm:inline font-medium">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/30 backdrop-blur-xl border-b rounded-2xl border-white/40 shadow-lg">
+      <div className="relative bg-[#1E1B4B] text-white text-sm shadow-md border-b rounded-2xl border-white/10">
+        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center px-6 py-2">
+          {/* Left Section - Contact Info */}
+          <div className="flex items-center gap-3">
+            <span className="font-medium tracking-wide flex items-center gap-2">
+              <i className="fa-solid fa-headset text-indigo-300"></i>
               Need Help? Contact Us Anytime
             </span>
+          </div>
 
+          {/* Right Section - Social Icons + Call Button */}
+          <div className="flex items-center gap-4">
             {/* Social Media Icons */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <a
                 href="https://facebook.com/yourpage"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-lavender-200 transition-colors"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-indigo-600/70 transition-all"
               >
-                <i className="fa-brands fa-facebook-f"></i>
+                <i className="fa-brands fa-facebook-f text-white text-lg"></i>
               </a>
               <a
                 href="https://instagram.com/yourpage"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-lavender-200 transition-colors"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-pink-600/70 transition-all"
               >
-                <i className="fa-brands fa-instagram"></i>
+                <i className="fa-brands fa-instagram text-white text-lg"></i>
               </a>
               <a
-                href="https://wa.me/yourwhatsapplink"
+                href="https://wa.me/9326947550"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-lavender-200 transition-colors"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-green-600/70 transition-all"
               >
-                <i className="fa-brands fa-whatsapp"></i>
+                <i className="fa-brands fa-whatsapp text-white text-lg"></i>
               </a>
             </div>
-          </div>
 
-          {/* Right Section - Call Now Button */}
-          <button className="bg-gradient-to-r from-lavender-400 to-purple-900 text-white px-6 py-1.5 rounded-full font-semibold text-sm hover:shadow-lg hover:shadow-purple-300/50 transition-all transform hover:scale-105">
-            Call Now
-          </button>
+            {/* Divider */}
+            <div className="w-px h-6 bg-white/20"></div>
+
+            {/* Call Now Button */}
+            <a
+              href="tel:+919326947550"
+              className="flex items-center gap-2 bg-white text-indigo-700 font-semibold px-4 py-2 rounded-full hover:bg-indigo-50 hover:shadow transition-all"
+            >
+              <i className="fa-solid fa-phone text-indigo-600 text-sm"></i>
+              Call Now
+            </a>
+          </div>
         </div>
       </div>
 
@@ -83,7 +92,7 @@ const Header = () => {
             <img
               src={Logo}
               alt="Logo"
-              className="w-12 h-12 rounded-full shadow-md"
+              className="w-12 h-12 shadow-md"
             />
             <div className="flex flex-col ml-1">
               <span className="hidden sm:inline font-semibold text-purple-900 text-2xl tracking-tight">
@@ -151,9 +160,9 @@ const Header = () => {
 
           {/* WhatsApp CTA */}
           <div className="hidden lg:block">
-            <button className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-300/50 transition-all transform hover:scale-105">
+            <a href="https://wa.me/9326947550" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-300/50 transition-all transform hover:scale-105 inline-block">
               WhatsApp Us
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -194,9 +203,9 @@ const Header = () => {
               </div>
             ))}
             <div className="p-4">
-              <button className="w-full bg-purple-400 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-300/50 transition-all transform hover:scale-105">
+              <a href="https://wa.me/9326947550" target="_blank" rel="noopener noreferrer" className="w-full bg-purple-400 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-300/50 transition-all transform hover:scale-105 inline-block">
                 WhatsApp Us
-              </button>
+              </a>
             </div>
           </div>
         )}

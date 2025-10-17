@@ -13,6 +13,7 @@ import {
   Users,
   Sparkles,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import Background from "./assets/hero-bg2.png";
 
 // ---------- Floating Element ----------
@@ -141,7 +142,7 @@ const BuildingMaterialsLanding: React.FC = () => {
         style={{ backgroundImage: `url(${Background})` }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px] -z-10"></div>
+        <div className="absolute inset-0 bg-white/80 backdrop-blur-[2px] -z-10"></div>
 
         {/* Floating Elements */}
         <div className="absolute inset-0 -z-0">
@@ -172,7 +173,7 @@ const BuildingMaterialsLanding: React.FC = () => {
               </div>
 
               <h1
-                className="text-6xl md:text-7xl font-bold leading-tight text-gray-900 animate-slideUp"
+                className="text-6xl md:text-7xl font-bold leading-tight text-white animate-slideUp"
                 style={{ animationDelay: "0.2s" }}
               >
                 Build Your <span className="text-gradient">Vision</span> With{" "}
@@ -180,7 +181,7 @@ const BuildingMaterialsLanding: React.FC = () => {
               </h1>
 
               <p
-                className="text-xl text-gray-600 max-w-lg animate-slideUp"
+                className="text-xl text-white max-w-lg animate-slideUp"
                 style={{ animationDelay: "0.3s" }}
               >
                 From foundation to finishing, we supply everything you need to
@@ -192,7 +193,7 @@ const BuildingMaterialsLanding: React.FC = () => {
                 className="flex flex-col sm:flex-row gap-4 animate-slideUp"
                 style={{ animationDelay: "0.4s" }}
               >
-                <button className="bg-purple-600 px-8 py-4 rounded-xl font-semibold text-lg text-white hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center group">
+                <button className="bg-purple-600 px-8 py-4 rounded-xl font-semibold text-lg text-white hover:shadow-3xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center group">
                   Explore Collections
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -362,9 +363,11 @@ const BuildingMaterialsLanding: React.FC = () => {
               <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
                 Get an instant quote and exclusive builder discounts today
               </p>
-              <button className="bg-white text-purple-600 px-10 py-4 rounded-xl font-bold text-lg hover:bg-purple-50 transition-all duration-300 transform hover:scale-105 shadow-2xl">
-                Request a Quote Now
-              </button>
+              <Link to="/contact">
+                <button className="bg-white text-purple-600 px-10 py-4 rounded-xl font-bold text-lg hover:bg-purple-50 transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                  Request a Quote Now
+                </button>
+              </Link>
             </div>
           </div>
         </div>
