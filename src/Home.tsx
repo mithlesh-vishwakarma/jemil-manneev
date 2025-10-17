@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowRight, Building2, Truck, Shield, Award, CheckCircle2, Phone, Mail, MapPin, ChevronRight, Hammer, Zap, Users, Star, Sparkles } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ArrowRight, Building2, Truck, Shield, Award, CheckCircle2, Phone, ChevronRight, Hammer, Zap, Users, Sparkles } from 'lucide-react';
+
 import Background from './assets/hero-bg2.png';
 
 const BuildingMaterialsLanding = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [activeCategory, setActiveCategory] = useState(0);
-  const [hoveredBenefit, setHoveredBenefit] = useState(null);
+  const [hoveredBenefit, setHoveredBenefit] = useState<number | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   useEffect(() => {
@@ -203,8 +205,8 @@ const BuildingMaterialsLanding = () => {
                 key={idx}
                 onClick={() => setActiveCategory(idx)}
                 className={`p-6 rounded-2xl text-left transition-all duration-300 transform hover:scale-105 ${activeCategory === idx
-                    ? 'bg-gradient-to-br from-purple-600 to-pink-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-900 hover:bg-gray-200 border-2 border-transparent'
+                  ? 'bg-gradient-to-br from-purple-600 to-pink-600 text-white shadow-lg'
+                  : 'bg-gray-100 text-gray-900 hover:bg-gray-200 border-2 border-transparent'
                   }`}
               >
                 <cat.icon className="w-8 h-8 mb-3" />
