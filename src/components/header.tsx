@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Logo from "../assets/logo-manneev.png";
-import { Facebook, Instagram, MessageCircle } from "lucide-react";
+// import { Facebook, Instagram, MessageCircle } from "lucide-react";
 
 
 const Header = () => {

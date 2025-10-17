@@ -1,5 +1,5 @@
 import React from "react";
-import { Building2, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import Logo from "../assets/logo-manneev.png";
 
 const Footer: React.FC = () => {
