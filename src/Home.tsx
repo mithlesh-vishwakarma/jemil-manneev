@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import {
   ArrowRight,
   Building2,
@@ -44,7 +44,6 @@ const FloatingElement: React.FC<FloatingElementProps> = ({
 const BuildingMaterialsLanding: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState(0);
   const [hoveredBenefit, setHoveredBenefit] = useState<number | null>(null);
-  const [_mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [benefitsVisible, setBenefitsVisible] = useState(false);
   const benefitsRef = useRef<HTMLElement>(null);
   const [animatedStats, setAnimatedStats] = useState([0, 0, 0, 0]);
@@ -53,105 +52,12 @@ const BuildingMaterialsLanding: React.FC = () => {
   const statsRef = useRef<HTMLDivElement>(null);
   const productsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
-  // Benefits section intersection observer
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setBenefitsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (benefitsRef.current) {
-      observer.observe(benefitsRef.current);
-    }
-
-    return () => {
-      if (benefitsRef.current) {
-        observer.unobserve(benefitsRef.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setStatsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (statsRef.current) {
-      observer.observe(statsRef.current);
-    }
-
-    return () => {
-      if (statsRef.current) {
-        observer.unobserve(statsRef.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setProductsVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (productsRef.current) {
-      observer.observe(productsRef.current);
-    }
-
-    return () => {
-      if (productsRef.current) {
-        observer.unobserve(productsRef.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (statsVisible) {
-      const duration = 2000; // 2 seconds
-      const steps = 60;
-      const increment = duration / steps;
-
-      stats.forEach((stat, index) => {
-        const targetValue = parseInt(stat.value.replace(/[^\d]/g, ''));
-        const stepValue = targetValue / steps;
-        let currentStep = 0;
-
-        const timer = setInterval(() => {
-          currentStep++;
-          const currentValue = Math.min(Math.floor(stepValue * currentStep), targetValue);
-          setAnimatedStats(prev => {
-            const newStats = [...prev];
-            newStats[index] = currentValue;
-            return newStats;
-          });
-
-          if (currentStep >= steps) {
-            clearInterval(timer);
-          }
-        }, increment);
-      });
-    }
-  }, [statsVisible]);
+  const stats = useMemo(() => [
+    { value: "15K+", label: "Projects Completed", icon: Building2 },
+    { value: "2,500+", label: "Active Builders", icon: Users },
+    { value: "24/7", label: "Support Available", icon: Phone },
+    { value: "50+", label: "Product Categories", icon: Award },
+  ], []);
 
   const categories = [
     {
@@ -192,12 +98,100 @@ const BuildingMaterialsLanding: React.FC = () => {
     },
   ];
 
-  const stats = [
-    { value: "15K+", label: "Projects Completed", icon: Building2 },
-    { value: "2,500+", label: "Active Builders", icon: Users },
-    { value: "24/7", label: "Support Available", icon: Phone },
-    { value: "50+", label: "Product Categories", icon: Award },
-  ];
+  // Benefits section intersection observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setBenefitsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (benefitsRef.current) {
+      observer.observe(benefitsRef.current);
+    }
+
+    const currentRef = benefitsRef.current;
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStatsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    const currentRef = statsRef.current;
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setProductsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (productsRef.current) {
+      observer.observe(productsRef.current);
+    }
+
+    const currentRef = productsRef.current;
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (statsVisible) {
+      const duration = 2000; // 2 seconds
+      const steps = 60;
+      const increment = duration / steps;
+
+      stats.forEach((stat, index) => {
+        const targetValue = parseInt(stat.value.replace(/[^\d]/g, ''));
+        const stepValue = targetValue / steps;
+        let currentStep = 0;
+
+        const timer = setInterval(() => {
+          currentStep++;
+          const currentValue = Math.min(Math.floor(stepValue * currentStep), targetValue);
+          setAnimatedStats(prev => {
+            const newStats = [...prev];
+            newStats[index] = currentValue;
+            return newStats;
+          });
+
+          if (currentStep >= steps) {
+            clearInterval(timer);
+          }
+        }, increment);
+      });
+    }
+  }, [statsVisible, stats]);
 
   const benefits = [
     {
