@@ -294,7 +294,7 @@ const BuildingMaterialsLanding: React.FC = () => {
 
       {/* ---------- Hero Section ---------- */}
       <section
-        className="relative pt-44 pb-24 px-6 overflow-hidden min-h-screen flex items-center bg-cover bg-center bg-no-repeat"
+        className="relative pt-24 sm:pt-32 md:pt-44 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${Background})` }}
       >
         {/* Overlay */}
@@ -302,9 +302,9 @@ const BuildingMaterialsLanding: React.FC = () => {
 
         {/* Floating Elements */}
         <div className="absolute inset-0 -z-0">
-          <FloatingElement delay={0} size="300px" style={{ top: "10%", left: "5%" }} />
-          <FloatingElement delay={0.5} size="400px" style={{ top: "20%", right: "10%" }} />
-          <FloatingElement delay={1} size="250px" style={{ bottom: "10%", left: "20%" }} />
+          <FloatingElement delay={0} size="200px" style={{ top: "10%", left: "5%" }} />
+          <FloatingElement delay={0.5} size="300px" style={{ top: "20%", right: "10%" }} />
+          <FloatingElement delay={1} size="150px" style={{ bottom: "10%", left: "20%" }} />
 
           {/* Grid Overlay */}
           <div
@@ -312,24 +312,24 @@ const BuildingMaterialsLanding: React.FC = () => {
             style={{
               backgroundImage:
                 "linear-gradient(0deg, transparent 24%, rgba(168, 139, 250, .05) 25%, rgba(168, 139, 250, .05) 26%, transparent 27%, transparent 74%, rgba(168, 139, 250, .05) 75%, rgba(168, 139, 250, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(168, 139, 250, .05) 25%, rgba(168, 139, 250, .05) 26%, transparent 27%, transparent 74%, rgba(168, 139, 250, .05) 75%, rgba(168, 139, 250, .05) 76%, transparent 77%, transparent)",
-              backgroundSize: "50px 50px",
+              backgroundSize: "30px 30px",
             }}
           />
         </div>
 
         {/* Hero Content */}
         <div className="max-w-7xl mx-auto relative z-10 w-full">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="inline-block animate-slideUp" style={{ animationDelay: "0.1s" }}>
-                <span className="bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-sm font-semibold border border-purple-300 flex items-center space-x-2 w-fit">
-                  <Sparkles className="w-4 h-4" />
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
+              <div className="inline-block animate-slideUp mx-auto lg:mx-0" style={{ animationDelay: "0.1s" }}>
+                <span className="bg-purple-100 text-purple-600 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold border border-purple-300 flex items-center space-x-2 w-fit">
+                  <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
                   <span>Trusted by 2,500+ Builders</span>
                 </span>
               </div>
 
               <h1
-                className="text-6xl md:text-7xl font-bold leading-tight text-white animate-slideUp"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white animate-slideUp"
                 style={{ animationDelay: "0.2s" }}
               >
                 Build Your <span className="text-gradient">Vision</span> With{" "}
@@ -337,7 +337,7 @@ const BuildingMaterialsLanding: React.FC = () => {
               </h1>
 
               <p
-                className="text-xl text-white max-w-lg animate-slideUp"
+                className="text-base sm:text-lg md:text-xl text-white max-w-lg mx-auto lg:mx-0 animate-slideUp"
                 style={{ animationDelay: "0.3s" }}
               >
                 From foundation to finishing, we supply everything you need to
@@ -346,17 +346,17 @@ const BuildingMaterialsLanding: React.FC = () => {
               </p>
 
               <div
-                className="flex flex-col sm:flex-row gap-4 animate-slideUp"
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slideUp"
                 style={{ animationDelay: "0.4s" }}
               >
-                <Link to="/products">
-                  <button className="bg-purple-600 px-8 py-4 rounded-xl font-semibold text-lg text-white hover:shadow-3xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center group cursor-pointer">
+                <Link to="/products" className="w-full sm:w-auto">
+                  <button className="w-full sm:w-auto bg-purple-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg text-white hover:shadow-3xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center group cursor-pointer">
                     Explore Collections
                     <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </Link>
-                <Link to="/contact">
-                  <button className="bg-white px-8 py-4 rounded-xl border border-purple-600 font-semibold text-lg text-purple-600 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center group cursor-pointer">
+                <Link to="/contact" className="w-full sm:w-auto">
+                  <button className="w-full sm:w-auto bg-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl border border-purple-600 font-semibold text-base sm:text-lg text-purple-600 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center group cursor-pointer">
                     Get A Quote
                   </button>
                 </Link>
@@ -364,10 +364,10 @@ const BuildingMaterialsLanding: React.FC = () => {
             </div>
 
             {/* Right Side Floating Cards */}
-            <div className="relative hidden md:flex items-center justify-center">
-              <div className="absolute w-80 h-80 bg-purple-200 rounded-full opacity-30 blur-3xl animate-pulse" />
+            <div className="relative hidden lg:flex items-center justify-center mt-8 lg:mt-0">
+              <div className="absolute w-64 sm:w-80 h-64 sm:h-80 bg-purple-200 rounded-full opacity-30 blur-3xl animate-pulse" />
               <div className="relative z-10 animate-float">
-                <div className="bg-white p-8 rounded-3xl shadow-2xl border border-purple-100 backdrop-blur-xl">
+                <div className="bg-white p-6 sm:p-8 rounded-3xl shadow-2xl border border-purple-100 backdrop-blur-xl">
                   <div className="space-y-4">
                     {[
                       "ISO 9001 Certified Quality",
@@ -377,10 +377,10 @@ const BuildingMaterialsLanding: React.FC = () => {
                     ].map((item, idx) => (
                       <div
                         key={idx}
-                        className="flex items-center space-x-4 p-4 rounded-xl bg-purple-50 hover:bg-purple-100 transition-all cursor-pointer transform hover:scale-105"
+                        className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl bg-purple-50 hover:bg-purple-100 transition-all cursor-pointer transform hover:scale-105"
                       >
-                        <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0" />
-                        <span className="text-gray-800 font-medium">{item}</span>
+                        <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 flex-shrink-0" />
+                        <span className="text-sm sm:text-base text-gray-800 font-medium">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -394,31 +394,31 @@ const BuildingMaterialsLanding: React.FC = () => {
       {/* ---------- Stats Section ---------- */}
       <section
         ref={statsRef}
-        className={`py-20 px-6 bg-purple-50 transition-all duration-1000 ${
+        className={`py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-purple-50 transition-all duration-1000 ${
           statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {stats.map((stat, idx) => (
               <div
                 key={idx}
-                className="text-center space-y-3 p-8 rounded-2xl bg-white border border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-purple-300/50 group cursor-pointer"
+                className="text-center space-y-3 p-6 sm:p-8 rounded-2xl bg-white border border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-purple-300/50 group cursor-pointer"
                 style={{
                   animationDelay: `${idx * 0.2}s`,
                   animation: statsVisible ? 'fadeInUp 0.8s ease-out forwards' : 'none'
                 }}
               >
-                <div className="bg-purple-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 shadow-lg group-hover:shadow-purple-300/50">
-                  <stat.icon className="w-8 h-8 text-purple-600" />
+                <div className="bg-purple-100 w-12 h-12 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 shadow-lg group-hover:shadow-purple-300/50">
+                  <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600" />
                 </div>
-                <div className="text-4xl font-bold text-gradient">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gradient">
                   {stat.value.includes('+') ? `${animatedStats[idx]}+` :
                    stat.value.includes('K') ? `${animatedStats[idx]}K` :
                    stat.value.includes('M') ? `${animatedStats[idx]}M` :
                    animatedStats[idx]}
                 </div>
-                <div className="text-gray-600 text-sm">{stat.label}</div>
+                <div className="text-gray-600 text-xs sm:text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -429,37 +429,37 @@ const BuildingMaterialsLanding: React.FC = () => {
       <section
         ref={productsRef}
         id="products"
-        className="py-24 px-6 bg-cover bg-center bg-no-repeat relative"
+        className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-cover bg-center bg-no-repeat relative"
         style={{ backgroundImage: `url(${Background})` }}
       >
         {/* Overlay for readability */}
         <div className="absolute inset-0 bg-white/90 -z-10"></div>
         <div className="max-w-7xl mx-auto">
           <div
-            className={`text-center mb-16 space-y-4 transition-all duration-1000 ${
+            className={`text-center mb-12 sm:mb-16 space-y-4 transition-all duration-1000 ${
               productsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
             <h2
-              className="text-5xl md:text-6xl font-bold text-gray-900 animate-bounceIn"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 animate-bounceIn"
               style={{ animationDelay: productsVisible ? '0.2s' : '0s' }}
             >
               Complete Range of <span className="text-gradient">Building Materials</span>
             </h2>
             <p
-              className="text-xl text-gray-600 max-w-2xl mx-auto animate-slideInLeft"
+              className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto animate-slideInLeft"
               style={{ animationDelay: productsVisible ? '0.4s' : '0s' }}
             >
               Everything from foundation to finishing, all under one roof
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
             {categories.map((cat, idx) => (
               <button
                 key={idx}
                 onClick={() => setActiveCategory(idx)}
-                className={`p-6 rounded-2xl text-left transition-all duration-500 transform hover:scale-110 hover:rotate-1 hover:shadow-xl relative overflow-hidden ${
+                className={`p-4 sm:p-6 rounded-2xl text-left transition-all duration-500 transform hover:scale-110 hover:rotate-1 hover:shadow-xl relative overflow-hidden ${
                   activeCategory === idx
                     ? "bg-purple-600 text-white shadow-2xl"
                     : "bg-gray-100 text-gray-900 hover:bg-gray-200 border-2 border-transparent hover:border-purple-300"
@@ -472,10 +472,10 @@ const BuildingMaterialsLanding: React.FC = () => {
                   backgroundPosition: activeCategory === idx ? "0 0, 0 5px, 5px -5px, -5px 0px" : 'auto'
                 }}
               >
-                <cat.icon className="w-8 h-8 mb-3 transition-transform duration-300 group-hover:scale-110" />
-                <h3 className="font-bold text-lg mb-2">{cat.name}</h3>
+                <cat.icon className="w-6 h-6 sm:w-8 sm:h-8 mb-3 transition-transform duration-300 group-hover:scale-110" />
+                <h3 className="font-bold text-base sm:text-lg mb-2">{cat.name}</h3>
                 <ChevronRight
-                  className={`w-5 h-5 transition-all duration-300 ${
+                  className={`w-4 h-4 sm:w-5 sm:h-5 transition-all duration-300 ${
                     activeCategory === idx ? "rotate-90 scale-110" : "group-hover:translate-x-1"
                   }`}
                 />
@@ -484,12 +484,12 @@ const BuildingMaterialsLanding: React.FC = () => {
           </div>
 
           <div
-            className={`bg-white p-8 rounded-3xl border-2 border-purple-200 shadow-xl transition-all duration-1000 ${
+            className={`bg-white p-6 sm:p-8 rounded-3xl border-2 border-purple-200 shadow-xl transition-all duration-1000 ${
               productsVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             style={{ animationDelay: productsVisible ? '0.6s' : '0s' }}
           >
-            <div className="relative mb-8 overflow-hidden rounded-2xl">
+            <div className="relative mb-6 sm:mb-8 overflow-hidden rounded-2xl">
               <div
                 className="absolute inset-0 opacity-10"
                 style={{
@@ -498,15 +498,15 @@ const BuildingMaterialsLanding: React.FC = () => {
                   backgroundPosition: "0 0, 0 10px, 10px -10px, -10px 0px"
                 }}
               />
-              <h3 className="text-3xl font-bold text-gray-900 animate-slideInRight relative z-10 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-purple-200">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 animate-slideInRight relative z-10 p-4 sm:p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-purple-200">
                 {categories[activeCategory].name}
               </h3>
             </div>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {categories[activeCategory].items.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-purple-50 p-8 rounded-2xl hover:shadow-2xl hover:shadow-purple-200/50 transition-all duration-500 cursor-pointer group border border-purple-100 hover:border-purple-400 transform hover:-translate-y-2 hover:rotate-1 overflow-hidden"
+                  className="bg-purple-50 p-6 sm:p-8 rounded-2xl hover:shadow-2xl hover:shadow-purple-200/50 transition-all duration-500 cursor-pointer group border border-purple-100 hover:border-purple-400 transform hover:-translate-y-2 hover:rotate-1 overflow-hidden"
                   style={{
                     animationDelay: `${idx * 0.15}s`,
                     animation: productsVisible ? 'staggerFade 0.8s ease-out forwards' : 'none'
@@ -516,18 +516,18 @@ const BuildingMaterialsLanding: React.FC = () => {
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-32 sm:h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  <CheckCircle2 className="w-8 h-8 text-purple-600 mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
-                  <h4 className="font-bold text-lg mb-2 text-gray-900">{item.name}</h4>
-                  <p className="text-gray-600 text-sm mb-4">
+                  <CheckCircle2 className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600 mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
+                  <h4 className="font-bold text-base sm:text-lg mb-2 text-gray-900">{item.name}</h4>
+                  <p className="text-gray-600 text-xs sm:text-sm mb-4">
                     Premium quality, best prices guaranteed
                   </p>
                   <button className="text-purple-600 font-semibold flex items-center group-hover:text-pink-600 transition-all duration-300 group-hover:scale-105">
                     View Details{" "}
-                    <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300" />
+                    <ArrowRight className="ml-1 w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300" />
                   </button>
                 </div>
               ))}
