@@ -4,8 +4,6 @@ import Header from './components/header';
 import Footer from './components/footer';
 import Home from './Home';
 import NotFound from './pages/NotFound';
-import ContactUs from './pages/contactUs';
-import Products from './pages/Products';
 
 const AppRoutes: React.FC = () => {
   return (
