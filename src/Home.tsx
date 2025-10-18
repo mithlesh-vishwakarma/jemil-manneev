@@ -425,7 +425,7 @@ const BuildingMaterialsLanding: React.FC = () => {
         </div>
       </section>
 
-      {/* ---------- Products Section ---------- */}
+      {/* ------------- Products Section ------------- */}
       <section
         ref={productsRef}
         id="products"
