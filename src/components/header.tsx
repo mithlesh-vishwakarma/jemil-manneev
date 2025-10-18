@@ -160,7 +160,7 @@ const Header = () => {
 
           {/* WhatsApp CTA */}
           <div className="hidden lg:block">
-            <a href="https://wa.me/9326947550" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-300/50 transition-all transform hover:scale-105 inline-block">
+            <a href="https://wa.me/9326947550" target="_blank" rel="noopener noreferrer" className="bg-purple-500 text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-300/50 transition-all transform hover:scale-105 inline-block">
               WhatsApp Us
             </a>
           </div>

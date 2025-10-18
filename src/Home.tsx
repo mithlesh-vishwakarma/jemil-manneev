@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   ArrowRight,
   Building2,
@@ -34,7 +34,7 @@ const FloatingElement: React.FC<FloatingElementProps> = ({
       width: size,
       height: size,
       animationDelay: `${delay}s`,
-      background: "linear-gradient(135deg, #c084fc, #a78bfa)",
+      background: "#a78bfa",
       ...style,
     }}
   />
@@ -45,6 +45,13 @@ const BuildingMaterialsLanding: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState(0);
   const [hoveredBenefit, setHoveredBenefit] = useState<number | null>(null);
   const [_mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [benefitsVisible, setBenefitsVisible] = useState(false);
+  const benefitsRef = useRef<HTMLElement>(null);
+  const [animatedStats, setAnimatedStats] = useState([0, 0, 0, 0]);
+  const [statsVisible, setStatsVisible] = useState(false);
+  const [productsVisible, setProductsVisible] = useState(false);
+  const statsRef = useRef<HTMLDivElement>(null);
+  const productsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -54,25 +61,133 @@ const BuildingMaterialsLanding: React.FC = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  // Benefits section intersection observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setBenefitsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (benefitsRef.current) {
+      observer.observe(benefitsRef.current);
+    }
+
+    return () => {
+      if (benefitsRef.current) {
+        observer.unobserve(benefitsRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStatsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => {
+      if (statsRef.current) {
+        observer.unobserve(statsRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setProductsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (productsRef.current) {
+      observer.observe(productsRef.current);
+    }
+
+    return () => {
+      if (productsRef.current) {
+        observer.unobserve(productsRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (statsVisible) {
+      const duration = 2000; // 2 seconds
+      const steps = 60;
+      const increment = duration / steps;
+
+      stats.forEach((stat, index) => {
+        const targetValue = parseInt(stat.value.replace(/[^\d]/g, ''));
+        const stepValue = targetValue / steps;
+        let currentStep = 0;
+
+        const timer = setInterval(() => {
+          currentStep++;
+          const currentValue = Math.min(Math.floor(stepValue * currentStep), targetValue);
+          setAnimatedStats(prev => {
+            const newStats = [...prev];
+            newStats[index] = currentValue;
+            return newStats;
+          });
+
+          if (currentStep >= steps) {
+            clearInterval(timer);
+          }
+        }, increment);
+      });
+    }
+  }, [statsVisible]);
+
   const categories = [
     {
       name: "Cement & Concrete",
-      items: ["Portland Cement", "Ready-Mix Concrete", "Concrete Blocks"],
+      items: [
+        { name: "Portland Cement", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" },
+        { name: "Ready-Mix Concrete", image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop" },
+        { name: "Concrete Blocks", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" }
+      ],
       icon: Building2,
     },
     {
       name: "Steel & Rebar",
-      items: ["TMT Bars", "Structural Steel", "Mesh & Wire"],
+      items: [
+        { name: "TMT Bars", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop" },
+        { name: "Structural Steel", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop" },
+        { name: "Mesh & Wire", image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400&h=300&fit=crop" }
+      ],
       icon: Shield,
     },
     {
       name: "Bricks & Blocks",
-      items: ["Clay Bricks", "AAC Blocks", "Fly Ash Bricks"],
+      items: [
+        { name: "Clay Bricks", image: "https://images.unsplash.com/photo-1590845947670-c009801ffa74?w=400&h=300&fit=crop" },
+        { name: "AAC Blocks", image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=300&fit=crop" },
+        { name: "Fly Ash Bricks", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" }
+      ],
       icon: Hammer,
     },
     {
       name: "Hardware & Tools",
-      items: ["Power Tools", "Hand Tools", "Safety Equipment"],
+      items: [
+        { name: "Power Tools", image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=400&h=300&fit=crop" },
+        { name: "Hand Tools", image: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=400&h=300&fit=crop" },
+        { name: "Safety Equipment", image: "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400&h=300&fit=crop" }
+      ],
       icon: Zap,
     },
   ];
@@ -119,17 +234,58 @@ const BuildingMaterialsLanding: React.FC = () => {
           from { opacity: 0; transform: translateY(30px); }
           to { opacity: 1; transform: translateY(0); }
         }
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInLeft {
+          from { opacity: 0; transform: translateX(-50px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideInRight {
+          from { opacity: 0; transform: translateX(50px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes bounceIn {
+          0% { opacity: 0; transform: scale(0.3); }
+          50% { opacity: 1; transform: scale(1.05); }
+          70% { transform: scale(0.9); }
+          100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes staggerFade {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
         .animate-float {
           animation: float 6s ease-in-out infinite;
+        }
+        .animate-slideInUp {
+          animation: slideInUp 0.8s ease-out forwards;
         }
         .animate-slideUp {
           animation: slideUp 0.8s ease-out forwards;
         }
+        .animate-fadeInUp {
+          animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .animate-slideInLeft {
+          animation: slideInLeft 0.8s ease-out forwards;
+        }
+        .animate-slideInRight {
+          animation: slideInRight 0.8s ease-out forwards;
+        }
+        .animate-bounceIn {
+          animation: bounceIn 0.8s ease-out forwards;
+        }
+        .animate-staggerFade {
+          animation: staggerFade 0.6s ease-out forwards;
+        }
         .text-gradient {
-          background: linear-gradient(135deg, #a78bfa, #c084fc);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
+          color: #a78bfa;
         }
       `}</style>
 
@@ -193,19 +349,23 @@ const BuildingMaterialsLanding: React.FC = () => {
                 className="flex flex-col sm:flex-row gap-4 animate-slideUp"
                 style={{ animationDelay: "0.4s" }}
               >
-                <button className="bg-purple-600 px-8 py-4 rounded-xl font-semibold text-lg text-white hover:shadow-3xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center group">
-                  Explore Collections
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="bg-white px-8 py-4 rounded-xl border border-purple-600 font-semibold text-lg text-purple-600 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center group">
-                  Get A Quote
-                </button>
+                <Link to="/products">
+                  <button className="bg-purple-600 px-8 py-4 rounded-xl font-semibold text-lg text-white hover:shadow-3xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center group cursor-pointer">
+                    Explore Collections
+                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </Link>
+                <Link to="/contact">
+                  <button className="bg-white px-8 py-4 rounded-xl border border-purple-600 font-semibold text-lg text-purple-600 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center group cursor-pointer">
+                    Get A Quote
+                  </button>
+                </Link>
               </div>
             </div>
 
             {/* Right Side Floating Cards */}
             <div className="relative hidden md:flex items-center justify-center">
-              <div className="absolute w-80 h-80 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full opacity-30 blur-3xl animate-pulse" />
+              <div className="absolute w-80 h-80 bg-purple-200 rounded-full opacity-30 blur-3xl animate-pulse" />
               <div className="relative z-10 animate-float">
                 <div className="bg-white p-8 rounded-3xl shadow-2xl border border-purple-100 backdrop-blur-xl">
                   <div className="space-y-4">
@@ -217,7 +377,7 @@ const BuildingMaterialsLanding: React.FC = () => {
                     ].map((item, idx) => (
                       <div
                         key={idx}
-                        className="flex items-center space-x-4 p-4 rounded-xl bg-gradient-to-r from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100 transition-all cursor-pointer transform hover:scale-105"
+                        className="flex items-center space-x-4 p-4 rounded-xl bg-purple-50 hover:bg-purple-100 transition-all cursor-pointer transform hover:scale-105"
                       >
                         <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0" />
                         <span className="text-gray-800 font-medium">{item}</span>
@@ -232,18 +392,32 @@ const BuildingMaterialsLanding: React.FC = () => {
       </section>
 
       {/* ---------- Stats Section ---------- */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-50 to-pink-50">
+      <section
+        ref={statsRef}
+        className={`py-20 px-6 bg-purple-50 transition-all duration-1000 ${
+          statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, idx) => (
               <div
                 key={idx}
-                className="text-center space-y-3 p-8 rounded-2xl bg-white border border-purple-200 hover:border-purple-400 transition-all duration-300 transform hover:scale-105 hover:shadow-lg group"
+                className="text-center space-y-3 p-8 rounded-2xl bg-white border border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-purple-300/50 group cursor-pointer"
+                style={{
+                  animationDelay: `${idx * 0.2}s`,
+                  animation: statsVisible ? 'fadeInUp 0.8s ease-out forwards' : 'none'
+                }}
               >
-                <div className="bg-gradient-to-br from-purple-100 to-pink-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+                <div className="bg-purple-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 shadow-lg group-hover:shadow-purple-300/50">
                   <stat.icon className="w-8 h-8 text-purple-600" />
                 </div>
-                <div className="text-4xl font-bold text-gradient">{stat.value}</div>
+                <div className="text-4xl font-bold text-gradient">
+                  {stat.value.includes('+') ? `${animatedStats[idx]}+` :
+                   stat.value.includes('K') ? `${animatedStats[idx]}K` :
+                   stat.value.includes('M') ? `${animatedStats[idx]}M` :
+                   animatedStats[idx]}
+                </div>
                 <div className="text-gray-600 text-sm">{stat.label}</div>
               </div>
             ))}
@@ -252,13 +426,30 @@ const BuildingMaterialsLanding: React.FC = () => {
       </section>
 
       {/* ---------- Products Section ---------- */}
-      <section id="products" className="py-24 px-6 bg-white">
+      <section
+        ref={productsRef}
+        id="products"
+        className="py-24 px-6 bg-cover bg-center bg-no-repeat relative"
+        style={{ backgroundImage: `url(${Background})` }}
+      >
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-white/90 -z-10"></div>
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900">
+          <div
+            className={`text-center mb-16 space-y-4 transition-all duration-1000 ${
+              productsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            <h2
+              className="text-5xl md:text-6xl font-bold text-gray-900 animate-bounceIn"
+              style={{ animationDelay: productsVisible ? '0.2s' : '0s' }}
+            >
               Complete Range of <span className="text-gradient">Building Materials</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p
+              className="text-xl text-gray-600 max-w-2xl mx-auto animate-slideInLeft"
+              style={{ animationDelay: productsVisible ? '0.4s' : '0s' }}
+            >
               Everything from foundation to finishing, all under one roof
             </p>
           </div>
@@ -268,41 +459,75 @@ const BuildingMaterialsLanding: React.FC = () => {
               <button
                 key={idx}
                 onClick={() => setActiveCategory(idx)}
-                className={`p-6 rounded-2xl text-left transition-all duration-300 transform hover:scale-105 ${
+                className={`p-6 rounded-2xl text-left transition-all duration-500 transform hover:scale-110 hover:rotate-1 hover:shadow-xl relative overflow-hidden ${
                   activeCategory === idx
-                    ? "bg-gradient-to-br from-purple-600 to-pink-600 text-white shadow-lg"
-                    : "bg-gray-100 text-gray-900 hover:bg-gray-200 border-2 border-transparent"
+                    ? "bg-purple-600 text-white shadow-2xl"
+                    : "bg-gray-100 text-gray-900 hover:bg-gray-200 border-2 border-transparent hover:border-purple-300"
                 }`}
+                style={{
+                  animationDelay: `${idx * 0.1}s`,
+                  animation: productsVisible ? 'slideInLeft 0.8s ease-out forwards' : 'none',
+                  backgroundImage: activeCategory === idx ? "linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%), linear-gradient(-45deg, rgba(255,255,255,0.1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.1) 75%), linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.1) 75%)" : 'none',
+                  backgroundSize: activeCategory === idx ? "10px 10px" : 'auto',
+                  backgroundPosition: activeCategory === idx ? "0 0, 0 5px, 5px -5px, -5px 0px" : 'auto'
+                }}
               >
-                <cat.icon className="w-8 h-8 mb-3" />
+                <cat.icon className="w-8 h-8 mb-3 transition-transform duration-300 group-hover:scale-110" />
                 <h3 className="font-bold text-lg mb-2">{cat.name}</h3>
                 <ChevronRight
-                  className={`w-5 h-5 transition-transform ${
-                    activeCategory === idx ? "rotate-90" : ""
+                  className={`w-5 h-5 transition-all duration-300 ${
+                    activeCategory === idx ? "rotate-90 scale-110" : "group-hover:translate-x-1"
                   }`}
                 />
               </button>
             ))}
           </div>
 
-          <div className="bg-white p-8 rounded-3xl border-2 border-purple-200 shadow-xl">
-            <h3 className="text-3xl font-bold mb-8 text-gray-900">
-              {categories[activeCategory].name}
-            </h3>
+          <div
+            className={`bg-white p-8 rounded-3xl border-2 border-purple-200 shadow-xl transition-all duration-1000 ${
+              productsVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+            }`}
+            style={{ animationDelay: productsVisible ? '0.6s' : '0s' }}
+          >
+            <div className="relative mb-8 overflow-hidden rounded-2xl">
+              <div
+                className="absolute inset-0 opacity-10"
+                style={{
+                  backgroundImage: "linear-gradient(45deg, #a78bfa 25%, transparent 25%), linear-gradient(-45deg, #a78bfa 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #a78bfa 75%), linear-gradient(-45deg, transparent 75%, #a78bfa 75%)",
+                  backgroundSize: "20px 20px",
+                  backgroundPosition: "0 0, 0 10px, 10px -10px, -10px 0px"
+                }}
+              />
+              <h3 className="text-3xl font-bold text-gray-900 animate-slideInRight relative z-10 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-purple-200">
+                {categories[activeCategory].name}
+              </h3>
+            </div>
             <div className="grid md:grid-cols-3 gap-6">
               {categories[activeCategory].items.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl hover:shadow-lg transition-all cursor-pointer group border border-purple-100 hover:border-purple-300"
+                  className="bg-purple-50 p-8 rounded-2xl hover:shadow-2xl hover:shadow-purple-200/50 transition-all duration-500 cursor-pointer group border border-purple-100 hover:border-purple-400 transform hover:-translate-y-2 hover:rotate-1 overflow-hidden"
+                  style={{
+                    animationDelay: `${idx * 0.15}s`,
+                    animation: productsVisible ? 'staggerFade 0.8s ease-out forwards' : 'none'
+                  }}
                 >
-                  <CheckCircle2 className="w-8 h-8 text-purple-600 mb-4 group-hover:scale-110 transition-transform" />
-                  <h4 className="font-bold text-lg mb-2 text-gray-900">{item}</h4>
+                  <div className="relative mb-4 overflow-hidden rounded-xl">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                  <CheckCircle2 className="w-8 h-8 text-purple-600 mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
+                  <h4 className="font-bold text-lg mb-2 text-gray-900">{item.name}</h4>
                   <p className="text-gray-600 text-sm mb-4">
                     Premium quality, best prices guaranteed
                   </p>
-                  <button className="text-purple-600 font-semibold flex items-center group-hover:text-pink-600 transition-colors">
+                  <button className="text-purple-600 font-semibold flex items-center group-hover:text-pink-600 transition-all duration-300 group-hover:scale-105">
                     View Details{" "}
-                    <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300" />
                   </button>
                 </div>
               ))}
@@ -311,14 +536,29 @@ const BuildingMaterialsLanding: React.FC = () => {
         </div>
       </section>
 
+      
+
       {/* ---------- Benefits Section ---------- */}
-      <section className="py-24 px-6 bg-gradient-to-br from-purple-50 via-white to-pink-50">
+      <section
+        ref={benefitsRef}
+        className="py-24 px-6 bg-purple-50"
+      >
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900">
+          <div
+            className={`text-center mb-16 space-y-4 transition-all duration-1000 ${
+              benefitsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            <h2
+              className="text-5xl md:text-6xl font-bold text-gray-900 animate-slideInUp"
+              style={{ animationDelay: benefitsVisible ? '0.2s' : '0s' }}
+            >
               Why Builders Choose <span className="text-gradient">MANNEEV</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p
+              className="text-xl text-gray-600 max-w-2xl mx-auto animate-slideInUp"
+              style={{ animationDelay: benefitsVisible ? '0.4s' : '0s' }}
+            >
               Your success is built on our foundation
             </p>
           </div>
@@ -329,14 +569,20 @@ const BuildingMaterialsLanding: React.FC = () => {
                 key={idx}
                 onMouseEnter={() => setHoveredBenefit(idx)}
                 onMouseLeave={() => setHoveredBenefit(null)}
-                className="bg-white p-8 rounded-2xl border-2 border-purple-200 hover:border-purple-400 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl cursor-pointer group"
+                className={`bg-white p-8 pt-16 rounded-2xl border-2 border-purple-200 hover:border-purple-400 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:-translate-y-2 cursor-pointer group relative ${
+                  benefitsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+                style={{
+                  animationDelay: `${idx * 0.15 + 0.6}s`,
+                  animation: benefitsVisible ? 'slideInUp 0.8s ease-out forwards' : 'none'
+                }}
               >
                 <div
-                  className={`bg-gradient-to-br from-purple-100 to-pink-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform ${
-                    hoveredBenefit === idx ? "scale-110" : ""
+                  className={`bg-purple-100 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-125 transition-all duration-500 absolute -top-10 left-1/2 transform -translate-x-1/2 ${
+                    hoveredBenefit === idx ? "scale-125 animate-float" : "animate-float"
                   }`}
                 >
-                  <benefit.icon className="w-8 h-8 text-purple-600" />
+                  <benefit.icon className="w-10 h-10 text-purple-600" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
                   {benefit.title}
@@ -351,7 +597,7 @@ const BuildingMaterialsLanding: React.FC = () => {
       {/* ---------- CTA Section ---------- */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
-          <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-12 md:p-16 text-center relative overflow-hidden group">
+          <div className="bg-purple-600 rounded-3xl p-12 md:p-16 text-center relative overflow-hidden group">
             <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-white rounded-full blur-3xl" />
               <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-white rounded-full blur-3xl" />
