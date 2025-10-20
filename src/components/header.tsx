@@ -1,13 +1,11 @@
 import { useState } from "react";
 import Logo from "../assets/logo-manneev.png";
-// import { Facebook, Instagram, MessageCircle } from "lucide-react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
-
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
+  const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
 
   const productSubmenu = [
     "Tiles",
@@ -28,7 +26,8 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/30 backdrop-blur-xl border-b rounded-2xl border-white/40 shadow-lg">
-      <div className="relative bg-[#1E1B4B] text-white text-sm shadow-md border-b rounded-2xl border-white/10">
+      {/* Top Bar - Hidden on mobile */}
+      <div className="hidden lg:block relative bg-[#1E1B4B] text-white text-sm shadow-md border-b rounded-2xl border-white/10">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center px-6 py-2">
           {/* Left Section - Contact Info */}
           <div className="flex items-center gap-3">
@@ -71,7 +70,7 @@ const Header = () => {
             {/* Divider */}
             <div className="w-px h-6 bg-white/20"></div>
 
-            {/* Call Now Button */}
+            {/* Call Now Button (Desktop Only) */}
             <a
               href="tel:+919326947550"
               className="flex items-center gap-2 bg-white text-indigo-700 font-semibold px-4 py-2 rounded-full hover:bg-indigo-50 hover:shadow transition-all"
@@ -83,17 +82,12 @@ const Header = () => {
         </div>
       </div>
 
-
       {/* Main Navigation */}
       <nav className="px-4 py-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo + Title */}
           <div className="flex items-center gap-2">
-            <img
-              src={Logo}
-              alt="Logo"
-              className="w-12 h-12 shadow-md"
-            />
+            <img src={Logo} alt="Logo" className="w-12 h-12 shadow-md" />
             <div className="flex flex-col ml-1">
               <span className="hidden sm:inline font-semibold text-purple-900 text-2xl tracking-tight">
                 MANNEEV ENTERPRISES
@@ -117,8 +111,9 @@ const Header = () => {
                   >
                     {item.name}
                     <svg
-                      className={`w-4 h-4 transition-transform ${isProductsDropdownOpen ? "rotate-180" : ""
-                        }`}
+                      className={`w-4 h-4 transition-transform ${
+                        isProductsDropdownOpen ? "rotate-180" : ""
+                      }`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -158,9 +153,14 @@ const Header = () => {
             ))}
           </div>
 
-          {/* WhatsApp CTA */}
+          {/* WhatsApp CTA (Desktop Only) */}
           <div className="hidden lg:block">
-            <a href="https://wa.me/9326947550" target="_blank" rel="noopener noreferrer" className="bg-purple-500 text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-300/50 transition-all transform hover:scale-105 inline-block">
+            <a
+              href="https://wa.me/9326947550"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-purple-500 text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-300/50 transition-all transform hover:scale-105 inline-block"
+            >
               WhatsApp Us
             </a>
           </div>
@@ -170,7 +170,7 @@ const Header = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="lg:hidden text-lavender-700 p-2 hover:bg-lavender-100 rounded-lg transition-colors"
           >
-            {isMenuOpen ? "Close" : "Menu"}
+            <i className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"}`}></i>
           </button>
         </div>
 
@@ -187,23 +187,39 @@ const Header = () => {
                   {item.name}
                 </a>
                 {item.submenu && (
-                  <div className="bg-white/50 backdrop-blur-sm">
-                    {item.submenu.map((subItem) => (
-                      <a
-                        key={subItem}
-                        href="/products"
-                        onClick={() => setIsMenuOpen(false)}
-                        className="block px-8 py-2 text-lavender-500 hover:bg-lavender-100 hover:text-purple-600 transition-colors text-sm"
-                      >
-                        {subItem}
-                      </a>
-                    ))}
+                  <div>
+                    <button
+                      onClick={() => setIsMobileProductsOpen(!isMobileProductsOpen)}
+                      className="flex items-center justify-between w-full px-4 py-2 text-lavender-700 hover:bg-lavender-100 hover:text-purple-500 transition-colors border-b border-white/30"
+                    >
+                      <span>{item.name}</span>
+                      <i className={`fas fa-chevron-${isMobileProductsOpen ? 'up' : 'down'} text-sm`}></i>
+                    </button>
+                    {isMobileProductsOpen && (
+                      <div className="bg-white/50 backdrop-blur-sm">
+                        {item.submenu.map((subItem) => (
+                          <a
+                            key={subItem}
+                            href="/products"
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block px-8 py-2 text-lavender-500 hover:bg-lavender-100 hover:text-purple-600 transition-colors text-sm"
+                          >
+                            {subItem}
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
             ))}
             <div className="p-4">
-              <a href="https://wa.me/9326947550" target="_blank" rel="noopener noreferrer" className="w-full bg-purple-400 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-300/50 transition-all transform hover:scale-105 inline-block">
+              <a
+                href="https://wa.me/9326947550"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-purple-400 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-300/50 transition-all transform hover:scale-105 inline-block"
+              >
                 WhatsApp Us
               </a>
             </div>
