@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Text */}
+        {/* .... Bottom Text.... */}
         <div className="border-t border-gray-700 pt-3 text-center text-gray-400 text-sm">
           <p>&copy; 2024 MANNEEV. All rights reserved.</p>
         </div>
