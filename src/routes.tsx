@@ -3,9 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/header';
 import Footer from './components/footer';
 import Home from './Home';
-import NotFound from './pages/NotFound';
-import ContactUs from './pages/ContactUs';
-import AboutUs from './pages/AboutUs';
+import NotFound from './pages/NotFound.tsx';
+import ContactUs from './pages/ContactUs.tsx';
+import AboutUs from './pages/AboutUs.tsx';
 
 const AppRoutes: React.FC = () => {
   return (
