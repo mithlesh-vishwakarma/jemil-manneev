@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
 import Background from "../assets/hero-bg2.png";
 
-const ContactUs: React.FC = () => {
+const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -183,4 +183,4 @@ const ContactUs: React.FC = () => {
   );
 };
 
-export default ContactUs;
+export default Contact;

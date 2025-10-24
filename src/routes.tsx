@@ -4,8 +4,9 @@ import Header from './components/header';
 import Footer from './components/footer';
 import Home from './Home';
 import NotFound from './pages/NotFound';
-import ContactUs from './pages/ContactUs';
+// import ContactUs from './pages/ContactUs';
 import AboutUs from './pages/AboutUs';
+import Contact from './pages/Contact';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -13,7 +14,8 @@ const AppRoutes: React.FC = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<ContactUs/>} />
+        <Route path="/contact" element={<Contact/> } />
+        {/* <Route path="/contact" element={<ContactUs/>} /> */}
         <Route path="/about" element={<AboutUs/> } />
         <Route path="/products" element={<NotFound />} />
         <Route path="/gallery" element={<NotFound />} />
