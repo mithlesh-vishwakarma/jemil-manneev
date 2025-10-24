@@ -1,12 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import {
-  Users,
   Building2,
   Award,
   Shield,
   Truck,
   HeartHandshake,
-  Factory,
   Leaf,
   Sparkles,
   CheckCircle2,
@@ -14,32 +12,11 @@ import {
 import Background from "../assets/hero-bg.png";
 
 const AboutUs: React.FC = () => {
-  const [visibleSections, setVisibleSections] = useState<string[]>([]);
   const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({});
 
   const setSectionRef = (id: string) => (el: HTMLElement | null) => {
     sectionsRef.current[id] = el;
   };
-
-  // Intersection observer for fade-in sections
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisibleSections((prev) => [...new Set([...prev, entry.target.id])]);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    Object.values(sectionsRef.current).forEach((section) => {
-      if (section) observer.observe(section);
-    });
-
-    return () => observer.disconnect();
-  }, []);
 
   const Section = ({
     id,

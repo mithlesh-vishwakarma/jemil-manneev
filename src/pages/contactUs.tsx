@@ -1,6 +1,6 @@
 
 import { useState, useEffect, useRef } from "react";
-import { Phone, Mail, MapPin, Clock, Send, Sparkles, CheckCircle2 } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
 import Background from "../assets/hero-bg2.png";
 
 const ContactUs: React.FC = () => {

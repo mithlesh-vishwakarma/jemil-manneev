@@ -1,5 +1,8 @@
-# TODO: Fix Contact Page Visibility
+# TODO: Fix TypeScript Build Errors
 
-- [x] Import ContactUs component in src/routes.tsx
-- [x] Update /contact route to render ContactUs instead of NotFound
-- [x] Test the contact page by running the development server and navigating to /contact
+## Tasks
+- [x] Remove unused imports in `src/pages/AboutUs.tsx`: `Users` and `Factory`
+- [x] Remove unused state variable `visibleSections` in `src/pages/AboutUs.tsx`
+- [x] Remove unused import `Sparkles` in `src/pages/ContactUs.tsx`
+- [x] Investigate and fix module resolution error for `ContactUs` in `src/routes.tsx`
+- [x] Run `npm run build` to verify fixes
