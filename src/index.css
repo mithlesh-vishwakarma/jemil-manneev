@@ -2,3 +2,45 @@
 
 
 
+/* Animated Background Blur Overlay */
+ 
+    @keyframes blurShift {
+      0%, 100% {
+        backdrop-filter: blur(8px) saturate(140%);
+      }
+      50% {
+        backdrop-filter: blur(14px) saturate(160%);
+      }
+    }
+    .animated-blur {
+      animation: blurShift 6s ease-in-out infinite;
+    }
+
+/* Floating Animation & Gradient Text */
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(20px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .text-gradient { background: linear-gradient(90deg, #7c3aed, #a78bfa); -webkit-background-clip: text; color: transparent; }
+        .glass-card {
+          background: rgba(255, 255, 255, 0.25);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 30px rgba(124, 58, 237, 0.2);
+        }
+        .neo-card {
+          background: #fff;
+          border-radius: 1rem;
+          box-shadow: 5px 5px 15px #d4c6f6, -5px -5px 15px #ffffff;
+          transition: all 0.3s ease;
+        }
+        .neo-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 5px 5px 20px #cbb8f5, -5px -5px 20px #ffffff;
+        }
+    
