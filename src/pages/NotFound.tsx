@@ -10,7 +10,7 @@ const NotFound: React.FC = () => {
         <p className="text-lg text-gray-500 mb-8">Page in under construction</p>
         <p className="text-xl text-orange-500 font-medium">Coming Soon</p>
         <Link to="/" className="mt-6 inline-block px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
-          Back to Home
+          Back to Home -
         </Link>
       </div>
     </div>
