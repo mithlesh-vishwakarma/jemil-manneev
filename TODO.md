@@ -1,8 +1,3 @@
-# TODO: Fix TypeScript Build Errors
+# TODO for Contact Page Layout Update
 
-## Tasks
-- [x] Remove unused imports in `src/pages/AboutUs.tsx`: `Users` and `Factory`
-- [x] Remove unused state variable `visibleSections` in `src/pages/AboutUs.tsx`
-- [x] Remove unused import `Sparkles` in `src/pages/Contact.tsx`
-- [x] Investigate and fix module resolution error for `ContactUs` in `src/routes.tsx`
-- [x] Run `npm run build` to verify fixes
+- [x] Modify Contact.tsx to split contact details: display first three cards in a 3-column grid, and place "Visit Us" card below with full width and rectangular styling.

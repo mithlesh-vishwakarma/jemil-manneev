@@ -31,10 +31,11 @@ const Contact: React.FC = () => {
 
   const contactDetails = [
     { icon: Phone, title: "Call Us", info: "+91 98765 43210", sub: "Mon–Sat, 9AM–7PM" },
-    { icon: Mail, title: "Email Us", info: "sales@manneev.com", sub: "Replies within 24 hours" },
-    { icon: MapPin, title: "Visit Us", info: "123 Builder's Avenue", sub: "Ahmedabad, Gujarat" },
+    { icon: Mail, title: "Email Us", info: "jemil.workspace@gmail.com", sub: "Replies within 24 hours" },
     { icon: Clock, title: "Working Hours", info: "Mon–Sat: 9AM–7PM", sub: "Sunday: Closed" },
   ];
+
+  const visitUsDetail = { icon: MapPin, title: "Visit Us", info: "Shop No 13,Dattani park building no 1 Opp Gokul Concord Tower, Thakur Village, Kandivali East, Mumbai, Maharashtra 400101", sub: "Kandivali East, Mumbai" };
 
   return (
     <div className="min-h-screen bg-white overflow-hidden">
@@ -75,23 +76,44 @@ const Contact: React.FC = () => {
 
       {/* Contact Info */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-purple-50">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {contactDetails.map((c, i) => (
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {contactDetails.map((c, i) => (
+              <div
+                key={i}
+                className={`bg-white p-8 rounded-2xl border-2 border-purple-200 hover:border-purple-400 shadow-md hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 cursor-pointer flex items-center ${
+                  visible ? "animate-fadeUp" : "opacity-0"
+                }`}
+                style={{ animationDelay: `${i * 0.15}s` }}
+              >
+                <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mr-6 animate-float flex-shrink-0">
+                  <c.icon className="w-8 h-8 text-purple-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{c.title}</h3>
+                  <p className="text-gray-800 font-semibold">{c.info}</p>
+                  <p className="text-gray-500 text-sm">{c.sub}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="w-full">
             <div
-              key={i}
-              className={`bg-white p-8 rounded-2xl border-2 border-purple-200 hover:border-purple-400 shadow-md hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 cursor-pointer ${
+              className={`bg-white p-8 rounded-xl border-2 border-purple-200 hover:border-purple-400 shadow-md hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 cursor-pointer flex items-center ${
                 visible ? "animate-fadeUp" : "opacity-0"
               }`}
-              style={{ animationDelay: `${i * 0.15}s` }}
+              style={{ animationDelay: "0.45s" }}
             >
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-4 animate-float">
-                <c.icon className="w-8 h-8 text-purple-600" />
+              <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mr-6 animate-float flex-shrink-0">
+                <visitUsDetail.icon className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">{c.title}</h3>
-              <p className="text-gray-800 font-semibold">{c.info}</p>
-              <p className="text-gray-500 text-sm">{c.sub}</p>
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{visitUsDetail.title}</h3>
+                <p className="text-gray-800 font-semibold">{visitUsDetail.info}</p>
+                <p className="text-gray-500 text-sm">{visitUsDetail.sub}</p>
+              </div>
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
@@ -172,7 +194,7 @@ const Contact: React.FC = () => {
             Our experts are here to help you every step of the way — from planning to delivery.
           </p>
           <a
-            href="tel:+919876543210"
+            href="tel:+919322147550"
             className="inline-block bg-white text-purple-600 px-10 py-4 rounded-xl font-bold hover:bg-purple-50 transition-all duration-300 transform hover:scale-105"
           >
             Call Now
