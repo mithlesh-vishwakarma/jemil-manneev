@@ -27,7 +27,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/30 backdrop-blur-xl border-b rounded-2xl border-white/40 shadow-lg">
       {/* Top Bar - Hidden on mobile */}
-      <div className="hidden lg:block relative bg-[#1E1B4B] text-white text-sm shadow-md border-b rounded-2xl border-white/10">
+      <div className="hidden lg:block relative bg-[#1E1B4B] text-white text-sm shadow-md border-b border-white/10">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center px-6 py-2">
           {/* Left Section - Contact Info */}
           <div className="flex items-center gap-3">
@@ -87,7 +87,7 @@ const Header = () => {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo + Title */}
           <div className="flex items-center gap-2">
-            <img src={Logo} alt="Logo" className="w-12 h-12 shadow-md" />
+            <img src={Logo} alt="Logo" className="w-12 h-12 shadow-xl border-0 rounded-b-full" />
             <div className="flex flex-col ml-1">
               <span className="hidden sm:inline font-semibold text-purple-900 text-2xl tracking-tight">
                 MANNEEV ENTERPRISES
@@ -142,6 +142,7 @@ const Header = () => {
                       <a
                         key={subItem}
                         href="/products"
+                        onClick={() => setIsProductsDropdownOpen(false)}
                         className="block px-4 py-2 text-lavender-600 hover:bg-purple-50 hover:text-purple-600 transition-colors"
                       >
                         {subItem}

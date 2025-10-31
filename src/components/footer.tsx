@@ -8,16 +8,23 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Logo Section */}
-          <div className="flex items-center gap-2">
+          <div className="flex gap-2">
             <img src={Logo} alt="Logo" className="w-12 h-12 shadow-md" />
             <div className="flex flex-col ml-1">
               <span className="hidden sm:inline font-semibold text-white text-2xl tracking-tight">
                 MANNEEV ENTERPRISES
               </span>
-              <span className="hidden sm:inline font-light text-white text-sm">
+              <span className="hidden sm:inline font-light text-white text-sm mb-5">
                 The Built Up Solution
               </span>
+
+                <span className="space-y-2 text-white text-sm width-content">
+                From foundation to finishing, we supply everything you need to construct excellence. Premium quality, competitive prices, and delivery you can count on.
+              </span>
             </div>
+            
+          
+  
           </div>
 
           {/* Quick Links */}

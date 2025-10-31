@@ -3,10 +3,13 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/header';
 import Footer from './components/footer';
 import Home from './Home';
-import NotFound from './pages/NotFound';
+// import NotFound from './pages/NotFound';
 // import ContactUs from './pages/ContactUs';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
+import ProductsList from './pages/ProductsList';
+import Gallery from './pages/Gallery';
+import OurPartners from './pages/OurPartners';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -17,9 +20,9 @@ const AppRoutes: React.FC = () => {
         <Route path="/contact" element={<Contact/> } />
         {/* <Route path="/contact" element={<ContactUs/>} /> */}
         <Route path="/about" element={<AboutUs/> } />
-        <Route path="/products" element={<NotFound />} />
-        <Route path="/gallery" element={<NotFound />} />
-        <Route path="/partners" element={<NotFound />} />
+        <Route path="/products" element={<ProductsList />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/partners" element={<OurPartners />} />
       </Routes>
       <Footer />
       {/* Floating Call Button - Visible only on mobile and tablet */}
