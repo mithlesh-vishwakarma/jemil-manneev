@@ -189,7 +189,7 @@ const Contact: React.FC = () => {
       {/* CTA Footer */}
       <section className="py-20 bg-purple-200 text-center text-black">
         <div className="max-w-3xl mx-auto space-y-6 px-6">
-          <h2 className="text-4xl font-bold">Let’s Build Something Amazing</h2>
+          <h2 className="text-4xl font-bold">Let’s Deal Something Amazing</h2>
           <p className="text-black text-lg">
             Our experts are here to help you every step of the way — from planning to delivery.
           </p>

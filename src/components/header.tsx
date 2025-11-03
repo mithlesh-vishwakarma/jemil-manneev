@@ -12,7 +12,13 @@ const Header = () => {
     "Granites",
     "Marbles",
     "Natural Stones",
+    "Italian Marbles",
+    "Slabs",
+    "Sink",
+    "Sanitary Ware",
     "Other Materials",
+    "Construction Chemicals",
+    "CP Fittings"
   ];
 
   const menuItems = [
@@ -111,9 +117,8 @@ const Header = () => {
                   >
                     {item.name}
                     <svg
-                      className={`w-4 h-4 transition-transform ${
-                        isProductsDropdownOpen ? "rotate-180" : ""
-                      }`}
+                      className={`w-4 h-4 transition-transform ${isProductsDropdownOpen ? "rotate-180" : ""
+                        }`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
