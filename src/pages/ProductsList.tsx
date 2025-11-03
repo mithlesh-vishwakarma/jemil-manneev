@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
+import MaterialImg from "../assets/materials.webp";
 
 const products = [
   {
@@ -186,7 +187,7 @@ const ProductsList: React.FC = () => {
           >
             <div className="w-full max-w-xl rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="../src/assets/materials.webp"
+                src={MaterialImg}
                 alt="hero"
                 className="w-full h-64 md:h-96 object-cover"
               />
