@@ -41,7 +41,7 @@ const partners = [
 
 const OurPartners = () => {
   return (
-    <section className="relative bg-gradient-to-b from-[#f9f9fb] via-[#f3f6ff] to-[#eef2ff] text-gray-800 py-20 overflow-hidden pt-42">
+    <section className="relative bg-[#f9f9fb] text-gray-800 py-20 overflow-hidden pt-42">
       {/* Subtle background glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(147,197,253,0.15),transparent_70%)]"></div>
 
@@ -50,7 +50,7 @@ const OurPartners = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-400"
+          className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-purple-500"
         >
           Trusted by Construction Industry Leaders
         </motion.h2>

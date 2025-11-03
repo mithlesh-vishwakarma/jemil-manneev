@@ -6,7 +6,7 @@ import {
   Leaf,
   CheckCircle2,
 } from "lucide-react";
-import Background from "../assets/hero-bg.png";
+import Background from "../assets/background-original.png";
 import MissionVisionValues from "../components/MissionVisionValues";
 
 

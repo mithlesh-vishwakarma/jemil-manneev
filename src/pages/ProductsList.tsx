@@ -186,7 +186,7 @@ const ProductsList: React.FC = () => {
           >
             <div className="w-full max-w-xl rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&q=80"
+                src="../src/assets/materials.webp"
                 alt="hero"
                 className="w-full h-64 md:h-96 object-cover"
               />

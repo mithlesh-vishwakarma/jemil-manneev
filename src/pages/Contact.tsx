@@ -1,7 +1,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
-import Background from "../assets/hero-bg2.png";
+import Background from "../assets/bg-main (2).webp";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
                 }`}
                 style={{ animationDelay: `${i * 0.15}s` }}
               >
-                <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mr-6 animate-float flex-shrink-0">
+                <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mr-6 animate-float shrink-0">
                   <c.icon className="w-8 h-8 text-purple-600" />
                 </div>
                 <div>
@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
               }`}
               style={{ animationDelay: "0.45s" }}
             >
-              <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mr-6 animate-float flex-shrink-0">
+              <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mr-6 animate-float shrink-0">
                 <visitUsDetail.icon className="w-8 h-8 text-purple-600" />
               </div>
               <div>

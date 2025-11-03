@@ -14,7 +14,8 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import Background from "./assets/hero-bg2.png";
+import Background1 from "./assets/background-original.png";
+import Background2 from "./assets/bg-main (2).webp";
 
 // ---------- Floating Element ----------
 type FloatingElementProps = {
@@ -217,7 +218,7 @@ const BuildingMaterialsLanding: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen  overflow-hidden">
       {/* ---------- CSS Animations ---------- */}
       <style>{`
         @keyframes float {
@@ -288,14 +289,14 @@ const BuildingMaterialsLanding: React.FC = () => {
 
       {/* ---------- Hero Section ---------- */}
       <section
-        className="relative pt-24 sm:pt-32 md:pt-44 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${Background})` }}
+        className="relative pt-24 sm:pt-32 md:pt-44 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${Background1})`, backgroundSize: 'cover' }}
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-white/80 backdrop-blur-[2px] -z-10"></div>
 
         {/* Floating Elements */}
-        <div className="absolute inset-0 -z-0">
+        <div className="absolute inset-0 z-0">
           <FloatingElement delay={0} size="200px" style={{ top: "10%", left: "5%" }} />
           <FloatingElement delay={0.5} size="300px" style={{ top: "20%", right: "10%" }} />
           <FloatingElement delay={1} size="150px" style={{ bottom: "10%", left: "20%" }} />
@@ -373,7 +374,7 @@ const BuildingMaterialsLanding: React.FC = () => {
                         key={idx}
                         className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl bg-purple-50 hover:bg-purple-100 transition-all cursor-pointer transform hover:scale-105"
                       >
-                        <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 flex-shrink-0" />
+                        <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 shrink-0" />
                         <span className="text-sm sm:text-base text-gray-800 font-medium">{item}</span>
                       </div>
                     ))}
@@ -424,7 +425,7 @@ const BuildingMaterialsLanding: React.FC = () => {
         ref={productsRef}
         id="products"
         className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-cover bg-center bg-no-repeat relative"
-        style={{ backgroundImage: `url(${Background})` }}
+        style={{ backgroundImage: `url(${Background2})`, backgroundSize: 'cover' }}
       >
         {/* Overlay for readability */}
         <div className="absolute inset-0 bg-white/90 -z-10"></div>
@@ -512,7 +513,7 @@ const BuildingMaterialsLanding: React.FC = () => {
                       alt={item.name}
                       className="w-full h-32 sm:h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0  bg-purple-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <CheckCircle2 className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600 mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
                   <h4 className="font-bold text-base sm:text-lg mb-2 text-gray-900">{item.name}</h4>
