@@ -1,83 +1,125 @@
-import React from "react";
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
-import Logo from "../assets/logo-manneev.png";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  ArrowRight,
+} from "lucide-react";
+import logo from "../assets/logo-manneev.png";
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
-    <footer className="bg-[#1E1B4B] text-white py-12 pb-4 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          {/* Logo Section */}
-          <div className="flex gap-2">
-            <img src={Logo} alt="Logo" className="w-12 h-12 shadow-md" />
-            <div className="flex flex-col ml-1">
-              <span className="hidden sm:inline font-semibold text-white text-2xl tracking-tight">
-                MANNEEV ENTERPRISES
-              </span>
-              <span className="hidden sm:inline font-light text-white text-sm mb-5">
-                The Built Up Solution
-              </span>
+    <footer className="bg-[#1C1C1C] text-[#F5F5F5]">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 px-6 py-12">
+        {/* Logo + About */}
+        <div>
+          <img src={logo} alt="Manneev Enterprises" className="h-16 mb-4" />
+          <h2 className="text-[#F5F5F5] font-semibold text-lg ">
+            MANNEEV ENTERPRISES
+          </h2><span className="text-[#B0B0B0]">The Built-Up Solution</span>
 
-                <span className="space-y-2 text-white text-sm width-content">
-                From foundation to finishing, we supply everything you need to construct excellence. Premium quality, competitive prices, and delivery you can count on.
-              </span>
-            </div>
-            
-          
-  
-          </div>
-
-          {/* Quick Links */}
-          <div className="space-y-3">
-            <h4 className="font-bold text-lg">Quick Links</h4>
-            <ul className="space-y-2 text-white text-sm">
-              <li><a href="/products" className="hover:text-gray-300 transition">Products</a></li>
-              <li><a href="/about" className="hover:text-gray-300 transition">About Us</a></li>
-              <li><a href="/contact" className="hover:text-gray-300 transition">Contact</a></li>
-            </ul>
-          </div>
-
-          {/* Contact + Socials */}
-          <div className="space-y-4">
-            <h4 className="font-bold text-lg">Contact</h4>
-            <ul className="space-y-2 text-white text-sm">
-              <li className="flex items-center space-x-2">
-                <Phone className="w-4 h-4" />
-                <span>+91 9322147550</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Mail className="w-4 h-4" />
-                <span>jemil.workspace@gmail.com</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <MapPin className="w-4 h-4" />
-                <span>Kandivali(E), Mumbai, Maharashtra 400101</span>
-              </li>
-            </ul>
-
-            {/* Social Media Icons */}
-            <div className="flex items-center space-x-4 pt-3">
-              <a href="#" className="hover:text-blue-400 transition-transform transform hover:scale-110">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="hover:text-pink-400 transition-transform transform hover:scale-110">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="hover:text-blue-500 transition-transform transform hover:scale-110">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="hover:text-sky-400 transition-transform transform hover:scale-110">
-                <Twitter className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
+          <p className="mt-3 text-sm text-[#B0B0B0] leading-relaxed">
+            Our carefully curated collections and personal touch have redefined
+            spaces across India, winning the trust of our customers for over 25
+            years.
+          </p>
         </div>
 
-        {/* .... Bottom Text.... */}
-        <div className="border-t border-gray-700 pt-3 text-center text-gray-400 text-sm">
-          <p>&copy; 2024 MANNEEV. All rights reserved.</p>
+        {/* About Us */}
+        <div>
+          <h3 className="text-[#D4AF37] font-semibold text-sm tracking-wider mb-4 uppercase">
+            About Us
+          </h3>
+          <p className="text-sm text-[#B0B0B0] leading-relaxed">
+            We combine craftsmanship, innovation, and design excellence to
+            elevate your living spaces with style and sophistication.
+          </p>
+        </div>
+
+        {/* Quick Links */}
+        <div>
+          <h3 className="text-[#D4AF37] font-semibold text-sm tracking-wider mb-4 uppercase">
+            Quick Links
+          </h3>
+          <ul className="space-y-2 text-sm">
+            {["Product", "Visit Us", "About Us", "Contact Us"].map((item) => (
+              <li key={item} className="flex items-center gap-2 group">
+                <ArrowRight
+                  size={14}
+                  className="text-[#D4AF37] group-hover:translate-x-1 transition"
+                />
+                <a
+                  href="#"
+                  className="hover:text-[#D4AF37] transition-colors"
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contact Us */}
+        <div>
+          <h3 className="text-[#D4AF37] font-semibold text-sm tracking-wider mb-4 uppercase">
+            Contact Us
+          </h3>
+          <ul className="space-y-3 text-sm text-[#B0B0B0]">
+            <li className="flex items-start gap-2">
+              <MapPin size={16} className="text-[#D4AF37] mt-1" />
+              <span>
+                Bath Decor NX, Shop No. 5, Kewal Tower, Wing-B, Opp. Vodafone
+                Gallery, Liberty Garden, Malad West, Mumbai, Maharashtra 400064
+              </span>
+            </li>
+            <li className="flex items-center gap-2">
+              <Phone size={16} className="text-[#D4AF37]" />
+              <a
+                href="tel:+919076150099"
+                className="hover:text-[#D4AF37] transition"
+              >
+                +91 90761 50099
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <Mail size={16} className="text-[#D4AF37]" />
+              <a
+                href="mailto:info@bathdecornx.com"
+                className="hover:text-[#D4AF37] transition"
+              >
+                info@bathdecornx.com
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <Clock size={16} className="text-[#D4AF37]" />
+              <span>Mon–Sat: 10 AM to 7:30 PM | Sunday Closed</span>
+            </li>
+          </ul>
         </div>
       </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-[#2E2E2E] text-center py-4 text-sm text-[#B0B0B0]">
+        © Copyright 2024–25 Bath Decor NX. All Rights Reserved.
+      </div>
+
+      {/* Floating WhatsApp Button */}
+      <a
+        href="https://wa.me/919076150099"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-5 right-5 bg-[#25D366] text-white p-3 rounded-full shadow-lg hover:scale-110 transition"
+      >
+        <i className="fab fa-whatsapp text-2xl"></i>
+      </a>
+
+      {/* Back to Top Button */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className="fixed bottom-5 right-20 bg-[#D4AF37] text-[#1C1C1C] p-3 rounded-full shadow-lg hover:bg-[#b8962e] transition"
+      >
+        ↑
+      </button>
     </footer>
   );
 };

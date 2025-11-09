@@ -7,20 +7,22 @@ import Home from './Home';
 // import ContactUs from './pages/ContactUs';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
-import ProductsList from './pages/ProductsList';
+import Collections from './pages/Collections';
 import Gallery from './pages/Gallery';
 import OurPartners from './pages/OurPartners';
-
+import {} from 'react-icons/fa';
+import TopBar from './components/TopBar';
 const AppRoutes: React.FC = () => {
   return (
     <div>
+      <TopBar />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact/> } />
         {/* <Route path="/contact" element={<ContactUs/>} /> */}
         <Route path="/about" element={<AboutUs/> } />
-        <Route path="/products" element={<ProductsList />} />
+        <Route path="/products" element={<Collections />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/partners" element={<OurPartners />} />
       </Routes>
