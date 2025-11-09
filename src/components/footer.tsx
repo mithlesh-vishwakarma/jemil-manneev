@@ -25,21 +25,35 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* About Us */}
-        <div>
-          <h3 className="text-[#D4AF37] font-semibold text-sm tracking-wider mb-4 uppercase">
-            About Us
-          </h3>
-          <p className="text-sm text-[#B0B0B0] leading-relaxed">
-            We combine craftsmanship, innovation, and design excellence to
-            elevate your living spaces with style and sophistication.
-          </p>
-        </div>
+        
 
         {/* Quick Links */}
         <div>
           <h3 className="text-[#D4AF37] font-semibold text-sm tracking-wider mb-4 uppercase">
             Quick Links
+          </h3>
+          <ul className="space-y-2 text-sm">
+            {["Product", "Visit Us", "About Us", "Contact Us"].map((item) => (
+              <li key={item} className="flex items-center gap-2 group">
+                <ArrowRight
+                  size={14}
+                  className="text-[#D4AF37] group-hover:translate-x-1 transition"
+                />
+                <a
+                  href="#"
+                  className="hover:text-[#D4AF37] transition-colors"
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Quick Links */}
+        <div>
+          <h3 className="text-[#D4AF37] font-semibold text-sm tracking-wider mb-4 uppercase">
+            Products
           </h3>
           <ul className="space-y-2 text-sm">
             {["Product", "Visit Us", "About Us", "Contact Us"].map((item) => (
@@ -66,28 +80,27 @@ const Footer = () => {
           </h3>
           <ul className="space-y-3 text-sm text-[#B0B0B0]">
             <li className="flex items-start gap-2">
-              <MapPin size={16} className="text-[#D4AF37] mt-1" />
+              <MapPin size={55} className="text-[#D4AF37] mt-1" />
               <span>
-                Bath Decor NX, Shop No. 5, Kewal Tower, Wing-B, Opp. Vodafone
-                Gallery, Liberty Garden, Malad West, Mumbai, Maharashtra 400064
+                Shop No 13,Dattani park building no 1 Opp Gokul Concord Tower, Thakur Village, Kandivali East, Mumbai, Maharashtra 400101
               </span>
             </li>
             <li className="flex items-center gap-2">
               <Phone size={16} className="text-[#D4AF37]" />
               <a
-                href="tel:+919076150099"
+                href="tel:+91 9876543210"
                 className="hover:text-[#D4AF37] transition"
               >
-                +91 90761 50099
+                +91 9876543210
               </a>
             </li>
             <li className="flex items-center gap-2">
               <Mail size={16} className="text-[#D4AF37]" />
               <a
-                href="mailto:info@bathdecornx.com"
+                href="mailto:jemil.workspace@gmail.com"
                 className="hover:text-[#D4AF37] transition"
               >
-                info@bathdecornx.com
+                jemil.workspace@gmail.com
               </a>
             </li>
             <li className="flex items-center gap-2">
@@ -100,26 +113,33 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-[#2E2E2E] text-center py-4 text-sm text-[#B0B0B0]">
-        © Copyright 2024–25 Bath Decor NX. All Rights Reserved.
+        © Copyright 2025 Manneev Enterprises. All Rights Reserved.
+        <div className=" text-center text-sm text-[#B0B0B0]">
+          made with ❤️ by <a href="http://ordinarycoder.com">Mithlesh</a>
+        </div>
       </div>
 
+
       {/* Floating WhatsApp Button */}
-      <a
+      {/* <a
         href="https://wa.me/919076150099"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-5 right-5 bg-[#25D366] text-white p-3 rounded-full shadow-lg hover:scale-110 transition"
       >
         <i className="fab fa-whatsapp text-2xl"></i>
-      </a>
+      </a> */}
 
       {/* Back to Top Button */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-5 right-20 bg-[#D4AF37] text-[#1C1C1C] p-3 rounded-full shadow-lg hover:bg-[#b8962e] transition"
+        className="fixed bottom-5 right-20 text-[#b8962e] w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all duration-300 overflow-hidden group cursor-pointer"
       >
+        <span className="absolute inset-0 rounded-full border-2 border-dashed border-[#D4AF37]/60 rotate-border pointer-events-none" />
         ↑
       </button>
+
+
     </footer>
   );
 };
