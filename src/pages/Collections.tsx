@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 // import ProductCard from "../components/Product";
 import MaterialImg from "../assets/materials.webp";
 
-const products = [
+const collections = [
   {
     title: "Tiles",
     main: "https://media.istockphoto.com/id/2208218411/photo/man-choosing-tile-among-different-samples-in-store-closeup.jpg?s=612x612&w=0&k=20&c=AcXCEgn_pT2Q4ybvwysyhwyJz4h7klEL9RB6rzXlSIM=",
@@ -209,10 +209,29 @@ const ProductsList: React.FC = () => {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {/* {products.map((p, i) => ( */}
-              {/* // <ProductCard key={i} title={p.title} main={p.main} thumbs={p.thumbs} desc={p.desc} /> */}
-              
-            {/* // ))} */}
+            {collections.map((c, i) => (
+              <div key={i} className="bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
+                <img src={c.main} alt={c.title} className="w-full h-48 object-cover rounded-lg" />
+                <div className="mt-3">
+                  <h3 className="text-lg font-semibold">{c.title}</h3>
+                  <p className="text-sm text-gray-500 mt-1">{c.desc}</p>
+                  <div className="mt-3 flex gap-2">
+                    <button
+                      onClick={() => navigate(`/collections/${encodeURIComponent(c.title.toLowerCase())}`)}
+                      className="px-3 py-2 text-sm rounded bg-purple-600 text-white"
+                    >
+                      View
+                    </button>
+                    <button
+                      onClick={handleContactClick}
+                      className="px-3 py-2 text-sm rounded border border-gray-200"
+                    >
+                      Request Quote
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </main>
