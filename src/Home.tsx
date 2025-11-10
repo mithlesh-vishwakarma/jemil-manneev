@@ -3,6 +3,7 @@ import KeywordScroll from "./components/KeywordScroll";
 import IntroVideo from "./assets/MANNEEV ENTERPRISES.mp4";
 import Video1 from "./assets/2-video-sample.mp4";
 import Video2 from "./assets/3-video-sample.mp4";
+import WhyChooseUs from "./components/WhyChooseUs";
 
 const LandingPage: React.FC = () => {
   const [showWebsite, setShowWebsite] = useState(false);
@@ -71,6 +72,7 @@ const LandingPage: React.FC = () => {
 
         {/* Scrolling Keywords Section */}
         <KeywordScroll />
+        <WhyChooseUs />
       </div>
     </>
   );

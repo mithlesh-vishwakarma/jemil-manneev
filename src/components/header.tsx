@@ -17,10 +17,10 @@ const Header = () => {
 
   return (
     <header className="bg-[#1C1C1C] text-[#F5F5F5] border-b border-[#F5F5F5]/20 shadow-sm">
-      <div className="max-w-7xl mx-auto flex items-center justify-between py-3 px-4 md:py-4 md:px-6">
+      <div className="mx-auto flex items-center justify-between py-3 px-20 md:py-4">
 
         {/* Logo */}
-        <a href="/" className="relative flex items-center gap-2">
+        <a href="/" className="relative flex items-center gap-3">
           <div className="relative p-[3px] rounded-full group">
             <img
               src={logo}
@@ -31,10 +31,17 @@ const Header = () => {
             <span className="absolute inset-0 rounded-full border-2 border-dashed border-[#D4AF37]/60 rotate-border" />
           </div>
 
-          <span className="text-lg md:text-xl font-semibold tracking-wide text-[#D4AF37]">
-            MANNEEV
-          </span>
+          {/* Text stacked vertically */}
+          <div className="flex flex-col leading-tight">
+            <span className="text-lg md:text-xl font-semibold tracking-wide text-[#D4AF37]">
+              MANNEEV ENTERPRISES
+            </span>
+            <span className="text-sm tracking-wide text-[#D4AF37]/80">
+              The Built-up Solution
+            </span>
+          </div>
         </a>
+
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-10">
@@ -44,11 +51,10 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className={`text-sm lg:text-base font-medium tracking-wide transition-colors duration-300 ${
-                  isActive
+                className={`text-sm lg:text-base font-medium tracking-wide transition-colors duration-300 ${isActive
                     ? "text-[#D4AF37]" // Active tab
                     : "text-[#F5F5F5] hover:text-[#D4AF37]" // Default + hover
-                }`}
+                  }`}
               >
                 {item.label}
               </a>
@@ -84,11 +90,10 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className={`block text-sm font-medium tracking-wide transition-colors duration-300 ${
-                  isActive
+                className={`block text-sm font-medium tracking-wide transition-colors duration-300 ${isActive
                     ? "text-[#D4AF37]"
                     : "text-[#F5F5F5] hover:text-[#D4AF37]"
-                }`}
+                  }`}
               >
                 {item.label}
               </a>
