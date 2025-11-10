@@ -10,7 +10,7 @@ const stats = [
 
 const StatsSection: React.FC = () => {
   return (
-    <section className="relative bg-[#1C1C1C] text-[#B0B0B0] py-20 px-6 overflow-hidden">
+    <section className="relative bg-[#725e03] text-[#1c1c1c] py-20 px-6 overflow-hidden">
       {/* Luxury overlay shimmer */}
       
 
@@ -25,10 +25,10 @@ const StatsSection: React.FC = () => {
               viewport={{ once: true }}
               className="flex flex-col items-center justify-center space-y-3 group"
             >
-              <h3 className="text-4xl sm:text-5xl font-extrabold text-[#D4AF37] drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] group-hover:scale-110 transition-transform duration-300">
+              <h3 className="text-4xl sm:text-5xl font-extrabold text-[#1c1c1c] drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] group-hover:scale-110 transition-transform duration-300">
                 {item.number}
               </h3>
-              <p className="text-sm sm:text-base tracking-wide text-gray-300 group-hover:text-[#D4AF37] transition-colors duration-300">
+              <p className="text-sm sm:text-base tracking-wide text-[#1c1c1c] group-hover:text-[#D4AF37] transition-colors duration-300">
                 {item.label}
               </p>
             </motion.div>

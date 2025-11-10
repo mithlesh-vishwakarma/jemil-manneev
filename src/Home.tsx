@@ -6,6 +6,7 @@ import Video2 from "./assets/3-video-sample.mp4";
 import WhyChooseUs from "./components/WhyChooseUs";
 import StatsSection from "./components/StatesSection";
 import VideoProduct from "./components/VideoProduct";
+import ProductSection from "./components/ProductSection";
 
 const LandingPage: React.FC = () => {
   const [showWebsite, setShowWebsite] = useState(false);
@@ -72,6 +73,7 @@ const LandingPage: React.FC = () => {
 
         {/* Scrolling Keywords Section */}
         <div id="second-section">  <KeywordScroll />  </div>
+        <ProductSection />
         <VideoProduct />
         <WhyChooseUs />
         <StatsSection />

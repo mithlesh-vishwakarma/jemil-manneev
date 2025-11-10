@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import ProductCard from "../components/ProductCard";
+// import ProductCard from "../components/Product";
 import MaterialImg from "../assets/materials.webp";
 
 const products = [
@@ -209,10 +209,10 @@ const ProductsList: React.FC = () => {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {products.map((p, i) => (
-              <ProductCard key={i} title={p.title} main={p.main} thumbs={p.thumbs} desc={p.desc} />
+            {/* {products.map((p, i) => ( */}
+              {/* // <ProductCard key={i} title={p.title} main={p.main} thumbs={p.thumbs} desc={p.desc} /> */}
               
-            ))}
+            {/* // ))} */}
           </div>
         </div>
       </main>

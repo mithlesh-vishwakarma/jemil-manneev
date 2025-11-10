@@ -14,11 +14,11 @@ const Footer = () => {
         {/* Logo + About */}
         <div>
           <img src={logo} alt="Manneev Enterprises" className="h-16 mb-4" />
-          <h2 className="text-[#F5F5F5] font-semibold text-lg ">
+          <h2 className="text-[#F5F5F5] font-semibold text-xl ">
             MANNEEV ENTERPRISES
           </h2><span className="text-[#B0B0B0]">The Built-Up Solution</span>
 
-          <p className="mt-3 text-sm text-[#B0B0B0] leading-relaxed">
+          <p className="mt-3 text-lg text-[#B0B0B0] leading-relaxed">
             Our carefully curated collections and personal touch have redefined
             spaces across India, winning the trust of our customers for over 25
             years.
@@ -29,10 +29,10 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-[#D4AF37] font-semibold text-sm tracking-wider mb-4 uppercase">
+          <h3 className="text-[#D4AF37] font-semibold text-lg tracking-wider mb-4 uppercase">
             Quick Links
           </h3>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-2 text-lg">
             {["Product", "Visit Us", "About Us", "Contact Us"].map((item) => (
               <li key={item} className="flex items-center gap-2 group">
                 <ArrowRight
@@ -52,18 +52,18 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-[#D4AF37] font-semibold text-sm tracking-wider mb-4 uppercase">
+          <h3 className="text-[#D4AF37] font-semibold text-lg tracking-wider mb-4 uppercase">
             Products
           </h3>
-          <ul className="space-y-2 text-sm">
-            {["Product", "Visit Us", "About Us", "Contact Us"].map((item) => (
+          <ul className="space-y-2 text-lg">
+            {["Tiles & Marbles", "Bathroom Fixtures", "Sanitary Ware", "Other Materials"].map((item) => (
               <li key={item} className="flex items-center gap-2 group">
                 <ArrowRight
                   size={14}
                   className="text-[#D4AF37] group-hover:translate-x-1 transition"
                 />
                 <a
-                  href="#"
+                  href="/collections"
                   className="hover:text-[#D4AF37] transition-colors"
                 >
                   {item}
@@ -75,12 +75,12 @@ const Footer = () => {
 
         {/* Contact Us */}
         <div>
-          <h3 className="text-[#D4AF37] font-semibold text-sm tracking-wider mb-4 uppercase">
+          <h3 className="text-[#D4AF37] font-semibold text-lg tracking-wider mb-4 uppercase">
             Contact Us
           </h3>
-          <ul className="space-y-3 text-sm text-[#B0B0B0]">
+          <ul className="space-y-3 text-lg text-[#B0B0B0]">
             <li className="flex items-start gap-2">
-              <MapPin size={55} className="text-[#D4AF37] mt-1" />
+              <MapPin size={50} className="text-[#D4AF37] mt-1" />
               <span>
                 Shop No 13,Dattani park building no 1 Opp Gokul Concord Tower, Thakur Village, Kandivali East, Mumbai, Maharashtra 400101
               </span>
@@ -112,9 +112,9 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-[#2E2E2E] text-center py-4 text-sm text-[#B0B0B0]">
+      <div className="border-t border-[#2E2E2E] text-center py-4 text-lg text-[#B0B0B0]">
         © Copyright 2025 Manneev Enterprises. All Rights Reserved.
-        <div className=" text-center text-sm text-[#B0B0B0]">
+        <div className=" text-center text-lg text-[#B0B0B0]">
           made with ❤️ by <a href="http://ordinarycoder.com">Mithlesh</a>
         </div>
       </div>
