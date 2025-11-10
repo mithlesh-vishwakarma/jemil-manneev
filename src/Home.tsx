@@ -4,6 +4,8 @@ import IntroVideo from "./assets/MANNEEV ENTERPRISES.mp4";
 import Video1 from "./assets/2-video-sample.mp4";
 import Video2 from "./assets/3-video-sample.mp4";
 import WhyChooseUs from "./components/WhyChooseUs";
+import StatsSection from "./components/StatesSection";
+import VideoProduct from "./components/VideoProduct";
 
 const LandingPage: React.FC = () => {
   const [showWebsite, setShowWebsite] = useState(false);
@@ -22,8 +24,8 @@ const LandingPage: React.FC = () => {
     <>
       {/* Intro Video Loader */}
       {!showWebsite && (
-        <div className="fixed inset-0 z-[9999] bg-black flex items-center justify-center transition-opacity duration-700">
-          <div className="relative w-[350px] sm:w-[480px] md:w-[640px] h-[240px] sm:h-[300px] md:h-[360px] overflow-hidden rounded-2xl shadow-2xl">
+        <div className="fixed inset-0 z-[ 9999] bg-black flex items-center justify-center transition-opacity duration-700">
+          <div className="relative w-[350px] sm:w-[480px] md:w-[640px] h-[ 240px] sm:h-[300px] md:h-[360px] overflow-hidden rounded-2xl shadow-2xl">
             <video
               src={IntroVideo}
               autoPlay
@@ -58,21 +60,21 @@ const LandingPage: React.FC = () => {
 
           {/* Text / CTA */}
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-            <h1 className="text-4xl sm:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+            <h1 className="text-4xl sm:text-6xl font-bold text-white/90 mb-6 drop-shadow-lg">
               Welcome to <span className="text-[#D4AF37]">MANNEEV</span>
             </h1>
             <p className="text-lg sm:text-2xl text-gray-200 max-w-2xl mb-8">
               Building the future with strength, quality, and trust.
             </p>
-            <button className="px-5 py-2.5 text-sm lg:text-base font-semibold bg-[#D4AF37] text-[#1C1C1C] rounded-full border border-transparent hover:bg-[#F5F5F5] hover:text-[#1C1C1C] hover:border-[#D4AF37] transition-all duration-300">
-              <a href="/products">Explore More</a>
-            </button>
+            
           </div>
         </section>
 
         {/* Scrolling Keywords Section */}
-        <KeywordScroll />
+        <div id="second-section">  <KeywordScroll />  </div>
+        <VideoProduct />
         <WhyChooseUs />
+        <StatsSection />
       </div>
     </>
   );

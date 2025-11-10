@@ -9,8 +9,8 @@ import logo from "../assets/logo-manneev.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1C1C1C] text-[#F5F5F5]">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 px-6 py-12">
+    <footer className="bg-[#1C1C1C] text-[#F5F5F5] border-t border-[#2E2E2E] ">
+      <div className="mx-auto grid md:grid-cols-4 gap-8 px-20 py-4 pt-12">
         {/* Logo + About */}
         <div>
           <img src={logo} alt="Manneev Enterprises" className="h-16 mb-4" />
@@ -131,11 +131,12 @@ const Footer = () => {
       </a> */}
 
       {/* Back to Top Button */}
+
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-5 right-20 text-[#b8962e] w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all duration-300 overflow-hidden group cursor-pointer"
+        className="fixed bottom-5 right-20 text-[#e4ab00] w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all duration-300 overflow-hidden group cursor-pointer"
       >
-        <span className="absolute inset-0 rounded-full border-2 border-dashed border-[#D4AF37]/60 rotate-border pointer-events-none" />
+        <span className="absolute inset-0 rounded-full border-2 border-dashed border-[#D4AF37]/60 rotate-border pointer-events-none z-50" />
         ↑
       </button>
 

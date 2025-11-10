@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/header';
+// import Header2 from './components/header2';
 import Footer from './components/footer';
 import Home from './Home';
 // import NotFound from './pages/NotFound';
@@ -17,6 +18,7 @@ const AppRoutes: React.FC = () => {
     <div>
       <TopBar />
       <Header />
+      {/* <Header2 /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact/> } />

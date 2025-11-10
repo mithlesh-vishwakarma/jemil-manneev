@@ -1,4 +1,4 @@
-# TODO: Set Main Font to Sans-Serif with Open Sans
+# TODO: Implement Random Images in WhyChooseUs Cards
 
-- [x] Add Google Fonts link for Open Sans in index.html
-- [x] Update tailwind.config.js to configure sans font family to 'Open Sans', sans-serif
+- [x] Update the `img` property in the `features` array in `src/components/WhyChooseUs.tsx` to use dynamic random Unsplash URLs with relevant keywords for each card theme.
+- [x] Test the component to ensure images load correctly and are random on each page load.
