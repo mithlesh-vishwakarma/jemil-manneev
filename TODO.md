@@ -1,10 +1,19 @@
-# TODO: Implement Sticky Header and Conditional TopBar Visibility
+# TODO: Standardize All Buttons to Use Single Button UI
 
-- [x] Create `src/components/Layout.tsx` component with scroll detection logic
-- [x] Implement conditional rendering: show TopBar at top, hide on scroll; make Header sticky on scroll
-- [x] Move Routes, Footer, and floating call button into Layout.tsx
-- [x] Update `src/routes.tsx` to export Layout component instead of AppRoutes
-- [x] Update `src/App.tsx` to import and use Layout instead of AppRoutes
-- [x] Test scroll behavior on different screen sizes (dev server running on http://localhost:5174/)
-- [ ] Verify Header navigation and mobile menu functionality
-- [ ] Check for z-index or styling conflicts
+- [x] Create src/components/ui/ folder
+- [x] Create src/components/ui/Button.tsx (reusable button component)
+- [x] Create src/components/ui/Icon.tsx (reusable icon component)
+- [x] Create src/components/ui/AppointmentButton.tsx (specific appointment button)
+- [x] Update src/pages/Collections.tsx to use AppointmentButton (replace "Contact Sales" button)
+- [x] Test the changes by running the development server
+- [ ] Replace all buttons in codebase with Button component for consistent UI
+- [ ] Update VideoProduct.tsx "Explore More" button
+- [ ] Update ProductSection.tsx "Explore More" button
+- [ ] Update OurPartners.tsx "Explore Products" button
+- [ ] Update Contact.tsx submit button
+- [ ] Update header components mobile buttons
+- [ ] Update footer scroll button
+- [ ] Remove AppointmentButton.tsx as it's now redundant
+- [ ] Final test of all buttons
+
+

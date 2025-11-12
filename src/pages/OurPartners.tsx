@@ -1,4 +1,6 @@
 
+import Button from "../components/ui/Button";
+
 const HomePage = () => {
   return (
     <div className="bg-[#1C1C1C] min-h-screen text-[#F5F5F5]">
@@ -23,9 +25,9 @@ const HomePage = () => {
             We deal in top-quality tiles, marbles, sanitary ware, rods, pipes, and taps.
             Trusted by builders and architects for years.
           </p>
-          <button className="bg-[#D4AF37] text-[#1C1C1C] font-semibold px-6 py-3 rounded-lg hover:bg-[#b8942f] transition">
+          <Button size="md">
             Explore Products
-          </button>
+          </Button>
         </div>
         <img
           src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=700&q=60"

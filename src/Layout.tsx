@@ -9,6 +9,7 @@ import Collections from './pages/Collections';
 import Gallery from './pages/Gallery';
 import OurPartners from './pages/OurPartners';
 import TopBar from './components/TopBar';
+import Tiles from './pages/ProductCollections/Tiles';
 
 const Layout: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,6 +43,7 @@ const Layout: React.FC = () => {
           <Route path="/collections" element={<Collections />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/partners" element={<OurPartners />} />
+          <Route path="/collections/tiles" element={<Tiles />} />
         </Routes>
       </div>
 

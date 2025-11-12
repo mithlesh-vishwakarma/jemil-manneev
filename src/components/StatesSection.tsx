@@ -28,7 +28,7 @@ const StatsSection: React.FC = () => {
               <h3 className="text-4xl sm:text-5xl font-extrabold text-[#1c1c1c] drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] group-hover:scale-110 transition-transform duration-300">
                 {item.number}
               </h3>
-              <p className="text-sm sm:text-base tracking-wide text-[#1c1c1c] group-hover:text-[#D4AF37] transition-colors duration-300">
+              <p className="text-lg tracking-wide text-[#1c1c1c] group-hover:text-[#D4AF37] transition-colors duration-300">
                 {item.label}
               </p>
             </motion.div>

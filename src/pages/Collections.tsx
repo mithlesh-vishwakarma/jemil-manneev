@@ -1,8 +1,10 @@
 import React from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 // import ProductCard from "../components/Product";
-import MaterialImg from "../assets/materials.webp";
+// import MaterialImg from "../assets/materials.webp";
+import Button from "../components/ui/Button";
+import AutoCarousel from "../components/AutoCarousel";
 
 const collections = [
   {
@@ -117,6 +119,27 @@ const collections = [
   },
 ];
 
+const slides = [
+  {
+    image: "https://images.pexels.com/photos/6957082/pexels-photo-6957082.jpeg",
+    title: "Sanitaryware That’s Anything But Ordinary",
+    subtitle: "Practical, stylish, and made to impress",
+  },
+  {
+    image: "https://images.pexels.com/photos/2554517/pexels-photo-2554517.jpeg",
+    title: "Tiles & Surfaces that Speak Luxury",
+    subtitle: "Elegance meets functionality",
+  },
+  {
+    image: "https://images.pexels.com/photos/7534570/pexels-photo-7534570.jpeg",
+    title: "Modern Bathroom Designs",
+    subtitle: "Transform your space effortlessly",
+  },
+];
+
+
+
+
 const ProductsList: React.FC = () => {
   const navigate = useNavigate();
 
@@ -125,11 +148,17 @@ const ProductsList: React.FC = () => {
   };
 
   return (
-    <div className="bg-white text-gray-900 min-h-screen pt-24">
+    <div className="bg-[#d1c1a4] text-[#1c1c1c] min-h-screen ">
       {/* HERO */}
-      <section className="relative bg-[linear-gradient(180deg,#faf5ff,rgba(250,246,255,0.6))] py-16 md:py-28 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-8 items-center">
-          <motion.div
+      <section className="h-[75v] relative bg-[linear-gradient(180deg,#faf5ff,rgba(250,246,255,0.6))] overflow-hidden">
+
+        <AutoCarousel slides={slides} />
+
+
+
+        {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-8 items-center"> */}
+
+        {/*  <motion.div
             className="md:w-1/2"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -144,12 +173,12 @@ const ProductsList: React.FC = () => {
             </p>
 
             <div className="mt-6 flex gap-3">
-              <a href="#products" className="px-5 py-3 rounded-lg bg-purple-600 text-white font-semibold shadow hover:bg-purple-700 transition">
+              <Button href="#products" size="md">
                 View Products
-              </a>
-              <button onClick={handleContactClick} className="px-5 py-3 rounded-lg border border-purple-200 text-purple-600 hover:bg-purple-100 hover:border-purple-300 transition-all duration-200 transform hover:scale-105 cursor-pointer">
-                Contact Sales
-              </button>
+              </Button>
+              <Button onClick={handleContactClick} size="md">
+                Conatct Sales
+              </Button>
             </div>
 
             <div className="mt-6 grid grid-cols-3 gap-3">
@@ -192,8 +221,8 @@ const ProductsList: React.FC = () => {
                 className="w-full h-64 md:h-96 object-cover"
               />
             </div>
-          </motion.div>
-        </div>
+          </motion.div>*/}
+        {/* </div> */}
       </section>
 
       {/* PRODUCTS GRID */}
@@ -201,7 +230,7 @@ const ProductsList: React.FC = () => {
         <div className="max-w-7xl mx-auto space-y-10">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Our <span className="text-gradient">Products</span>
+              Our <span className="text-[#1c1c1c]">Products</span>
             </h2>
             <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
               Select categories and click view for images, details and quotation support.
@@ -210,24 +239,25 @@ const ProductsList: React.FC = () => {
 
           <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {collections.map((c, i) => (
-              <div key={i} className="bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
+              <div key={i} className="bg-[#ffffff] rounded-2xl shadow hover:shadow-lg transition p-4">
                 <img src={c.main} alt={c.title} className="w-full h-48 object-cover rounded-lg" />
                 <div className="mt-3">
                   <h3 className="text-lg font-semibold">{c.title}</h3>
                   <p className="text-sm text-gray-500 mt-1">{c.desc}</p>
                   <div className="mt-3 flex gap-2">
-                    <button
+                    <Button
                       onClick={() => navigate(`/collections/${encodeURIComponent(c.title.toLowerCase())}`)}
-                      className="px-3 py-2 text-sm rounded bg-purple-600 text-white"
+                      size="sm"
                     >
                       View
-                    </button>
-                    <button
+                    </Button>
+                    <Button
                       onClick={handleContactClick}
-                      className="px-3 py-2 text-sm rounded border border-gray-200"
+                      size="sm"
+                      variant="outline"
                     >
                       Request Quote
-                    </button>
+                    </Button>
                   </div>
                 </div>
               </div>
