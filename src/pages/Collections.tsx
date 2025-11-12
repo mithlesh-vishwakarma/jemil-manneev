@@ -1,8 +1,6 @@
 import React from "react";
 // import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-// import ProductCard from "../components/Product";
-// import MaterialImg from "../assets/materials.webp";
 import Button from "../components/ui/Button";
 import AutoCarousel from "../components/AutoCarousel";
 
@@ -153,76 +151,6 @@ const ProductsList: React.FC = () => {
       <section className="h-[75v] relative bg-[linear-gradient(180deg,#faf5ff,rgba(250,246,255,0.6))] overflow-hidden">
 
         <AutoCarousel slides={slides} />
-
-
-
-        {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-8 items-center"> */}
-
-        {/*  <motion.div
-            className="md:w-1/2"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-              Materials that last. Solutions that simplify.
-            </h1>
-            <p className="mt-4 text-gray-600 max-w-xl">
-              Sourced carefully. Delivered on time. Designed with performance and style in mind.
-              Browse our product range and request a quote for fast delivery.
-            </p>
-
-            <div className="mt-6 flex gap-3">
-              <Button href="#products" size="md">
-                View Products
-              </Button>
-              <Button onClick={handleContactClick} size="md">
-                Conatct Sales
-              </Button>
-            </div>
-
-            <div className="mt-6 grid grid-cols-3 gap-3">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 font-bold">✓</div>
-                <div>
-                  <div className="text-sm font-semibold">Quality Certified</div>
-                  <div className="text-xs text-gray-500">ISI & brand checks</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 font-bold">🚚</div>
-                <div>
-                  <div className="text-sm font-semibold">Fast Logistics</div>
-                  <div className="text-xs text-gray-500">Dedicated fleet</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 font-bold">🤝</div>
-                <div>
-                  <div className="text-sm font-semibold">Trusted Partner</div>
-                  <div className="text-xs text-gray-500">2500+ builders</div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="md:w-1/2 flex justify-center md:justify-end"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="w-full max-w-xl rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src={MaterialImg}
-                alt="hero"
-                className="w-full h-64 md:h-96 object-cover"
-              />
-            </div>
-          </motion.div>*/}
-        {/* </div> */}
       </section>
 
       {/* PRODUCTS GRID */}

@@ -38,7 +38,7 @@ const AutoCarousel: React.FC<AutoCarouselProps> = ({ slides, interval = 4000 }) 
           <div className="absolute inset-0 bg-black/30"></div>
 
           {/* Text Overlay */}
-          <div className="absolute inset-0 flex flex-col justify-center items-start px-32 md:px-64 lg:px-98 text-white ">
+          <div className="absolute inset-0 flex flex-col justify-center items-center px-32 md:px-64 lg:px-98 text-white ">
             <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
               {slide.title}
             </h2>
