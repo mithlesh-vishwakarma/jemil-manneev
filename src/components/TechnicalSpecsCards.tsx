@@ -61,8 +61,8 @@ const TechnicalTermsClone = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center p-6">
-      <div className="max-w-6xl w-full">
+    <div className="bg-white flex items-center justify-center p-6">
+      <div className="w-full">
         {/* Main Title */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-gray-900 tracking-tight">
@@ -123,9 +123,6 @@ const TechnicalTermsClone = () => {
             ))}
           </div>
         </div>
-
-        {/* Bottom spacing */}
-        <div className="mt-12"></div>
       </div>
     </div>
   );

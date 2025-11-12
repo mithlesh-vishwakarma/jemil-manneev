@@ -2,6 +2,7 @@ import { Menu } from "lucide-react";
 import { useState } from "react";
 import { useLocation } from "react-router-dom"; // <-- Add this
 import logo from "../assets/logo-manneev.png";
+import Button from "./ui/Button";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);

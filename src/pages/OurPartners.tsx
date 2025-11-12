@@ -1,5 +1,5 @@
 
-import Button from "../components/ui/Button";
+// import Button from "../components/ui/Button";
 
 const HomePage = () => {
   return (
@@ -25,9 +25,9 @@ const HomePage = () => {
             We deal in top-quality tiles, marbles, sanitary ware, rods, pipes, and taps.
             Trusted by builders and architects for years.
           </p>
-          <Button size="md">
+          {/* <Button size="md">
             Explore Products
-          </Button>
+          </Button> */}
         </div>
         <img
           src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=700&q=60"

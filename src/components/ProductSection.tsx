@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Button from "./ui/Button";
+import AppointmentButton from "./ui/Button";
 
 const products = [
   {
@@ -106,10 +106,13 @@ const ProductSection: React.FC = () => {
         </div>
 
         {/* Explore More Button */}
-        <div className="mt-12 text-center">
-          <Button href="/products" size="md">
+        <div className="hidden md:flex items-center mt-6 justify-center">
+          <a
+            href="/collections"
+            className="px-5 py-2.5 text-sm lg:text-base font-semibold bg-[#D4AF37] text-[#1C1C1C] rounded-full border border-transparent hover:bg-[#F5F5F5] hover:text-[#1C1C1C] hover:border-[#D4AF37] transition-all duration-300"
+          >
             Explore More
-          </Button>
+          </a>
         </div>
       </div>
     </section>

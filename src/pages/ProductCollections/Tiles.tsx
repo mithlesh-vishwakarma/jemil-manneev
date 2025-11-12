@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { ChevronDownIcon, ChevronUpIcon, StarIcon } from '@heroicons/react/24/solid';
 import TechnicalSpecsCard from '../../components/TechnicalSpecsCards';
 
-// Sample data - in real app, this would come from API
 const productData = {
-  brand: "FLAVOUR GRANITO",
-  size: "600 x 1200 mm",
+  brand: "Manneev Premium Tiles",
+  size: "4' x 2' ft (1200 x 600 mm)",
   finishes: {
     glossy: {
       title: "Glossy Finish",
@@ -80,10 +79,10 @@ const FinishSection: React.FC<FinishSectionProps> = ({ finishKey, finish, isExpa
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-6 border border-gray-200">
+    <div className="bg-[#1c1c1c] rounded-xl shadow-lg overflow-hidden mb-6 border border-gray-200">
       {/* Header */}
       <div
-        className="p-6 cursor-pointer flex items-center justify-between hover:bg-gray-50 transition-colors"
+        className="p-6 cursor-pointer flex items-center justify-between hover:bg-[#D4AF37] transition-colors"
         onClick={onToggle}
       >
         <div className="flex items-center space-x-4">
@@ -91,12 +90,12 @@ const FinishSection: React.FC<FinishSectionProps> = ({ finishKey, finish, isExpa
             <StarIcon className={`w-6 h-6 ${getIconColor(finishKey)}`} />
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-gray-800">{finish.title}</h2>
+            <h2 className="text-2xl font-bold text-[#D4AF37]">{finish.title}</h2>
             <p className="text-gray-600 mt-1">{productData.brand} • {productData.size}</p>
           </div>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="finish-badge bg-gray-100 text-gray-700">
+          <span className="text-[#D4AF37]">
             {finish.products.length} Products
           </span>
           {isExpanded ? (
@@ -160,18 +159,18 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-[#d1c1a4]">
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-12 mt-12 relative z-10">
+      <main className="container mx-auto px-4 py-12 relative z-10">
         {/* Introduction */}
         <div className="text-center mb-16">
-          <div className="inline-block bg-white rounded-full px-6 py-4 shadow-lg mb-6">
-            <span className="text-gray-700 font-semibold">✨ Premium Quality Tiles ✨</span>
+          <div className="inline-block bg-[#D4AF37] rounded-full px-6 py-4 shadow-lg mb-6">
+            <span className="text-[#1c1c1c] font-semibold">✨ Premium Quality Tiles ✨</span>
           </div>
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
             Discover Our Exclusive Collection
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-[#424242] max-w-3xl mx-auto">
             Explore our three distinct finishes - each designed to bring unique character 
             and functionality to your spaces. From modern glossy elegance to textured artistic statements.
           </p>
@@ -191,7 +190,7 @@ function App() {
         </div>
 
         {/* Features Grid */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center p-6">
             <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">✨</span>
@@ -213,9 +212,11 @@ function App() {
             <h3 className="text-xl font-semibold mb-2">Slip Resistant</h3>
             <p className="text-gray-600">Safety-focused designs perfect for all environments</p>
           </div>
-        </div>
+        </div> */}
+        <TechnicalSpecsCard />
       </main>
-          <TechnicalSpecsCard />
+
+          
 
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-12 mt-20">

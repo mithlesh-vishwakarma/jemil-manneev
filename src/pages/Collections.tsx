@@ -246,18 +246,20 @@ const ProductsList: React.FC = () => {
                   <p className="text-sm text-gray-500 mt-1">{c.desc}</p>
                   <div className="mt-3 flex gap-2">
                     <Button
+                      text="View"
                       onClick={() => navigate(`/collections/${encodeURIComponent(c.title.toLowerCase())}`)}
                       size="sm"
-                    >
-                      View
-                    </Button>
+                    />
+
+
                     <Button
+                      text="Request Quote"
                       onClick={handleContactClick}
                       size="sm"
                       variant="outline"
-                    >
-                      Request Quote
-                    </Button>
+                    />
+
+
                   </div>
                 </div>
               </div>
