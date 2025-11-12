@@ -239,7 +239,7 @@ const ProductsList: React.FC = () => {
 
           <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {collections.map((c, i) => (
-              <div key={i} className="bg-[#ffffff] rounded-2xl shadow hover:shadow-lg transition p-4">
+              <div key={i} className="bg-[#ffffff] shadow hover:shadow-lg transition p-4">
                 <img src={c.main} alt={c.title} className="w-full h-48 object-cover rounded-lg" />
                 <div className="mt-3">
                   <h3 className="text-lg font-semibold">{c.title}</h3>
