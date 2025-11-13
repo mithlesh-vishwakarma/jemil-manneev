@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const TopBar = () => {
   return (
-    <div className="bg-[#d1c1a4] text-[#1C1C1C] text-[15px] tracking-[1.1px] font-semibold">
+    <div className="bg-[#d1c1a4] text-[#1C1C1C] text-[10px] tracking-[1.1px] font-semibold">
       <div className="flex flex-col md:flex-row justify-between py-2 px-20">
         {/* Left Section */}
         <div className="flex flex-wrap items-left gap-4">
@@ -39,7 +39,7 @@ const TopBar = () => {
 
         {/* Right Section */}
         <div className="flex items-center ml-10 gap-3 mt-2 md:mt-0">
-          <p className="uppercase text-[15px] tracking-[1.1px] text-[#725e03]">
+          <p className="uppercase text-[10px] tracking-[1.1px] text-[#725e03]">
             <strong>Follow us on social</strong>
           </p>
           <a
@@ -48,7 +48,7 @@ const TopBar = () => {
             rel="noreferrer"
             className="text-[#1C1C1C] hover:text-[#725e03] transition "
           >
-            <FaFacebookF size={15} />
+            <FaFacebookF size={12} />
           </a>
           <a
             href="https://www.instagram.com/cb_westend/"
@@ -56,7 +56,7 @@ const TopBar = () => {
             rel="noreferrer"
             className="text-[#1C1C1C] hover:text-[#725e03] transition"
           >
-            <FaInstagram size={16} />
+            <FaInstagram size={12} />
           </a>
           <a
             href="https://www.linkedin.com/company/c-bhogilal-westend-official"
@@ -64,7 +64,7 @@ const TopBar = () => {
             rel="noreferrer"
             className="text-[#1C1C1C] hover:text-[#725e03] transition"
           >
-            <FaLinkedinIn size={15} />
+            <FaLinkedinIn size={12} />
           </a>
         </div>
       </div>
