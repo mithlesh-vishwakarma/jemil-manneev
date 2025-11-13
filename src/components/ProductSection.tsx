@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import AppointmentButton from "./ui/Button";
+// import AppointmentButton from "./ui/Button";
 
 const products = [
   {
