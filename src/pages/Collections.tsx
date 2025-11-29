@@ -135,9 +135,6 @@ const slides = [
   },
 ];
 
-
-
-
 const ProductsList: React.FC = () => {
   const navigate = useNavigate();
 
@@ -178,16 +175,12 @@ const ProductsList: React.FC = () => {
                       onClick={() => navigate(`/collections/${encodeURIComponent(c.title.toLowerCase())}`)}
                       size="sm"
                     />
-
-
                     <Button
                       text="Request Quote"
                       onClick={handleContactClick}
                       size="sm"
                       variant="outline"
                     />
-
-
                   </div>
                 </div>
               </div>
