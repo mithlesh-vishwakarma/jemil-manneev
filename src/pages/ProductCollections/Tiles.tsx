@@ -122,153 +122,190 @@ const FinishSection: React.FC<FinishSectionProps> = ({ finishKey, finish, isExpa
   };
 
   return (
-      <div className="bg-[#2a2a2a] rounded-xl shadow-lg overflow-hidden mb-6 border border-gray-200">
+    <div className="bg-[#111111] rounded-xl shadow-lg overflow-hidden mb-6 border border-gray-200">
 
-        {/* Header */}
-        <div
-          className="p-6 cursor-pointer flex items-center justify-between transition-colors hover:bg-[#88876d]"
-          onClick={onToggle}
-        >
-          <div className="flex items-center space-x-4">
-            <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${getBadgeColor(finishKey)}`}>
-              <StarIcon className={`w-6 h-6 ${getIconColor(finishKey)}`} />
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold text-[#D4AF37]">{finish.title}</h2>
-              <p className="text-gray-400 mt-1">{productData.brand} • {productData.size}</p>
-            </div>
+      {/* Header */}
+      <div
+        className="p-6 cursor-pointer flex items-center justify-between transition-colors hover:bg-[#88876d]"
+        onClick={onToggle}
+      >
+        <div className="flex items-center space-x-4">
+          <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${getBadgeColor(finishKey)}`}>
+            <StarIcon className={`w-6 h-6 ${getIconColor(finishKey)}`} />
           </div>
-          <div className="flex items-center space-x-2">
-            <span className="text-[#D4AF37]">
-              {finish.products.length} Products
-            </span>
-            {isExpanded ? (
-              <ChevronUpIcon className="w-6 h-6 text-gray-400" />
-            ) : (
-              <ChevronDownIcon className="w-6 h-6 text-gray-400" />
-            )}
+          <div>
+            <h2 className="text-2xl font-bold text-[#D4AF37]">{finish.title}</h2>
+            <p className="text-gray-400 mt-1">{productData.brand} • {productData.size}</p>
           </div>
         </div>
-
-        {/* Expandable Content */}
-        {isExpanded && (
-          <div className="px-6 pb-6 border-t border-gray-200">
-            {/* Description */}
-            <div className="mt-6 mb-8">
-              <p className="text-gray-300 text-lg leading-relaxed">{finish.description}</p>
-            </div>
-
-            {/* Products Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {finish.products.map((product) => (
-                <div key={product.id} className="tile-card rounded-lg overflow-hidden border border-gray-600">
-                  <div className="aspect-square relative group">
-                    <img
-                      src={product.image}
-                      alt={product.code}
-                      className="w-full h-full object-cover transition-transform group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 group-hover:bg-opacity-10 transition-all duration-300" />
-                  </div>
-
-                  <div className="p-4">
-                    <h3 className="font-semibold text-[#D4AF37] text-lg">{product.code}</h3>
-                    <div className="flex items-center justify-between mt-2">
-                      <span className="text-sm text-gray-400">{productData.size}</span>
-                      <span className={`text-xs px-2 py-1 rounded ${getBadgeColor(finishKey)}`}>
-                        {finishKey.toUpperCase()}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        <div className="flex items-center space-x-2">
+          <span className="text-[#D4AF37]">
+            {finish.products.length} Products
+          </span>
+          {isExpanded ? (
+            <ChevronUpIcon className="w-6 h-6 text-gray-400" />
+          ) : (
+            <ChevronDownIcon className="w-6 h-6 text-gray-400" />
+          )}
+        </div>
       </div>
 
-      );
+      {/* Expandable Content */}
+      {isExpanded && (
+        <div className="px-6 pb-6 border-t border-gray-200">
+          {/* Description */}
+          <div className="mt-6 mb-8">
+            <p className="text-gray-300 text-lg leading-relaxed">{finish.description}</p>
+          </div>
+
+          {/* Products Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {finish.products.map((product) => (
+              <div
+                key={product.id}
+                className="group relative rounded-2xl overflow-hidden 
+             bg-white/10 backdrop-blur-md 
+             border border-white/20 
+             shadow-lg hover:shadow-2xl 
+             transition-all duration-300 
+             hover:-translate-y-1"
+              >
+                {/* Image */}
+                <div className="aspect-square relative overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.code}
+                    className="w-full h-full object-cover 
+                 transition-transform duration-500 
+                 hover:scale-110"
+                  />
+
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 
+                    bg-linear-to-t 
+                    from-black/50 via-black/10 to-transparent 
+                    opacity-0 group-hover:opacity-100 
+                    transition-opacity duration-300" />
+                </div>
+
+                {/* Glass Content */}
+                <div className="relative p-4">
+                  <h3 className="font-semibold text-[#D4AF37] text-lg tracking-wide">
+                    {product.code}
+                  </h3>
+
+                  <div className="flex items-center justify-between mt-2">
+                    <span className="text-sm text-gray-300">
+                      {productData.size}
+                    </span>
+
+                    <span
+                      className={`text-xs px-3 py-1 rounded-full 
+                    border border-white/30 
+                    backdrop-blur-sm 
+                    ${getBadgeColor(finishKey)}`}
+                    >
+                      {finishKey.toUpperCase()}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Subtle shine */}
+                <div
+                  className="pointer-events-none absolute inset-0 
+               rounded-2xl 
+               ring-1 ring-inset ring-white/10"
+                />
+              </div>
+
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+
+  );
 
 };
 
 
-      function Tiles() {
+function Tiles() {
   const [expandedSections, setExpandedSections] = useState({
-        glossy: true,
-      carving: false,
-      sinker: false,
+    glossy: true,
+    carving: false,
+    sinker: false,
   });
 
   const toggleSection = (section: keyof typeof expandedSections) => {
-        setExpandedSections((prev) => ({
-          ...prev,
-          [section]: !prev[section],
-        }));
+    setExpandedSections((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
   };
 
-      return (
-      <div className="min-h-screen bg-[#d1c1a4]">
-        <section className="h-[75v] relative bg-[linear-gradient(180deg,#faf5ff,rgba(250,246,255,0.6))] overflow-hidden">
+  return (
+    <div className="min-h-screen bg-[#d1c1a4]">
+      <section className="h-[75v] relative bg-[linear-gradient(180deg,#faf5ff,rgba(250,246,255,0.6))] overflow-hidden">
 
         <AutoCarousel slides={slides} />
       </section>
-        <main className="container mx-auto px-4 py-12 relative z-10">
-          {/* Intro */}
+      <main className="container mx-auto px-4 py-12 relative z-10">
+        {/* Intro */}
 
-          <div className="text-center mb-16">
-            <div className="inline-block bg-[#D4AF37] rounded-full px-6 py-4 shadow-lg mb-6">
-              <span className="text-[#1c1c1c] font-semibold">✨ Premium Quality Tiles ✨</span>
-            </div>
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Discover Our Exclusive Collection</h2>
-            <p className="text-xl text-[#424242] max-w-3xl mx-auto">
-              Explore our three distinct finishes — each designed to bring unique character and functionality to your spaces.
-            </p>
+        <div className="text-center mb-16">
+          <div className="inline-block bg-[#D4AF37] rounded-full px-6 py-4 shadow-lg mb-6">
+            <span className="text-[#1c1c1c] font-semibold">✨ Premium Quality Tiles ✨</span>
           </div>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">Discover Our Exclusive Collection</h2>
+          <p className="text-xl text-[#424242] max-w-3xl mx-auto">
+            Explore our three distinct finishes — each designed to bring unique character and functionality to your spaces.
+          </p>
+        </div>
 
-          {/* Finishes */}
-          <div className="max-w-full mx-auto">
-            {Object.entries(productData.finishes).map(([key, finish]) => (
-              <FinishSection
-                key={key}
-                finishKey={key as keyof typeof productData.finishes}
-                finish={finish}
-                isExpanded={expandedSections[key as keyof typeof expandedSections]}
-                onToggle={() => toggleSection(key as keyof typeof expandedSections)}
-              />
-            ))}
+        {/* Finishes */}
+        <div className="max-w-full mx-auto">
+          {Object.entries(productData.finishes).map(([key, finish]) => (
+            <FinishSection
+              key={key}
+              finishKey={key as keyof typeof productData.finishes}
+              finish={finish}
+              isExpanded={expandedSections[key as keyof typeof expandedSections]}
+              onToggle={() => toggleSection(key as keyof typeof expandedSections)}
+            />
+          ))}
+        </div>
+
+        {/* Technical Specs */}
+
+      </main>
+      <TechnicalSpecs />
+      {/* Footer */}
+      <footer className="bg-[#88876d] text-gray-800 py-12 mt-0">
+        <div className="container mx-auto px-4 text-center">
+          <h3 className="text-2xl font-bold mb-4">
+            Ready to Transform Your Space?
+          </h3>
+          <p className="text-gray-800 mb-6">
+            Contact us for samples and professional consultation
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            {/* WhatsApp Contact Button */}
+            <a
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-3xl font-semibold transition-colors border border-green-800"
+            >
+              <FaWhatsapp className="text-3xl" />
+              Contact Us
+            </a>
           </div>
+        </div>
+      </footer>
 
-          {/* Technical Specs */}
-
-        </main>
-        <TechnicalSpecs />
-        {/* Footer */}
-        <footer className="bg-[#88876d] text-gray-800 py-12 mt-0">
-          <div className="container mx-auto px-4 text-center">
-            <h3 className="text-2xl font-bold mb-4">
-              Ready to Transform Your Space?
-            </h3>
-            <p className="text-gray-800 mb-6">
-              Contact us for samples and professional consultation
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              {/* WhatsApp Contact Button */}
-              <a
-                href="https://wa.me/919876543210"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-3xl font-semibold transition-colors border border-green-800"
-              >
-                <FaWhatsapp className="text-3xl" />
-                Contact Us
-              </a>
-            </div>
-          </div>
-        </footer>
-
-      </div>
-      );
+    </div>
+  );
 }
 
-      export default Tiles;
+export default Tiles;
