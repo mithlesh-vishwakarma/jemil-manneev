@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#1C1C1C] text-[#F5F5F5] border-t border-[#2E2E2E] ">
       <div className="mx-auto grid md:grid-cols-4 gap-8 px-20 py-4 pt-12">
-        {/* Logo + About */}
+        {/* Logo + About+ */}
         <div>
           <img src={logo} alt="Manneev Enterprises" className="h-16 mb-4" />
           <h2 className="text-[#F5F5F5] font-semibold text-xl ">
