@@ -5,7 +5,8 @@ import Footer from './components/footer';
 import Home from './Home';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
-import Collections from './pages/Collections';
+import NotFound from './pages/NotFound';
+// import Collections from './pages/Collections';
 import Gallery from './pages/Gallery';
 import OurPartners from './pages/OurPartners';
 import TopBar from './components/TopBar';
@@ -40,7 +41,7 @@ const Layout: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/collections" element={<Collections />} />
+          <Route path="/collections" element={<NotFound />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/partners" element={<OurPartners />} />
           <Route path="/collections/tiles" element={<Tiles />} />
