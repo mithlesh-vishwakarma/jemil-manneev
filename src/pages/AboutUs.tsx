@@ -58,7 +58,7 @@ const AboutUs: React.FC = () => {
               About <span className="text-[#D4AF37]">MANNEEV</span>
             </h1>
           </div>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-[#D4AF37] max-w-2xl mx-auto border border-[#D4AF37]/30 p-4 rounded-2xl bg-black/60">
             We are redefining how construction materials reach your site —
             combining quality, trust, and innovation to build the future together.
           </p>
@@ -215,25 +215,25 @@ const AboutUs: React.FC = () => {
   ">
             {[
               {
-                name: "Rajesh Kumar",
+                name: "Amit Nakrani",
                 role: "Founder & CEO",
                 img: "https://images.unsplash.com/photo-1603415526960-f7e0328b1f67?w=400",
               },
-              {
-                name: "Aisha Patel",
-                role: "Head of Operations",
-                img: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=400",
-              },
-              {
-                name: "Arun Kumar",
-                role: "Technical Director",
-                img: "https://images.unsplash.com/photo-1603415526960-f7e0328b1f67?w=400",
-              },
-              {
-                name: "Sana Verma",
-                role: "Customer Relations Lead",
-                img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400",
-              },
+              // {
+              //   name: "Aisha Patel",
+              //   role: "Head of Operations",
+              //   img: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=400",
+              // },
+              // {
+              //   name: "Arun Kumar",
+              //   role: "Technical Director",
+              //   img: "https://images.unsplash.com/photo-1603415526960-f7e0328b1f67?w=400",
+              // },
+              // {
+              //   name: "Sana Verma",
+              //   role: "Customer Relations Lead",
+              //   img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400",
+              // },
             ].map((member, idx) => (
               <div
                 key={idx}

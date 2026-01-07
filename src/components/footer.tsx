@@ -114,9 +114,9 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-[#2E2E2E] text-center py-4 text-lg text-[#B0B0B0]">
         © Copyright 2025 Manneev Enterprises. All Rights Reserved.
-        <div className=" text-center text-lg text-[#B0B0B0]">
+        {/* <div className=" text-center text-lg text-[#B0B0B0]">
           made with ❤️ by <a href="http://ordinarycoder.com">Mithlesh</a>
-        </div>
+        </div> */}
       </div>
 
 
