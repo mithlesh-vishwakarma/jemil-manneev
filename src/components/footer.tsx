@@ -25,7 +25,7 @@ const Footer = () => {
           </p>
         </div>
 
-        
+
 
         {/* Quick Links */}
         <div>
@@ -88,19 +88,19 @@ const Footer = () => {
             <li className="flex items-center gap-2">
               <Phone size={16} className="text-[#D4AF37]" />
               <a
-                href="tel:+91 9876543210"
+                href="tel:+91 9326947550"
                 className="hover:text-[#D4AF37] transition"
               >
-                +91 9876543210
+                +91 9326947550
               </a>
             </li>
             <li className="flex items-center gap-2">
               <Mail size={16} className="text-[#D4AF37]" />
               <a
-                href="mailto:jemil.workspace@gmail.com"
+                href="mailto:info@manneev.com"
                 className="hover:text-[#D4AF37] transition"
               >
-                jemil.workspace@gmail.com
+                info@manneev.com
               </a>
             </li>
             <li className="flex items-center gap-2">

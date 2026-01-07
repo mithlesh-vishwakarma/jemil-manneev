@@ -292,7 +292,7 @@ function Tiles() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             {/* WhatsApp Contact Button */}
             <a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/919326947550"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-3xl font-semibold transition-colors border border-green-800"
