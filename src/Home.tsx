@@ -1,20 +1,15 @@
 import React, { useState } from "react";
 import KeywordScroll from "./components/KeywordScroll";
-import IntroVideo from "./assets/MANNEEV ENTERPRISES.mp4";
+
 import Video1 from "./assets/2-video-sample.mp4";
 import Video2 from "./assets/3-video-sample.mp4";
 import WhyChooseUs from "./components/WhyChooseUs";
 import StatsSection from "./components/StatesSection";
 import VideoProduct from "./components/VideoProduct";
-import ProductSection from "./components/ProductSection";
+// import ProductSection from "./components/ProductSection";
 
 const LandingPage: React.FC = () => {
-  const [showWebsite, setShowWebsite] = useState(false);
   const [currentMedia, setCurrentMedia] = useState<"video1" | "video2">("video1");
-
-  const handleIntroEnd = () => {
-    setShowWebsite(true);
-  };
 
   const handleVideoEnd = () => {
     // Switch between Video1 and Video2 for looping sequence
@@ -23,28 +18,8 @@ const LandingPage: React.FC = () => {
 
   return (
     <>
-      {/* Intro Video Loader */}
-      {!showWebsite && (
-        <div className="fixed inset-0 z-[ 9999] bg-black flex items-center justify-center transition-opacity duration-700">
-          <div className="relative w-[350px] sm:w-[480px] md:w-[640px] h-[ 240px] sm:h-[300px] md:h-[360px] overflow-hidden rounded-2xl shadow-2xl">
-            <video
-              src={IntroVideo}
-              autoPlay
-              muted
-              playsInline
-              onEnded={handleIntroEnd}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-      )}
-
       {/* Main Website Content */}
-      <div
-        className={`transition-opacity duration-1000 ${
-          showWebsite ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
-      >
+      <div>
         {/* Hero Section */}
         <section className="relative w-full h-[80vh] overflow-hidden">
           <video
@@ -67,13 +42,13 @@ const LandingPage: React.FC = () => {
             <p className="text-lg sm:text-2xl text-gray-200 max-w-2xl mb-8">
               Building the future with strength, quality, and trust.
             </p>
-            
+
           </div>
         </section>
 
         {/* Scrolling Keywords Section */}
         <div id="second-section">  <KeywordScroll />  </div>
-        <ProductSection />
+        {/* <ProductSection /> */}
         <VideoProduct />
         <WhyChooseUs />
         <StatsSection />

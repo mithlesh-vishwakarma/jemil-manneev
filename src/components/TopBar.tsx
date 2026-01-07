@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 const TopBar = () => {
   return (
@@ -9,20 +9,20 @@ const TopBar = () => {
         <div className="flex flex-wrap items-left gap-4">
           {/* Phone */}
           <a
-            href="tel:+919876543210"
+            href="tel:+919326947550"
             className="flex items-center gap-2 hover:text-[#725e03] transition"
           >
             <Phone size={15} className="text-[#725e03]" />
-            <span>CALL +91 9876543210</span>
+            <span>CALL +91 9326947550</span>
           </a>
 
           {/* Email */}
           <a
-            href="mailto:jemil.workspace@gmail.com"
+            href="mailto:info@manneev.com"
             className="flex items-center gap-2 hover:text-[#725e03] transition"
           >
             <Mail size={15} className="text-[#725e03]" />
-            <span>jemil.workspace@gmail.com</span>
+            <span>info@manneev.com</span>
           </a>
 
           {/* Location */}
@@ -42,14 +42,14 @@ const TopBar = () => {
           <p className="uppercase text-[10px] tracking-[1.1px] text-[#725e03]">
             <strong>Follow us on social</strong>
           </p>
-          <a
+          {/* <a
             href="https://www.facebook.com/cbwestend"
             target="_blank"
             rel="noreferrer"
             className="text-[#1C1C1C] hover:text-[#725e03] transition "
           >
             <FaFacebookF size={12} />
-          </a>
+          </a> */}
           <a
             href="https://www.instagram.com/cb_westend/"
             target="_blank"
@@ -58,14 +58,14 @@ const TopBar = () => {
           >
             <FaInstagram size={12} />
           </a>
-          <a
+          {/* <a
             href="https://www.linkedin.com/company/c-bhogilal-westend-official"
             target="_blank"
             rel="noreferrer"
             className="text-[#1C1C1C] hover:text-[#725e03] transition"
           >
             <FaLinkedinIn size={12} />
-          </a>
+          </a> */}
         </div>
       </div>
     </div>

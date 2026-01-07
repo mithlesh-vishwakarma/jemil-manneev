@@ -12,7 +12,7 @@ const Header = () => {
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
     { label: "Collections", href: "/collections" },
-    { label: "Brand Partners", href: "/brands" },
+    { label: "Brand Partners", href: "/partners" },
     { label: "Contact Us", href: "/contact" },
   ];
 
@@ -53,8 +53,8 @@ const Header = () => {
                 key={item.label}
                 href={item.href}
                 className={`text-sm lg:text-base font-medium tracking-wide transition-colors duration-300 ${isActive
-                    ? "text-[#D4AF37]" // Active tab
-                    : "text-[#F5F5F5] hover:text-[#D4AF37]" // Default + hover
+                  ? "text-[#D4AF37]" // Active tab
+                  : "text-[#F5F5F5] hover:text-[#D4AF37]" // Default + hover
                   }`}
               >
                 {item.label}
@@ -92,8 +92,8 @@ const Header = () => {
                 key={item.label}
                 href={item.href}
                 className={`block text-sm font-medium tracking-wide transition-colors duration-300 ${isActive
-                    ? "text-[#D4AF37]"
-                    : "text-[#F5F5F5] hover:text-[#D4AF37]"
+                  ? "text-[#D4AF37]"
+                  : "text-[#F5F5F5] hover:text-[#D4AF37]"
                   }`}
               >
                 {item.label}
