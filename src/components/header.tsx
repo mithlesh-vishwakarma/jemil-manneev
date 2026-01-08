@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header className="bg-[#1C1C1C] text-[#F5F5F5] border-b border-[#F5F5F5]/20 shadow-sm">
-      <div className="mx-auto flex items-center justify-between py-3 px-20 md:py-4">
+      <div className="mx-auto flex items-center justify-between py-3 px-4 md:px-20 xl:py-4">
 
         {/* Logo */}
         <a href="/" className="relative flex items-center gap-3">
@@ -26,7 +26,7 @@ const Header = () => {
             <img
               src={logo}
               alt="Logo"
-              className="h-12 w-12 md:h-14 md:w-14 object-contain rounded-full relative z-10"
+              className="h-12 w-12 xl:h-14 xl:w-14 object-contain rounded-full relative z-10"
             />
             {/* Dashed rotating border */}
             <span className="absolute inset-0 rounded-full border-2 border-dashed border-[#D4AF37]/60 rotate-border" />
@@ -34,7 +34,7 @@ const Header = () => {
 
           {/* Text stacked vertically */}
           <div className="flex flex-col leading-tight">
-            <span className="text-lg md:text-xl font-semibold tracking-wide text-[#D4AF37]">
+            <span className="text-lg xl:text-xl font-semibold tracking-wide text-[#D4AF37]">
               MANNEEV ENTERPRISES
             </span>
             <span className="text-sm tracking-wide text-[#D4AF37]/80">
@@ -45,7 +45,7 @@ const Header = () => {
 
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden xl:flex items-center gap-10">
           {navItems.map((item) => {
             const isActive = location.pathname === item.href;
             return (
@@ -64,7 +64,7 @@ const Header = () => {
         </nav>
 
         {/* Appointment Button */}
-        <div className="hidden md:flex items-center">
+        <div className="hidden xl:flex items-center">
           <a
             href="/contact"
             className="px-5 py-2.5 text-sm lg:text-base font-semibold bg-[#D4AF37] text-[#1C1C1C] rounded-full border border-transparent hover:bg-[#F5F5F5] hover:text-[#1C1C1C] hover:border-[#D4AF37] transition-all duration-300"
@@ -75,16 +75,16 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-[#D4AF37]"
+          className="xl:hidden text-[#D4AF37]"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <Menu size={26} />
+          <Menu size={35} />
         </button>
       </div>
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#2E2E2E] px-5 pb-5 space-y-3 animate-fadeIn">
+        <div className="xl:hidden bg-[#2E2E2E] px-5 pb-5 space-y-3 animate-fadeIn">
           {navItems.map((item) => {
             const isActive = location.pathname === item.href;
             return (

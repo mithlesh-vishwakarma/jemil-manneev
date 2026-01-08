@@ -10,7 +10,7 @@ import logo from "../assets/logo-manneev.png";
 const Footer = () => {
   return (
     <footer className="bg-[#1C1C1C] text-[#F5F5F5] border-t border-[#2E2E2E] ">
-      <div className="mx-auto grid md:grid-cols-4 gap-8 px-20 py-4 pt-12">
+      <div className="mx-auto grid md:grid-cols-4 gap-8 px-4 md:px-20 py-4 pt-12">
         {/* Logo + About+ */}
         <div>
           <img src={logo} alt="Manneev Enterprises" className="h-16 mb-4" />
@@ -80,13 +80,13 @@ const Footer = () => {
           </h3>
           <ul className="space-y-3 text-lg text-[#B0B0B0]">
             <li className="flex items-start gap-2">
-              <MapPin size={50} className="text-[#D4AF37] mt-1" />
+              <MapPin className="text-[#D4AF37] mt-1 shrink-0 w-6 h-6 md:w-5 md:h-5" />
               <span>
                 Shop No 13,Dattani park building no 1 Opp Gokul Concord Tower, Thakur Village, Kandivali East, Mumbai, Maharashtra 400101
               </span>
             </li>
             <li className="flex items-center gap-2">
-              <Phone size={16} className="text-[#D4AF37]" />
+              <Phone className="text-[#D4AF37] mt-1 shrink-0 w-6 h-6 md:w-5 md:h-5" />
               <a
                 href="tel:+91 9326947550"
                 className="hover:text-[#D4AF37] transition"
@@ -95,7 +95,7 @@ const Footer = () => {
               </a>
             </li>
             <li className="flex items-center gap-2">
-              <Mail size={16} className="text-[#D4AF37]" />
+              <Mail className="text-[#D4AF37] mt-1 shrink-0 w-6 h-6 md:w-5 md:h-5" />
               <a
                 href="mailto:info@manneev.com"
                 className="hover:text-[#D4AF37] transition"
@@ -103,8 +103,8 @@ const Footer = () => {
                 info@manneev.com
               </a>
             </li>
-            <li className="flex items-center gap-2">
-              <Clock size={16} className="text-[#D4AF37]" />
+            <li className="flex items-start gap-2">
+              <Clock className="text-[#D4AF37] mt-[2px] shrink-0 w-6 h-6 md:w-5 md:h-5" />
               <span>Mon–Sat: 10 AM to 7:30 PM | Sunday Closed</span>
             </li>
           </ul>
@@ -112,7 +112,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-[#2E2E2E] text-center py-4 text-lg text-[#B0B0B0]">
+      <div className="border-t border-[#2E2E2E] text-center py-4 text-sm text-[#B0B0B0]">
         © Copyright 2025 Manneev Enterprises. All Rights Reserved.
         {/* <div className=" text-center text-lg text-[#B0B0B0]">
           made with ❤️ by <a href="http://ordinarycoder.com">Mithlesh</a>

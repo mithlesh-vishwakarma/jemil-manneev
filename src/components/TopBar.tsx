@@ -4,7 +4,7 @@ import { FaInstagram } from "react-icons/fa";
 const TopBar = () => {
   return (
     <div className="bg-[#d1c1a4] text-[#1C1C1C] text-[10px] tracking-[1.1px] font-semibold">
-      <div className="flex flex-col md:flex-row justify-between py-2 px-20">
+      <div className="flex flex-col md:flex-row justify-between py-2 px-4 md:px-20">
         {/* Left Section */}
         <div className="flex flex-wrap items-left gap-4">
           {/* Phone */}
