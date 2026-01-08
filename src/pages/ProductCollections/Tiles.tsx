@@ -1,10 +1,11 @@
-import React, { useMemo } from 'react';
+// import React, { useMemo } from 'react';
 import ProductShowcase from '../../components/ProductShowcase';
 
 import glossy102 from '../../assets/bg-main (1).webp';
 import glossy103 from '../../assets/bg-main (1).webp';
 import carving704 from '../../assets/bg-main (1).webp';
 import sinker12 from '../../assets/bg-main (1).webp';
+import { useMemo } from 'react';
 
 // ==== PRODUCT DATA ====
 const productData = {
@@ -85,7 +86,7 @@ const slides = [
 
 function Tiles() {
   // Flatten all products
-  const allProducts = useMemo(() => Object.entries(productData.finishes).flatMap(([key, finish]) =>
+  const allProducts = useMemo(() => Object.entries(productData.finishes).flatMap(([, finish]) =>
     finish.products.map((product) => ({
       ...product,
       surface: finish.title,
