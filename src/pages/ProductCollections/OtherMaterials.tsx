@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import ProductShowcase from '../../components/ProductShowcase';
 
 const productData = {
