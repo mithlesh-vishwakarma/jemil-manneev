@@ -19,30 +19,30 @@ const LandingPage: React.FC = () => {
   return (
     <>
       {/* Main Website Content */}
-      <div>
-        {/* Hero Section */}
-        <section className="relative w-full h-[80vh] overflow-hidden">
-          <video
-            src={currentMedia === "video1" ? Video1 : Video2}
-            autoPlay
-            muted
-            playsInline
-            onEnded={handleVideoEnd}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+      {/* Background Video & Overlay (Fixed) */}
+      <div className="fixed inset-0 w-full h-full -z-10 overflow-hidden">
+        <video
+          src={currentMedia === "video1" ? Video1 : Video2}
+          autoPlay
+          muted
+          playsInline
+          onEnded={handleVideoEnd}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40"></div>
+      </div>
 
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/40"></div>
-
-          {/* Text / CTA */}
-          <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
+      {/* Main Website Content */}
+      <div className="relative">
+        {/* Hero Section (Content Scrolls) */}
+        <section className="relative w-full h-[80vh] flex flex-col items-center justify-center text-center px-6">
+          <div className="relative z-10">
             <h1 className="text-4xl sm:text-6xl font-bold text-white/90 mb-6 drop-shadow-lg">
               Welcome to <span className="text-[#D4AF37]">MANNEEV</span>
             </h1>
             <p className="text-lg sm:text-2xl text-gray-200 max-w-2xl mb-8">
               Building the future with strength, quality, and trust.
             </p>
-
           </div>
         </section>
 

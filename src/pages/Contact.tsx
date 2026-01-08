@@ -30,9 +30,9 @@ const Contact: React.FC = () => {
   };
 
   const contactDetails = [
-    { icon: Phone, title: "Call Us", info: "+91 98765 43210", sub: "Mon–Sat, 9AM–7PM" },
+    { icon: Phone, title: "Call Us", info: "+91 98765 43210", sub: "Mon–Sun, 9:30AM–7:30PM" },
     { icon: Mail, title: "Email Us", info: "info@manneev.com", sub: "Replies within 24 hours" },
-    { icon: Clock, title: "Working Hours", info: "Mon–Sat: 9AM–7PM", sub: "Sunday: Closed" },
+    { icon: Clock, title: "Working Hours", info: "Mon–Sun: 9:30AM–7:30PM", sub: "Everyday: Open" },
   ];
 
   const visitUsDetail = { icon: MapPin, title: "Visit Us", info: "Shop No 13,Dattani park building no 1 Opp Gokul Concord Tower, Thakur Village, Kandivali East, Mumbai, Maharashtra 400101", sub: "Kandivali East, Mumbai" };
