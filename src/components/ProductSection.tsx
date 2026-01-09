@@ -1,26 +1,31 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 // import AppointmentButton from "./ui/Button";
 
 const products = [
   {
     name: "Tiles & Marbles",
-    image: "https://images.pexels.com/photos/6970063/pexels-photo-6970063.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/6970063/pexels-photo-6970063.jpeg?auto=compress&cs=tinysrgb&w=600",
     link: "/collections",
   },
   {
     name: "Bathroom Fixtures",
-    image: "https://images.pexels.com/photos/10919428/pexels-photo-10919428.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/10919428/pexels-photo-10919428.jpeg?auto=compress&cs=tinysrgb&w=600",
     link: "/collections",
   },
   {
     name: "Sanitary Ware",
-    image: "https://images.pexels.com/photos/6316056/pexels-photo-6316056.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/6316056/pexels-photo-6316056.jpeg?auto=compress&cs=tinysrgb&w=600",
     link: "/collections",
   },
   {
     name: "Other Materials",
-    image: "https://images.pexels.com/photos/19825178/pexels-photo-19825178.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/19825178/pexels-photo-19825178.jpeg?auto=compress&cs=tinysrgb&w=600",
     link: "/collections",
   },
 ];
@@ -45,7 +50,9 @@ const ProductSection: React.FC = () => {
               />
               {/* Overlay behind title */}
               <div className="absolute bottom-0 left-0 w-full p-4 bg-black/40 group-hover:bg-black/60 transition-colors duration-300">
-                <h3 className="text-2xl md:text-4xl font-bold text-white">{product.name}</h3>
+                <h3 className="text-2xl md:text-4xl font-bold text-white">
+                  {product.name}
+                </h3>
               </div>
 
               {/* Focus lines */}
@@ -107,12 +114,12 @@ const ProductSection: React.FC = () => {
 
         {/* Explore More Button */}
         <div className="hidden md:flex items-center mt-6 justify-center">
-          <a
-            href="/collections"
+          <Link
+            to="/collections"
             className="px-5 py-2.5 text-sm lg:text-base font-semibold bg-[#D4AF37] text-[#1C1C1C] rounded-full border border-transparent hover:bg-[#F5F5F5] hover:text-[#1C1C1C] hover:border-[#D4AF37] transition-all duration-300"
           >
             Explore More
-          </a>
+          </Link>
         </div>
       </div>
     </section>

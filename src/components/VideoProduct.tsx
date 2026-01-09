@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // import Button from "./ui/Button";
 
 const VideoProduct: React.FC = () => {
@@ -11,7 +12,9 @@ const VideoProduct: React.FC = () => {
             Luxury, Crafted to Perfection
           </h2>
           <p className="text-lg lg:text-xl text-[#6e633e]">
-            Our curated range of sophisticated fixtures and custom bathroom designs transforms every corner into a luxurious retreat, blending style with impeccable quality
+            Our curated range of sophisticated fixtures and custom bathroom
+            designs transforms every corner into a luxurious retreat, blending
+            style with impeccable quality
           </p>
           <ul className="space-y-3 text-[#1c1c1c] list-disc list-inside">
             <li>Premium quality materials built to last</li>
@@ -19,13 +22,13 @@ const VideoProduct: React.FC = () => {
             <li>Seamless integration into any space</li>
           </ul>
           <div className="hidden md:flex items-center mt-6">
-          <a
-            href="/collections"
-            className="px-5 py-2.5 text-sm lg:text-base font-semibold bg-[#D4AF37] text-[#1C1C1C] rounded-full border border-transparent hover:bg-[#F5F5F5] hover:text-[#1C1C1C] hover:border-[#D4AF37] transition-all duration-300"
-          >
-            Explore More
-          </a>
-        </div>
+            <Link
+              to="/collections"
+              className="px-5 py-2.5 text-sm lg:text-base font-semibold bg-[#D4AF37] text-[#1C1C1C] rounded-full border border-transparent hover:bg-[#F5F5F5] hover:text-[#1C1C1C] hover:border-[#D4AF37] transition-all duration-300"
+            >
+              Explore More
+            </Link>
+          </div>
         </div>
 
         {/* Right Side Video */}
@@ -39,7 +42,6 @@ const VideoProduct: React.FC = () => {
               className="w-full h-auto object-cover"
             />
           </div>
-
         </div>
       </div>
     </section>
