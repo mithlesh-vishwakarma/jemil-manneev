@@ -6,6 +6,7 @@ import Home from "./Home";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 // import Collections from './pages/Collections';
+import NotFound from "./pages/NotFound";
 import Gallery from "./pages/Gallery";
 import OurPartners from "./pages/OurPartners";
 import TopBar from "./components/TopBar";
@@ -20,7 +21,6 @@ import SanitaryWare from "./pages/ProductCollections/SanitaryWare";
 import OtherMaterials from "./pages/ProductCollections/OtherMaterials";
 import ConstructionChemicals from "./pages/ProductCollections/ConstructionChemicals";
 import CPFittings from "./pages/ProductCollections/CPFittings";
-import ProductsList from "./pages/Collections";
 
 const Layout: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,7 +53,7 @@ const Layout: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/collections" element={<ProductsList />} />
+          <Route path="/collections" element={<NotFound />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/partners" element={<OurPartners />} />
           <Route path="/collections/tiles" element={<Tiles />} />
