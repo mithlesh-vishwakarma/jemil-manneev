@@ -129,7 +129,7 @@ const Footer = () => {
 
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-5 right-20 text-[#e4ab00] w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all duration-300 overflow-hidden group cursor-pointer z-50 mix-blend-screen"
+        className="fixed bottom-4 lg:right-18 right-5 text-[#e4ab00] w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all duration-300 overflow-hidden group cursor-pointer z-50 mix-blend-screen"
       >
         <span className="absolute inset-0 rounded-full border-2 border-dashed border-[#e4ab00] rotate-border pointer-events-none z-50" />
         ↑
