@@ -1,15 +1,8 @@
-
 import React, { useRef } from "react";
-import {
-  Award,
-  Shield,
-  Truck,
-  Leaf,
-  CheckCircle2,
-} from "lucide-react";
+import { Award, Shield, Truck, Leaf, CheckCircle2 } from "lucide-react";
 import Background from "../assets/background-original.png";
 import MissionVisionValues from "../components/MissionVisionValues";
-
+import { Link } from "react-router-dom";
 
 const AboutUs: React.FC = () => {
   const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({});
@@ -39,11 +32,8 @@ const AboutUs: React.FC = () => {
     </section>
   );
 
-
-
   return (
     <div className="bg-[#0a0a0a] min-h-screen text-white">
-
       {/* ---------- Hero Section ---------- */}
       <Section
         id="about-hero"
@@ -60,7 +50,8 @@ const AboutUs: React.FC = () => {
           </div>
           <p className="text-lg sm:text-xl text-[#D4AF37] max-w-2xl mx-auto border border-[#D4AF37]/30 p-4 rounded-2xl bg-black/60">
             We are redefining how construction materials reach your site —
-            combining quality, trust, and innovation to build the future together.
+            combining quality, trust, and innovation to build the future
+            together.
           </p>
         </div>
       </Section>
@@ -73,7 +64,8 @@ const AboutUs: React.FC = () => {
               Our <span className="text-[#D4AF37]">Journey</span>
             </h2>
             <p className="text-gray-300 leading-relaxed">
-              Founded with a vision to simplify material procurement for builders,
+              Founded with a vision to simplify material procurement for
+              builders,
               <span className="font-semibold text-[#D4AF37]"> MANNEEV </span>
               began as a small team determined to connect top manufacturers with
               construction professionals seamlessly.
@@ -117,19 +109,46 @@ const AboutUs: React.FC = () => {
             </div>
 
             {[
-              { icon: Award, title: "Quality Certified", desc: "We partner only with ISI-certified and top-tier brands.", position: "card-position-0" },
-              { icon: Truck, title: "Efficient Logistics", desc: "On-time delivery through our dedicated transport fleet.", position: "card-position-1" },
-              { icon: Shield, title: "Trusted by Builders", desc: "Over 2,500+ professionals rely on our reliability.", position: "card-position-2" },
-              { icon: Leaf, title: "Sustainability Focus", desc: "We prioritize eco-friendly materials and practices.", position: "card-position-3" },
+              {
+                icon: Award,
+                title: "Quality Certified",
+                desc: "We partner only with ISI-certified and top-tier brands.",
+                position: "card-position-0",
+              },
+              {
+                icon: Truck,
+                title: "Efficient Logistics",
+                desc: "On-time delivery through our dedicated transport fleet.",
+                position: "card-position-1",
+              },
+              {
+                icon: Shield,
+                title: "Trusted by Builders",
+                desc: "Over 2,500+ professionals rely on our reliability.",
+                position: "card-position-2",
+              },
+              {
+                icon: Leaf,
+                title: "Sustainability Focus",
+                desc: "We prioritize eco-friendly materials and practices.",
+                position: "card-position-3",
+              },
             ].map((item, idx) => (
-              <div key={idx} className={`neo-card p-6 text-center cursor-pointer w-48 ${item.position}`}>
+              <div
+                key={idx}
+                className={`neo-card p-6 text-center cursor-pointer w-48 ${item.position}`}
+              >
                 <div className="card-background bg-[#1C1C1C] border border-[#D4AF37]/20 rounded-2xl shadow-lg hover:border-[#D4AF37] transition-all duration-300 h-full">
                   <div className="p-4">
                     <div className="bg-[#D4AF37]/10 w-14 h-14 rounded-xl flex items-center justify-center mb-4 mx-auto border border-[#D4AF37]/30">
                       <item.icon className="w-7 h-7 text-[#D4AF37]" />
                     </div>
-                    <h3 className="text-base font-bold mb-2 text-white">{item.title}</h3>
-                    <p className="text-gray-400 text-xs leading-tight">{item.desc}</p>
+                    <h3 className="text-base font-bold mb-2 text-white">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-400 text-xs leading-tight">
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -137,8 +156,12 @@ const AboutUs: React.FC = () => {
           </div>
 
           <div className="lg:hidden flex flex-col items-center gap-6 mt-8">
-            <div className="text-[#D4AF37] text-2xl font-bold animate-pulse">↻</div>
-            <p className="text-gray-500 text-sm">Continuous cycle of excellence</p>
+            <div className="text-[#D4AF37] text-2xl font-bold animate-pulse">
+              ↻
+            </div>
+            <p className="text-gray-500 text-sm">
+              Continuous cycle of excellence
+            </p>
           </div>
         </div>
 
@@ -198,12 +221,14 @@ const AboutUs: React.FC = () => {
             Meet Our <span className="text-[#D4AF37]">Leadership</span> Team
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            A team of passionate builders, engineers, and innovators driving MANNEEV’s mission forward.
+            A team of passionate builders, engineers, and innovators driving
+            MANNEEV’s mission forward.
           </p>
         </div>
 
         <div className="w-full flex justify-center px-4">
-          <div className="
+          <div
+            className="
     grid 
     grid-cols-1 
     sm:grid-cols-2 
@@ -212,7 +237,8 @@ const AboutUs: React.FC = () => {
     lg:gap-20
     max-w-6xl
     justify-items-center
-  ">
+  "
+          >
             {[
               {
                 name: "Amit Nakrani",
@@ -278,11 +304,13 @@ const AboutUs: React.FC = () => {
             ))}
           </div>
         </div>
-
       </Section>
 
       {/* ---------- CTA ---------- */}
-      <Section id="cta" className="py-24 px-6 bg-[#000] text-center relative overflow-hidden border-t border-[#D4AF37]/20">
+      <Section
+        id="cta"
+        className="py-24 px-6 bg-[#000] text-center relative overflow-hidden border-t border-[#D4AF37]/20"
+      >
         <div className="absolute inset-0 opacity-20">
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#D4AF37] rounded-full blur-3xl opacity-20" />
           <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#D4AF37] rounded-full blur-3xl opacity-20" />
@@ -292,14 +320,15 @@ const AboutUs: React.FC = () => {
             Building Trust, One Project at a Time
           </h2>
           <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-            Let’s collaborate to make your next project smoother, faster, and more sustainable.
+            Let’s collaborate to make your next project smoother, faster, and
+            more sustainable.
           </p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="bg-[#D4AF37] text-black px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#c5a028] transition-all duration-300 transform hover:scale-105 shadow-2xl inline-flex items-center justify-center"
           >
             Get in Touch <CheckCircle2 className="ml-2 w-5 h-5" />
-          </a>
+          </Link>
         </div>
       </Section>
     </div>

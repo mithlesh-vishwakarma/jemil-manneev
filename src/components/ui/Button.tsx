@@ -1,6 +1,7 @@
 // src/components/ui/Button.tsx
 import React from "react";
 import Icon from "./Icon"; // optional, only if you want icon support
+import { Link } from "react-router-dom";
 
 interface ButtonProps {
   text: string;
@@ -51,17 +52,21 @@ const Button: React.FC<ButtonProps> = ({
 
   const content = (
     <>
-      {iconName && iconPosition === "left" && <Icon name={iconName} size={16} />}
+      {iconName && iconPosition === "left" && (
+        <Icon name={iconName} size={16} />
+      )}
       <span>{text}</span>
-      {iconName && iconPosition === "right" && <Icon name={iconName} size={16} />}
+      {iconName && iconPosition === "right" && (
+        <Icon name={iconName} size={16} />
+      )}
     </>
   );
 
   if (href) {
     return (
-      <a href={href} onClick={onClick} className={buttonClasses}>
+      <Link to={href} onClick={onClick} className={buttonClasses}>
         {content}
-      </a>
+      </Link>
     );
   }
 

@@ -1,5 +1,6 @@
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import logo from "../assets/logo-manneev.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -32,9 +33,9 @@ const Footer = () => {
                   size={14}
                   className="text-[#D4AF37] group-hover:translate-x-1 transition"
                 />
-                <a href="#" className="hover:text-[#D4AF37] transition-colors">
+                <Link to="#" className="hover:text-[#D4AF37] transition-colors">
                   {item}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -57,12 +58,12 @@ const Footer = () => {
                   size={14}
                   className="text-[#D4AF37] group-hover:translate-x-1 transition"
                 />
-                <a
-                  href="/collections"
+                <Link
+                  to="/collections"
                   className="hover:text-[#D4AF37] transition-colors"
                 >
                   {item}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -83,21 +84,21 @@ const Footer = () => {
             </li>
             <li className="flex items-center gap-2">
               <Phone className="text-[#D4AF37] mt-1 shrink-0 w-6 h-6 md:w-5 md:h-5" />
-              <a
-                href="tel:+91 9326947550"
+              <Link
+                to="tel:+91 9326947550"
                 className="hover:text-[#D4AF37] transition"
               >
                 +91 9326947550
-              </a>
+              </Link>
             </li>
             <li className="flex items-center gap-2">
               <Mail className="text-[#D4AF37] mt-1 shrink-0 w-6 h-6 md:w-5 md:h-5" />
-              <a
-                href="mailto:info@manneev.com"
+              <Link
+                to="mailto:info@manneev.com"
                 className="hover:text-[#D4AF37] transition"
               >
                 info@manneev.com
-              </a>
+              </Link>
             </li>
             <li className="flex items-start gap-2">
               <Clock className="text-[#D4AF37] mt-[2px] shrink-0 w-6 h-6 md:w-5 md:h-5" />
@@ -109,21 +110,21 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-[#2E2E2E] text-center py-4 text-sm text-[#B0B0B0]">
-        © Copyright 2025 Manneev Enterprises. All Rights Reserved.
+        © Copyright 2026 Manneev Enterprises. All Rights Reserved.
         {/* <div className=" text-center text-lg text-[#B0B0B0]">
-          made with ❤️ by <a href="http://ordinarycoder.com">Mithlesh</a>
+          made with ❤️ by <Link to="http://ordinarycoder.com">Mithlesh</Link>
         </div> */}
       </div>
 
       {/* Floating WhatsApp Button */}
-      {/* <a
-        href="https://wa.me/919076150099"
+      {/* <Link
+        to="https://wa.me/919076150099"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-5 right-5 bg-[#25D366] text-white p-3 rounded-full shadow-lg hover:scale-110 transition"
       >
         <i className="fab fa-whatsapp text-2xl"></i>
-      </a> */}
+      </Link> */}
 
       {/* Back to Top Button */}
 

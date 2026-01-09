@@ -1,6 +1,6 @@
 import { Menu } from "lucide-react";
 import { useState } from "react";
-import { useLocation } from "react-router-dom"; // <-- Add this
+import { Link, useLocation } from "react-router-dom"; // <-- Add this
 import logo from "../assets/logo-manneev.png";
 // import Button from "./ui/Button";
 
@@ -21,7 +21,7 @@ const Header = () => {
       <div className="mx-auto flex items-center justify-between py-3 px-4 md:px-20 xl:py-4">
 
         {/* Logo */}
-        <a href="/" className="relative flex items-center gap-3">
+        <Link to="/" className="relative flex items-center gap-3">
           <div className="relative p-[3px] rounded-full group">
             <img
               src={logo}
@@ -41,7 +41,7 @@ const Header = () => {
               The Built-up Solution
             </span>
           </div>
-        </a>
+        </Link>
 
 
         {/* Desktop Nav */}
@@ -49,28 +49,28 @@ const Header = () => {
           {navItems.map((item) => {
             const isActive = location.pathname === item.href;
             return (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className={`text-sm lg:text-base font-medium tracking-wide transition-colors duration-300 ${isActive
                   ? "text-[#D4AF37]" // Active tab
                   : "text-[#F5F5F5] hover:text-[#D4AF37]" // Default + hover
                   }`}
               >
                 {item.label}
-              </a>
+              </Link>
             );
           })}
         </nav>
 
         {/* Appointment Button */}
         <div className="hidden xl:flex items-center">
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="px-5 py-2.5 text-sm lg:text-base font-semibold bg-[#D4AF37] text-[#1C1C1C] rounded-full border border-transparent hover:bg-[#F5F5F5] hover:text-[#1C1C1C] hover:border-[#D4AF37] transition-all duration-300"
           >
             Appointment
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -88,25 +88,25 @@ const Header = () => {
           {navItems.map((item) => {
             const isActive = location.pathname === item.href;
             return (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className={`block text-sm font-medium tracking-wide transition-colors duration-300 ${isActive
                   ? "text-[#D4AF37]"
                   : "text-[#F5F5F5] hover:text-[#D4AF37]"
                   }`}
               >
                 {item.label}
-              </a>
+              </Link>
             );
           })}
           <div className="pt-3">
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="block text-center w-full py-2.5 rounded-full bg-[#D4AF37] text-[#1C1C1C] font-semibold hover:bg-[#F5F5F5] transition-all duration-300"
             >
               Appointment
-            </a>
+            </Link>
           </div>
         </div>
       )}

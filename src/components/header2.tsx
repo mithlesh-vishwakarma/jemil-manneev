@@ -1,6 +1,6 @@
 import { Menu } from "lucide-react";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo-manneev.png";
 
 const Header2 = () => {
@@ -26,16 +26,16 @@ const Header2 = () => {
           {leftNav.map((item) => {
             const isActive = location.pathname === item.href;
             return (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className={`text-sm lg:text-base font-medium tracking-wide transition-colors duration-300 ${isActive
                   ? "text-[#D4AF37]"
                   : "text-[#F5F5F5] hover:text-[#D4AF37]"
                   }`}
               >
                 {item.label}
-              </a>
+              </Link>
             );
           })}
         </nav>
@@ -73,7 +73,7 @@ const Header2 = () => {
                 textAnchor="middle"
                 dominantBaseline="middle"
               >
-                <textPath href="#curveBelow" startOffset="50%">
+                <textPath to="#curveBelow" startOffset="50%">
                   The Built-up Solution
                 </textPath>
               </text>
@@ -91,24 +91,24 @@ const Header2 = () => {
           {rightNav.map((item) => {
             const isActive = location.pathname === item.href;
             return (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className={`text-sm lg:text-base font-medium tracking-wide transition-colors duration-300 ${isActive
                   ? "text-[#D4AF37]"
                   : "text-[#F5F5F5] hover:text-[#D4AF37]"
                   }`}
               >
                 {item.label}
-              </a>
+              </Link>
             );
           })}
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="px-5 py-2 text-sm lg:text-base font-semibold bg-[#D4AF37] text-[#1C1C1C] rounded-full border border-transparent hover:bg-[#F5F5F5] hover:text-[#1C1C1C] hover:border-[#D4AF37] transition-all duration-300"
           >
             Appointment
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -126,25 +126,25 @@ const Header2 = () => {
           {navItems.map((item) => {
             const isActive = location.pathname === item.href;
             return (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className={`block text-sm font-medium tracking-wide transition-colors duration-300 ${isActive
                   ? "text-[#D4AF37]"
                   : "text-[#F5F5F5] hover:text-[#D4AF37]"
                   }`}
               >
                 {item.label}
-              </a>
+              </Link>
             );
           })}
           <div className="pt-3">
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="block text-center w-full py-2.5 rounded-full bg-[#D4AF37] text-[#1C1C1C] font-semibold hover:bg-[#F5F5F5] transition-all duration-300"
             >
               Appointment
-            </a>
+            </Link>
           </div>
         </div>
       )}

@@ -1,10 +1,8 @@
 // import React from 'react';
-import NotFound from './NotFound';
+import NotFound from "./NotFound";
 
 const OurPartners = () => {
-  return (
-    <NotFound />
-  );
+  return <NotFound />;
 };
 
 export default OurPartners;
@@ -18,10 +16,10 @@ export default OurPartners;
 //       <header className="flex justify-between items-center px-8 py-4 border-b border-[#2E2E2E]">
 //         <h1 className="text-2xl font-bold text-[#D4AF37]">BuildMate Dealers</h1>
 //         <nav className="space-x-6">
-//           <a href="#" className="hover:text-[#D4AF37] transition">Home</a>
-//           <a href="#" className="hover:text-[#D4AF37] transition">Products</a>
-//           <a href="#" className="hover:text-[#D4AF37] transition">About</a>
-//           <a href="#" className="hover:text-[#D4AF37] transition">Contact</a>
+//           <Link to="#" className="hover:text-[#D4AF37] transition">Home</Link>
+//           <Link to="#" className="hover:text-[#D4AF37] transition">Products</Link>
+//           <Link to="#" className="hover:text-[#D4AF37] transition">About</Link>
+//           <Link to="#" className="hover:text-[#D4AF37] transition">Contact</Link>
 //         </nav>
 //       </header>
 //
