@@ -1,10 +1,4 @@
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
-  ArrowRight,
-} from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import logo from "../assets/logo-manneev.png";
 
 const Footer = () => {
@@ -16,7 +10,8 @@ const Footer = () => {
           <img src={logo} alt="Manneev Enterprises" className="h-16 mb-4" />
           <h2 className="text-[#F5F5F5] font-semibold text-xl ">
             MANNEEV ENTERPRISES
-          </h2><span className="text-[#B0B0B0]">The Built-Up Solution</span>
+          </h2>
+          <span className="text-[#B0B0B0]">The Built-Up Solution</span>
 
           <p className="mt-3 text-lg text-[#B0B0B0] leading-relaxed">
             Our carefully curated collections and personal touch have redefined
@@ -24,8 +19,6 @@ const Footer = () => {
             years.
           </p>
         </div>
-
-
 
         {/* Quick Links */}
         <div>
@@ -39,10 +32,7 @@ const Footer = () => {
                   size={14}
                   className="text-[#D4AF37] group-hover:translate-x-1 transition"
                 />
-                <a
-                  href="#"
-                  className="hover:text-[#D4AF37] transition-colors"
-                >
+                <a href="#" className="hover:text-[#D4AF37] transition-colors">
                   {item}
                 </a>
               </li>
@@ -56,7 +46,12 @@ const Footer = () => {
             Products
           </h3>
           <ul className="space-y-2 text-lg">
-            {["Tiles & Marbles", "Bathroom Fixtures", "Sanitary Ware", "Other Materials"].map((item) => (
+            {[
+              "Tiles & Marbles",
+              "Bathroom Fixtures",
+              "Sanitary Ware",
+              "Other Materials",
+            ].map((item) => (
               <li key={item} className="flex items-center gap-2 group">
                 <ArrowRight
                   size={14}
@@ -82,7 +77,8 @@ const Footer = () => {
             <li className="flex items-start gap-2">
               <MapPin className="text-[#D4AF37] mt-1 shrink-0 w-6 h-6 md:w-5 md:h-5" />
               <span>
-                Shop No 13,Dattani park building no 1 Opp Gokul Concord Tower, Thakur Village, Kandivali East, Mumbai, Maharashtra 400101
+                Shop No 13,Dattani park building no 1 Opp Gokul Concord Tower,
+                Thakur Village, Kandivali East, Mumbai, Maharashtra 400101
               </span>
             </li>
             <li className="flex items-center gap-2">
@@ -119,7 +115,6 @@ const Footer = () => {
         </div> */}
       </div>
 
-
       {/* Floating WhatsApp Button */}
       {/* <a
         href="https://wa.me/919076150099"
@@ -134,13 +129,11 @@ const Footer = () => {
 
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-5 right-20 text-[#e4ab00] w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all duration-300 overflow-hidden group cursor-pointer"
+        className="fixed bottom-5 right-20 text-[#e4ab00] w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all duration-300 overflow-hidden group cursor-pointer z-50"
       >
         <span className="absolute inset-0 rounded-full border-2 border-dashed border-[#D4AF37]/60 rotate-border pointer-events-none z-50" />
         ↑
       </button>
-
-
     </footer>
   );
 };
