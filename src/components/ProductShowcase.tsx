@@ -177,7 +177,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({
                 {/* Image */}
                 <div className="relative overflow-hidden rounded-md border border-[#D4AF37] aspect-square">
                   <img
-                    src={product.image}
+                    src={`/tiles/${product.image}`}
                     alt={product.code}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
