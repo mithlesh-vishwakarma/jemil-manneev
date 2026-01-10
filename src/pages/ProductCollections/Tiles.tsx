@@ -1,8 +1,7 @@
 // import React, { useMemo } from 'react';
 import ProductShowcase from "../../components/ProductShowcase";
 
-import glossy102 from "../../assets/bg-main (1).webp";
-import glossy103 from "../../assets/bg-main (1).webp";
+
 import carving704 from "../../assets/bg-main (1).webp";
 import sinker12 from "../../assets/bg-main (1).webp";
 import { useMemo } from "react";
