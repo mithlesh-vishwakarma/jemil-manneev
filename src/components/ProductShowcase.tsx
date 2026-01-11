@@ -169,9 +169,9 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({
         {/* Products Grid */}
         {currentProducts.length > 0 ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            {currentProducts.map((product) => (
+            {currentProducts.map((product,i) => (
               <div
-                key={product.id}
+                key={i}
                 className="bg-[#88876d] shadow-lg hover:shadow-xl transition-all duration-300 p-3 border border-[#D4AF37] rounded-lg group hover:-translate-y-1"
               >
                 {/* Image */}
