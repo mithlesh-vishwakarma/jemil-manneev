@@ -96,6 +96,35 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({
     currentPage * itemsPerPage
   );
 
+  const getPaginationPages = () => {
+    const pages: (number | "dots")[] = [];
+
+    if (totalPages <= 4) {
+      return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }
+
+    const start = Math.max(2, currentPage - 1);
+    const end = Math.min(totalPages - 1, currentPage + 1);
+
+    pages.push(1);
+
+    if (start > 2) {
+      pages.push("dots");
+    }
+
+    for (let i = start; i <= end; i++) {
+      pages.push(i);
+    }
+
+    if (end < totalPages - 1) {
+      pages.push("dots");
+    }
+
+    pages.push(totalPages);
+
+    return pages;
+  };
+
   return (
     <div className="min-h-screen bg-[#1c1c1c]">
       <section className="h-[75vh] relative bg-[linear-gradient(180deg,#faf5ff,rgba(250,246,255,0.6))] overflow-hidden">
@@ -169,10 +198,10 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({
         {/* Products Grid */}
         {currentProducts.length > 0 ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            {currentProducts.map((product,i) => (
+            {currentProducts.map((product, i) => (
               <div
                 key={i}
-                className="bg-[#88876d] shadow-lg hover:shadow-xl transition-all duration-300 p-3 border border-[#D4AF37] rounded-lg group hover:-translate-y-1"
+                className="bg-[#88876d] shadow-lg hover:shadow-xl transition-all duration-300 p-2 md:p-3 border border-[#D4AF37] rounded-lg group hover:-translate-y-1"
               >
                 {/* Image */}
                 <div className="relative overflow-hidden rounded-md border border-[#D4AF37] aspect-square">
@@ -227,6 +256,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({
         {/* Pagination */}
         {filteredProducts.length > itemsPerPage && (
           <div className="mt-12 flex justify-center items-center gap-2">
+            {/* Prev */}
             <button
               disabled={currentPage === 1}
               onClick={() => setCurrentPage((p) => p - 1)}
@@ -235,26 +265,48 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({
               <ChevronLeftIcon className="w-5 h-5" />
             </button>
 
-            {/* Page Numbers */}
-            <div className="flex gap-1">
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-                (page) => (
+            {/* Desktop Page Numbers */}
+            <div className="hidden sm:flex gap-1">
+              {getPaginationPages().map((page, index) => {
+                if (page === "dots") {
+                  return (
+                    <span
+                      key={`dots-${index}`}
+                      className="w-10 h-10 flex items-center justify-center text-gray-400"
+                    >
+                      ...
+                    </span>
+                  );
+                }
+
+                return (
                   <button
                     key={page}
                     onClick={() => setCurrentPage(page)}
-                    className={`w-10 h-10 rounded-lg border font-semibold transition-all duration-300 
-                     ${
-                       currentPage === page
-                         ? "bg-[#D4AF37] text-white border-[#D4AF37] shadow-md scale-105"
-                         : "bg-white/10 text-gray-400 border-gray-600 hover:border-[#D4AF37] hover:text-[#D4AF37]"
-                     }`}
+                    className={`w-10 h-10 rounded-lg border font-semibold transition-all duration-300
+              ${
+                currentPage === page
+                  ? "bg-[#D4AF37] text-white border-[#D4AF37] shadow-md scale-105"
+                  : "bg-white/10 text-gray-400 border-gray-600 hover:border-[#D4AF37] hover:text-[#D4AF37]"
+              }`}
                   >
                     {page}
                   </button>
-                )
-              )}
+                );
+              })}
             </div>
 
+            {/* Mobile Page Indicator */}
+            <div className="sm:hidden font-semibold text-gray-400 px-3">
+              Page{" "}
+              <span className="text-[#D4AF37] font-semibold">
+                {currentPage}
+              </span>{" "}
+              of{" "}
+              <span className="text-[#D4AF37] font-semibold">{totalPages}</span>
+            </div>
+
+            {/* Next */}
             <button
               disabled={currentPage === totalPages}
               onClick={() => setCurrentPage((p) => p + 1)}
