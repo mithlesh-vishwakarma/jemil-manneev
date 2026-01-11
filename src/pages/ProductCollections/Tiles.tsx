@@ -1,7 +1,6 @@
 // import React, { useMemo } from 'react';
 import ProductShowcase from "../../components/ProductShowcase";
 
-
 import carving704 from "../../assets/bg-main (1).webp";
 import sinker12 from "../../assets/bg-main (1).webp";
 import { useMemo } from "react";
@@ -110,6 +109,114 @@ const productData = {
           image: "glossy016.png",
           color: "Dark (DK)",
         },
+        {
+          id: 17,
+          code: "102 SATVARIO",
+          image: "glossy017.png",
+          color: "White/Light",
+        },
+        {
+          id: 18,
+          code: "103 SILK ONYX",
+          image: "glossy018.png",
+          color: "Dark/Black",
+        },
+        {
+          id: 19,
+          code: "113 SATVARIO WHITE",
+          image: "glossy019.png",
+          color: "White",
+        },
+        {
+          id: 20,
+          code: "132 MARFIL",
+          image: "glossy020.png",
+          color: "Cream/Ivory",
+        },
+        {
+          id: 21,
+          code: "133 ONISTA IVORY",
+          image: "glossy021.png",
+          color: "Ivory/Off-white",
+        },
+        {
+          id: 22,
+          code: "151 NATURAL BEIGE",
+          image: "glossy022.png",
+          color: "Beige",
+        },
+        {
+          id: 23,
+          code: "381 BRECCIA OLIVE",
+          image: "glossy023.png",
+          color: "Olive",
+        },
+        {
+          id: 24,
+          code: "1674 ITALIAN GOLD",
+          image: "glossy024.png",
+          color: "Gold",
+        },
+        {
+          id: 25,
+          code: "GREY MURA PEARL",
+          image: "glossy025.png",
+          color: "Grey",
+        },
+        {
+          id: 26,
+          code: "1808 THUNDER BOLT",
+          image: "glossy026.png",
+          color: "Grey",
+        },
+        {
+          id: 27,
+          code: "1813 ANGELO WHITE",
+          image: "glossy027.png",
+          color: "White",
+        },
+        {
+          id: 28,
+          code: "1930 VIGA SILVER",
+          image: "glossy028.png",
+          color: "Silver",
+        },
+        {
+          id: 29,
+          code: "1934 PAZERO REX",
+          image: "glossy029.png",
+          color: "Earth Tones",
+        },
+        {
+          id: 30,
+          code: "25142 ONYX SIENNA",
+          image: "glossy030.png",
+          color: "Reddish-Brown",
+        },
+        {
+          id: 31,
+          code: "40118 RYNESTONE",
+          image: "glossy031.png",
+          color: "Neutral",
+        },
+        {
+          id: 32,
+          code: "1984 MODULAR GREEN",
+          image: "glossy032.png",
+          color: "Green",
+        },
+        {
+          id: 33,
+          code: "1989 MODULAR BLACK",
+          image: "glossy033.png",
+          color: "Black",
+        },
+        {
+          id: 34,
+          code: "2107 RODRIO GOLD",
+          image: "glossy034.png",
+          color: "Gold",
+        },
       ],
     },
     slate: {
@@ -174,110 +281,106 @@ const productData = {
     carving: {
       title: "Carving Finish",
       products: [
-        { id: 19, code: "704 ASTER WHITE", image: carving704, color: "White" },
         {
-          id: 20,
+          id: 1,
+          code: "704 ASTER WHITE",
+          image: "carving001.png",
+          color: "WHITE",
+        },
+        {
+          id: 2,
           code: "706 PIETRA ASH",
-          image:
-            "https://images.pexels.com/photos/691710/pexels-photo-691710.jpeg",
-          color: "Ash",
+          image: "carving002.png",
+          color: "ASH",
         },
         {
-          id: 21,
+          id: 3,
           code: "709 PIETRA NERO",
-          image:
-            "https://images.pexels.com/photos/430211/pexels-photo-430211.jpeg",
-          color: "Nero",
+          image: "carving003.png",
+          color: "NERO",
         },
         {
-          id: 22,
-          code: "716 FLORENCIA BEIGE",
-          image:
-            "https://images.pexels.com/photos/276514/pexels-photo-276514.jpeg",
-          color: "Beige",
+          id: 4,
+          code: "716 FLORENCIA BEIGE S",
+          image: "carving004.png",
+          color: "BEIGE",
         },
         {
-          id: 23,
-          code: "743 SOL BLUE",
-          image:
-            "https://images.pexels.com/photos/1722193/pexels-photo-1722193.jpeg",
-          color: "Blue",
+          id: 5,
+          code: "743 SOL BLUE S",
+          image: "carving005.png",
+          color: "BLUE",
         },
         {
-          id: 24,
-          code: "763 VALVET CREMA",
-          image:
-            "https://images.pexels.com/photos/235986/pexels-photo-235986.jpeg",
-          color: "Crema",
+          id: 6,
+          code: "763 VALVET CREMA S",
+          image: "carving006.png",
+          color: "CREMA",
         },
         {
-          id: 25,
-          code: "766 CYRENE BROWN",
-          image:
-            "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg",
-          color: "Brown",
+          id: 7,
+          code: "766 CYRENE BROWN S",
+          image: "carving007.png",
+          color: "BROWN",
         },
         {
-          id: 26,
-          code: "767 CYRENE CREMA",
-          image:
-            "https://images.pexels.com/photos/691710/pexels-photo-691710.jpeg",
-          color: "Crema",
+          id: 8,
+          code: "767 CYRENE CREMA S",
+          image: "carving008.png",
+          color: "CREMA",
         },
         {
-          id: 27,
+          id: 9,
           code: "768 CYRENE GRIS",
-          image:
-            "https://images.pexels.com/photos/430211/pexels-photo-430211.jpeg",
-          color: "Gris",
+          image: "carving009.png",
+          color: "GRIS",
         },
         {
-          id: 28,
+          id: 10,
           code: "17013 CROWN",
-          image:
-            "https://images.pexels.com/photos/276514/pexels-photo-276514.jpeg",
-          color: "Gold",
+          image: "carving010.png",
+          color: "CROWN",
         },
       ],
     },
     sinker: {
       title: "Sinker Finish",
       products: [
-        { id: 29, code: "12 BEATNIK BASE", image: sinker12, color: "Base" },
         {
-          id: 30,
-          code: "11 BEATNIK DECOR",
-          image:
-            "https://images.pexels.com/photos/430211/pexels-photo-430211.jpeg",
-          color: "Decor",
+          id: 1,
+          code: "12 BEATNIK BASE",
+          image: "sinker001.png",
+          color: "Beige",
         },
         {
-          id: 31,
+          id: 2,
+          code: "11 BEATNIK DECOR",
+          image: "sinker002.png",
+          color: "Multi-tone",
+        },
+        {
+          id: 3,
           code: "81 NINJO GREY",
-          image:
-            "https://images.pexels.com/photos/1722193/pexels-photo-1722193.jpeg",
+          image: "sinker003.png",
           color: "Grey",
         },
         {
-          id: 32,
+          id: 4,
           code: "80 NINJO GREY DECOR",
-          image:
-            "https://images.pexels.com/photos/235986/pexels-photo-235986.jpeg",
-          color: "Grey Decor",
+          image: "sinker004.png",
+          color: "Grey",
         },
         {
-          id: 33,
+          id: 5,
           code: "22 SWIM NATURAL",
-          image:
-            "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg",
-          color: "Natural",
+          image: "sinker005.png",
+          color: "Warm Neutral",
         },
         {
-          id: 34,
+          id: 6,
           code: "53 SWIM MULTI DECOR",
-          image:
-            "https://images.pexels.com/photos/691710/pexels-photo-691710.jpeg",
-          color: "Multi",
+          image: "sinker006.png",
+          color: "Multi-color",
         },
       ],
     },
