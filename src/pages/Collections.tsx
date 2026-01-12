@@ -137,9 +137,6 @@ const collections = [
 //   },
 // ];
 
-
-
-
 const ProductsList: React.FC = () => {
   const navigate = useNavigate();
 
@@ -201,16 +198,12 @@ const ProductsList: React.FC = () => {
                       size="sm"
                       className="hover:!bg-transparent"
                     />
-
-
                     <Button
                       text="Request Quote"
                       onClick={handleContactClick}
                       size="sm"
                       variant="outline"
                     />
-
-
                   </div>
                 </div>
               </div>

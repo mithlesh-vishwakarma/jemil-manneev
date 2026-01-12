@@ -21,6 +21,7 @@ import SanitaryWare from "./pages/ProductCollections/SanitaryWare";
 import OtherMaterials from "./pages/ProductCollections/OtherMaterials";
 import ConstructionChemicals from "./pages/ProductCollections/ConstructionChemicals";
 import CPFittings from "./pages/ProductCollections/CPFittings";
+import LandingPage from "./components/bastion/LandingPage";
 
 const Layout: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,13 +39,13 @@ const Layout: React.FC = () => {
   return (
     <div>
       {/* TopBar - Hidden when scrolled */}
-      {!isScrolled && <TopBar />}
+      {/* {!isScrolled && <TopBar />} */}
 
       {/* Header - Sticky when scrolled, relative when at top */}
       <div
         className={isScrolled ? "fixed top-0 left-0 right-0 z-50" : "relative"}
       >
-        <Header />
+        {/* <Header /> */}
       </div>
 
       {/* Main Content - Add top padding when Header is sticky */}
@@ -55,7 +56,7 @@ const Layout: React.FC = () => {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/collections" element={<Collections />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/partners" element={<OurPartners />} />
+          <Route path="/partners" element={<LandingPage />} />
           <Route path="/collections/tiles" element={<Tiles />} />
           <Route path="/collections/granites" element={<Granites />} />
           <Route path="/collections/marbles" element={<Marbles />} />
