@@ -1,7 +1,7 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
 import Background from "../assets/bg-main (2).webp";
+import { Link } from "react-router-dom";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -18,7 +18,9 @@ const Contact: React.FC = () => {
     setVisible(true);
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -30,15 +32,35 @@ const Contact: React.FC = () => {
   };
 
   const contactDetails = [
-    { icon: Phone, title: "Call Us", info: "+91 98765 43210", sub: "Mon–Sat, 9AM–7PM" },
-    { icon: Mail, title: "Email Us", info: "jemil.workspace@gmail.com", sub: "Replies within 24 hours" },
-    { icon: Clock, title: "Working Hours", info: "Mon–Sat: 9AM–7PM", sub: "Sunday: Closed" },
+    {
+      icon: Phone,
+      title: "Call Us",
+      info: "+91 98765 43210",
+      sub: "Mon–Sun, 9:30AM–7:30PM",
+    },
+    {
+      icon: Mail,
+      title: "Email Us",
+      info: "info@manneev.com",
+      sub: "Replies within 24 hours",
+    },
+    {
+      icon: Clock,
+      title: "Working Hours",
+      info: "Mon–Sun: 9:30AM–7:30PM",
+      sub: "Everyday: Open",
+    },
   ];
 
-  const visitUsDetail = { icon: MapPin, title: "Visit Us", info: "Shop No 13,Dattani park building no 1 Opp Gokul Concord Tower, Thakur Village, Kandivali East, Mumbai, Maharashtra 400101", sub: "Kandivali East, Mumbai" };
+  const visitUsDetail = {
+    icon: MapPin,
+    title: "Visit Us",
+    info: "Shop No 13,Dattani park building no 1 Opp Gokul Concord Tower, Thakur Village, Kandivali East, Mumbai, Maharashtra 400101",
+    sub: "Kandivali East, Mumbai",
+  };
 
   return (
-    <div className="min-h-screen bg-white overflow-hidden">
+    <div className="min-h-screen bg-[#0a0a0a] overflow-hidden text-white">
       <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
@@ -61,37 +83,41 @@ const Contact: React.FC = () => {
         className="relative flex items-center justify-center pt-40 pb-24 px-4 sm:px-6 lg:px-8 text-center bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${Background})` }}
       >
-        <div className="absolute inset-0 bg-white/80 backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
 
         <div className="relative z-10 max-w-3xl mx-auto space-y-6 animate-fadeUp">
-
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900">
-            Get in <span className="text-gradient">Touch</span>
-          </h1>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Whether you need a quote, product information, or expert guidance — our team is just a message away.
+          <div className="inline-block px-6 py-4 rounded-2xl bg-black/40 backdrop-blur-md shadow-lg border border-[#D4AF37]/30">
+            <h1 className="text-5xl md:text-6xl font-bold text-white">
+              Get in <span className="text-[#D4AF37]">Touch</span>
+            </h1>
+          </div>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            Whether you need a quote, product information, or expert guidance —
+            our team is just a message away.
           </p>
         </div>
       </section>
 
       {/* Contact Info */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-purple-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#111]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
             {contactDetails.map((c, i) => (
               <div
                 key={i}
-                className={`bg-white p-8 rounded-2xl border-2 border-purple-200 hover:border-purple-400 shadow-md hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 cursor-pointer flex items-center ${
+                className={`bg-[#1C1C1C] p-8 rounded-2xl border border-[#D4AF37]/20 hover:border-[#D4AF37] shadow-md hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 cursor-pointer flex items-center ${
                   visible ? "animate-fadeUp" : "opacity-0"
                 }`}
                 style={{ animationDelay: `${i * 0.15}s` }}
               >
-                <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mr-6 animate-float shrink-0">
-                  <c.icon className="w-8 h-8 text-purple-600" />
+                <div className="w-16 h-16 bg-[#D4AF37]/10 rounded-2xl flex items-center justify-center mr-6 animate-float shrink-0 border border-[#D4AF37]/30">
+                  <c.icon className="w-8 h-8 text-[#D4AF37]" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{c.title}</h3>
-                  <p className="text-gray-800 font-semibold">{c.info}</p>
+                  <h3 className="text-lg font-bold text-white mb-2">
+                    {c.title}
+                  </h3>
+                  <p className="text-gray-300 font-semibold">{c.info}</p>
                   <p className="text-gray-500 text-sm">{c.sub}</p>
                 </div>
               </div>
@@ -99,17 +125,21 @@ const Contact: React.FC = () => {
           </div>
           <div className="w-full">
             <div
-              className={`bg-white p-8 rounded-xl border-2 border-purple-200 hover:border-purple-400 shadow-md hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 cursor-pointer flex items-center ${
+              className={`bg-[#1C1C1C] p-8 rounded-xl border border-[#D4AF37]/20 hover:border-[#D4AF37] shadow-md hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 cursor-pointer flex items-center ${
                 visible ? "animate-fadeUp" : "opacity-0"
               }`}
               style={{ animationDelay: "0.45s" }}
             >
-              <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mr-6 animate-float shrink-0">
-                <visitUsDetail.icon className="w-8 h-8 text-purple-600" />
+              <div className="w-16 h-16 bg-[#D4AF37]/10 rounded-xl flex items-center justify-center mr-6 animate-float shrink-0 border border-[#D4AF37]/30">
+                <visitUsDetail.icon className="w-8 h-8 text-[#D4AF37]" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{visitUsDetail.title}</h3>
-                <p className="text-gray-800 font-semibold">{visitUsDetail.info}</p>
+                <h3 className="text-lg font-bold text-white mb-2">
+                  {visitUsDetail.title}
+                </h3>
+                <p className="text-gray-300 font-semibold">
+                  {visitUsDetail.info}
+                </p>
                 <p className="text-gray-500 text-sm">{visitUsDetail.sub}</p>
               </div>
             </div>
@@ -118,18 +148,22 @@ const Contact: React.FC = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0a0a0a] relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-10 left-10 w-64 h-64 bg-purple-200 rounded-full opacity-20 blur-3xl animate-float" />
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-purple-300 rounded-full opacity-20 blur-3xl animate-float" />
+          <div className="absolute top-10 left-10 w-64 h-64 bg-[#D4AF37] rounded-full opacity-5 blur-3xl animate-float" />
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#D4AF37] rounded-full opacity-5 blur-3xl animate-float" />
         </div>
 
-        <div className="max-w-4xl mx-auto relative z-10 bg-white p-10 sm:p-12 rounded-3xl shadow-2xl border border-purple-100 backdrop-blur-xl">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-8">
-            Send Us a <span className="text-gradient">Message</span>
+        <div className="max-w-4xl mx-auto relative z-10 bg-[#141414] p-10 sm:p-12 rounded-3xl shadow-2xl border border-[#D4AF37]/20 backdrop-blur-xl">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-8">
+            Send Us a <span className="text-[#D4AF37]">Message</span>
           </h2>
 
-          <form ref={formRef} onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+          >
             <input
               type="text"
               name="name"
@@ -137,7 +171,7 @@ const Contact: React.FC = () => {
               onChange={handleChange}
               required
               placeholder="Your Name"
-              className="p-4 border border-purple-200 rounded-xl focus:ring-2 focus:ring-purple-400 focus:outline-none transition-all"
+              className="p-4 bg-[#222] border border-gray-700 text-white rounded-xl focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent focus:outline-none transition-all placeholder-gray-500"
             />
             <input
               type="email"
@@ -146,7 +180,7 @@ const Contact: React.FC = () => {
               onChange={handleChange}
               required
               placeholder="Your Email"
-              className="p-4 border border-purple-200 rounded-xl focus:ring-2 focus:ring-purple-400 focus:outline-none transition-all"
+              className="p-4 bg-[#222] border border-gray-700 text-white rounded-xl focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent focus:outline-none transition-all placeholder-gray-500"
             />
             <input
               type="text"
@@ -154,7 +188,7 @@ const Contact: React.FC = () => {
               value={formData.phone}
               onChange={handleChange}
               placeholder="Your Phone"
-              className="p-4 border border-purple-200 rounded-xl focus:ring-2 focus:ring-purple-400 focus:outline-none transition-all sm:col-span-2"
+              className="p-4 bg-[#222] border border-gray-700 text-white rounded-xl focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent focus:outline-none transition-all sm:col-span-2 placeholder-gray-500"
             />
             <textarea
               name="message"
@@ -163,13 +197,13 @@ const Contact: React.FC = () => {
               required
               placeholder="Your Message"
               rows={5}
-              className="p-4 border border-purple-200 rounded-xl focus:ring-2 focus:ring-purple-400 focus:outline-none transition-all sm:col-span-2 resize-none"
+              className="p-4 bg-[#222] border border-gray-700 text-white rounded-xl focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent focus:outline-none transition-all sm:col-span-2 resize-none placeholder-gray-500"
             />
 
             <div className="sm:col-span-2 flex justify-center">
               <button
                 type="submit"
-                className="bg-purple-600 text-white px-10 py-4 rounded-xl font-semibold hover:bg-purple-700 transition-all duration-300 flex items-center gap-2 transform hover:scale-105"
+                className="bg-[#D4AF37] text-black px-10 py-4 rounded-xl font-bold hover:bg-[#c5a028] transition-all duration-300 flex items-center gap-2 transform hover:scale-105"
               >
                 {isSubmitted ? (
                   <>
@@ -187,18 +221,21 @@ const Contact: React.FC = () => {
       </section>
 
       {/* CTA Footer */}
-      <section className="py-20 bg-purple-200 text-center text-black">
+      <section className="py-20 bg-[#111] text-center text-white border-t border-[#D4AF37]/20">
         <div className="max-w-3xl mx-auto space-y-6 px-6">
-          <h2 className="text-4xl font-bold">Let’s Deal Something Amazing</h2>
-          <p className="text-black text-lg">
-            Our experts are here to help you every step of the way — from planning to delivery.
+          <h2 className="text-4xl font-bold">
+            Let’s Deal Something <span className="text-[#D4AF37]">Amazing</span>
+          </h2>
+          <p className="text-gray-400 text-lg">
+            Our experts are here to help you every step of the way — from
+            planning to delivery.
           </p>
-          <a
-            href="tel:+919322147550"
-            className="inline-block bg-white text-purple-600 px-10 py-4 rounded-xl font-bold hover:bg-purple-50 transition-all duration-300 transform hover:scale-105"
+          <Link
+            to="tel:+919322147550"
+            className="inline-block bg-[#D4AF37] text-black px-10 py-4 rounded-xl font-bold hover:bg-[#c5a028] transition-all duration-300 transform hover:scale-105"
           >
             Call Now
-          </a>
+          </Link>
         </div>
       </section>
     </div>

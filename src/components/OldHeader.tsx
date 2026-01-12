@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Logo from "../assets/logo-manneev.png";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +19,7 @@ const Header = () => {
     "Sanitary Ware",
     "Other Materials",
     "Construction Chemicals",
-    "CP Fittings"
+    "CP Fittings",
   ];
 
   const menuItems = [
@@ -46,43 +47,43 @@ const Header = () => {
           <div className="flex items-center gap-4">
             {/* Social Media Icons */}
             <div className="flex items-center gap-2">
-              <a
-                href="https://facebook.com/yourpage"
+              <Link
+                to="https://facebook.com/yourpage"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-indigo-600/70 transition-all"
               >
                 <i className="fa-brands fa-facebook-f text-white text-lg"></i>
-              </a>
-              <a
-                href="https://instagram.com/yourpage"
+              </Link>
+              <Link
+                to="https://instagram.com/yourpage"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-pink-600/70 transition-all"
               >
                 <i className="fa-brands fa-instagram text-white text-lg"></i>
-              </a>
-              <a
-                href="https://wa.me/9326947550"
+              </Link>
+              <Link
+                to="https://wa.me/9326947550"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-green-600/70 transition-all"
               >
                 <i className="fa-brands fa-whatsapp text-white text-lg"></i>
-              </a>
+              </Link>
             </div>
 
             {/* Divider */}
             <div className="w-px h-6 bg-white/20"></div>
 
             {/* Call Now Button (Desktop Only) */}
-            <a
-              href="tel:+919326947550"
+            <Link
+              to="tel:+919326947550"
               className="flex items-center gap-2 bg-white text-indigo-700 font-semibold px-4 py-2 rounded-full hover:bg-indigo-50 hover:shadow transition-all"
             >
               <i className="fa-solid fa-phone text-indigo-600 text-sm"></i>
               Call Now
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -92,7 +93,11 @@ const Header = () => {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo + Title */}
           <div className="flex items-center gap-2">
-            <img src={Logo} alt="Logo" className="w-12 h-12 shadow-xl border-0 rounded-b-full" />
+            <img
+              src={Logo}
+              alt="Logo"
+              className="w-12 h-12 shadow-xl border-0 rounded-b-full"
+            />
             <div className="flex flex-col ml-1">
               <span className="hidden sm:inline font-semibold text-purple-900 text-2xl tracking-tight">
                 MANNEEV ENTERPRISES
@@ -116,8 +121,9 @@ const Header = () => {
                   >
                     {item.name}
                     <svg
-                      className={`w-4 h-4 transition-transform ${isProductsDropdownOpen ? "rotate-180" : ""
-                        }`}
+                      className={`w-4 h-4 transition-transform ${
+                        isProductsDropdownOpen ? "rotate-180" : ""
+                      }`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -131,26 +137,26 @@ const Header = () => {
                     </svg>
                   </button>
                 ) : (
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.href}
                     className="text-lavender-700 hover:text-purple-500 transition-colors flex items-center gap-1 font-medium"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 )}
 
                 {/* Dropdown Menu */}
                 {item.submenu && isProductsDropdownOpen && (
                   <div className="absolute top-full left-0 mt-2 w-56 bg-white/80 backdrop-blur-lg border border-white/30 rounded-lg shadow-2xl py-2">
                     {item.submenu.map((subItem) => (
-                      <a
+                      <Link
                         key={subItem}
-                        href="/products"
+                        to="/products"
                         onClick={() => setIsProductsDropdownOpen(false)}
                         className="block px-4 py-2 text-lavender-600 hover:bg-purple-50 hover:text-purple-600 transition-colors"
                       >
                         {subItem}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -160,14 +166,14 @@ const Header = () => {
 
           {/* WhatsApp CTA (Desktop Only) */}
           <div className="hidden lg:block">
-            <a
-              href="https://wa.me/9326947550"
+            <Link
+              to="https://wa.me/9326947550"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-purple-500 text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-300/50 transition-all transform hover:scale-105 inline-block"
             >
               WhatsApp Us
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -184,33 +190,39 @@ const Header = () => {
           <div className="lg:hidden mt-4 bg-white/80 backdrop-blur-lg rounded-lg shadow-xl overflow-hidden border border-white/30">
             {menuItems.map((item) => (
               <div key={item.name}>
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   onClick={() => !item.submenu && setIsMenuOpen(false)}
                   className="block px-4 py-3 text-lavender-700 hover:bg-lavender-100 hover:text-purple-500 transition-colors border-b border-white/30"
                 >
                   {item.name}
-                </a>
+                </Link>
                 {item.submenu && (
                   <div>
                     <button
-                      onClick={() => setIsMobileProductsOpen(!isMobileProductsOpen)}
+                      onClick={() =>
+                        setIsMobileProductsOpen(!isMobileProductsOpen)
+                      }
                       className="flex items-center justify-between w-full px-4 py-2 text-lavender-700 hover:bg-lavender-100 hover:text-purple-500 transition-colors border-b border-white/30"
                     >
                       <span>{item.name}</span>
-                      <i className={`fas fa-chevron-${isMobileProductsOpen ? 'up' : 'down'} text-sm`}></i>
+                      <i
+                        className={`fas fa-chevron-${
+                          isMobileProductsOpen ? "up" : "down"
+                        } text-sm`}
+                      ></i>
                     </button>
                     {isMobileProductsOpen && (
                       <div className="bg-white/50 backdrop-blur-sm">
                         {item.submenu.map((subItem) => (
-                          <a
+                          <Link
                             key={subItem}
-                            href="/products"
+                            to="/products"
                             onClick={() => setIsMenuOpen(false)}
                             className="block px-8 py-2 text-lavender-500 hover:bg-lavender-100 hover:text-purple-600 transition-colors text-sm"
                           >
                             {subItem}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     )}
@@ -219,14 +231,14 @@ const Header = () => {
               </div>
             ))}
             <div className="p-4">
-              <a
-                href="https://wa.me/9326947550"
+              <Link
+                to="https://wa.me/9326947550"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-purple-400 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-300/50 transition-all transform hover:scale-105 inline-block"
               >
                 WhatsApp Us
-              </a>
+              </Link>
             </div>
           </div>
         )}

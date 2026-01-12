@@ -43,7 +43,7 @@ const WhyChooseUs: React.FC = () => {
         viewport={{ once: true }}
         className="relative z-10 max-w-7xl mx-auto px-6"
       >
-       
+
 
         <div className="flex flex-col gap-24">
           {features.map((item, index) => (
@@ -53,11 +53,11 @@ const WhyChooseUs: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className={`relative flex flex-col md:flex-row items-center overflow-hidden transition-all duration-500 bg-[#1c1c1c] ${index % 2 === 1 ? "md:flex-row-reverse md:translate-x-20" : "md:-translate-x-20"
+              className={`relative flex flex-col xl:flex-row items-center overflow-hidden transition-all duration-500 bg-[#1c1c1c] ${index % 2 === 1 ? "xl:flex-row-reverse xl:translate-x-20" : "xl:-translate-x-20"
                 }`}
             >
               {/* Video Side */}
-              <div className="md:w-1/2 w-full h-[300px] overflow-hidden ">
+              <div className="xl:w-1/2 w-full h-[300px] overflow-hidden ">
                 <motion.video
                   src={item.video}
                   autoPlay
@@ -68,11 +68,11 @@ const WhyChooseUs: React.FC = () => {
               </div>
 
               {/* Content Side */}
-              <div className="md:w-1/2 w-full p-10 flex flex-col justify-center text-center md:text-left">
+              <div className="xl:w-1/2 w-full p-10 flex flex-col justify-center text-center xl:text-left">
                 <motion.div
                   whileHover={{ rotate: 8, scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="flex justify-center md:justify-start mb-4"
+                  className="flex justify-center xl:justify-start mb-4"
                 >
                   {item.icon}
                 </motion.div>

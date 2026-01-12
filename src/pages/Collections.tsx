@@ -2,7 +2,9 @@ import React from "react";
 // import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/ui/Button";
-import AutoCarousel from "../components/AutoCarousel";
+// import AutoCarousel from "../components/AutoCarousel";
+import Video1 from "../assets/2-video-sample.mp4";
+import Video2 from "../assets/3-video-sample.mp4";
 
 const collections = [
   {
@@ -117,23 +119,23 @@ const collections = [
   },
 ];
 
-const slides = [
-  {
-    image: "https://images.pexels.com/photos/6957082/pexels-photo-6957082.jpeg",
-    title: "Sanitaryware That’s Anything But Ordinary",
-    subtitle: "Practical, stylish, and made to impress",
-  },
-  {
-    image: "https://images.pexels.com/photos/2554517/pexels-photo-2554517.jpeg",
-    title: "Tiles & Surfaces that Speak Luxury",
-    subtitle: "Elegance meets functionality",
-  },
-  {
-    image: "https://images.pexels.com/photos/7534570/pexels-photo-7534570.jpeg",
-    title: "Modern Bathroom Designs",
-    subtitle: "Transform your space effortlessly",
-  },
-];
+// const slides = [
+//   {
+//     image: "https://images.pexels.com/photos/6957082/pexels-photo-6957082.jpeg",
+//     title: "Sanitaryware That’s Anything But Ordinary",
+//     subtitle: "Practical, stylish, and made to impress",
+//   },
+//   {
+//     image: "https://images.pexels.com/photos/2554517/pexels-photo-2554517.jpeg",
+//     title: "Tiles & Surfaces that Speak Luxury",
+//     subtitle: "Elegance meets functionality",
+//   },
+//   {
+//     image: "https://images.pexels.com/photos/7534570/pexels-photo-7534570.jpeg",
+//     title: "Modern Bathroom Designs",
+//     subtitle: "Transform your space effortlessly",
+//   },
+// ];
 
 const ProductsList: React.FC = () => {
   const navigate = useNavigate();
@@ -142,38 +144,59 @@ const ProductsList: React.FC = () => {
     navigate('/contact');
   };
 
-  return (
-    <div className="bg-[#d1c1a4] text-[#1c1c1c] min-h-screen ">
-      {/* HERO */}
-      <section className="h-[75v] relative bg-[linear-gradient(180deg,#faf5ff,rgba(250,246,255,0.6))] overflow-hidden">
+  const [currentMedia, setCurrentMedia] = React.useState<"video1" | "video2">("video1");
 
-        <AutoCarousel slides={slides} />
+  const handleVideoEnd = () => {
+    setCurrentMedia((prev) => (prev === "video1" ? "video2" : "video1"));
+  };
+
+  return (
+    <div className="text-[#1c1c1c] min-h-screen relative">
+      {/* BACKGROUND VIDEO */}
+      <div className="fixed inset-0 w-full h-full -z-10 overflow-hidden">
+        <video
+          src={currentMedia === "video1" ? Video1 : Video2}
+          autoPlay
+          muted
+          playsInline
+          onEnded={handleVideoEnd}
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* HERO SPACER */}
+      {/* <section className="h-[75v] relative bg-[linear-gradient(180deg,#faf5ff,rgba(250,246,255,0.6))] overflow-hidden"> */}
+
+      {/* <AutoCarousel slides={slides} /> */}
+      {/* </section> */}
+      <section className="relative w-full h-[80vh] bg-transparent">
       </section>
 
       {/* PRODUCTS GRID */}
       <main id="products" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto space-y-10">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          <div className="text-center border border-[#D4AF37] p-4 rounded-lg w-fit mx-auto bg-[#88876d] backdrop-blur-sm">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1c1c1c]">
               Our <span className="text-[#1c1c1c]">Products</span>
             </h2>
-            <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
+            <p className="text-[#1c1c1c] mt-2 max-w-2xl mx-auto">
               Select categories and click view for images, details and quotation support.
             </p>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {collections.map((c, i) => (
-              <div key={i} className="bg-[#ffffff] shadow hover:shadow-lg transition p-4">
-                <img src={c.main} alt={c.title} className="w-full h-48 object-cover rounded-lg" />
+              <div key={i} className="bg-[#88876d] shadow hover:shadow-lg transition p-4 border border-[#D4AF37] rounded-lg">
+                <img src={c.main} alt={c.title} className="w-full h-48 object-cover rounded-lg border border-[#D4AF37]" />
                 <div className="mt-3">
-                  <h3 className="text-lg font-semibold">{c.title}</h3>
-                  <p className="text-sm text-gray-500 mt-1">{c.desc}</p>
+                  <h3 className="text-lg font-semibold text-[#1c1c1c]">{c.title}</h3>
+                  <p className="text-sm text-[#1c1c1c] mt-1">{c.desc}</p>
                   <div className="mt-3 flex gap-2">
                     <Button
                       text="View"
                       onClick={() => navigate(`/collections/${encodeURIComponent(c.title.toLowerCase())}`)}
                       size="sm"
+                      className="hover:!bg-transparent"
                     />
                     <Button
                       text="Request Quote"
