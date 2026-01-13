@@ -138,11 +138,6 @@ const collections = [
 // ];
 
 const ProductsList: React.FC = () => {
-  const navigate = useNavigate();
-
-  const handleContactClick = () => {
-    navigate('/contact');
-  };
 
   const [currentMedia, setCurrentMedia] = React.useState<"video1" | "video2">("video1");
 
@@ -165,10 +160,6 @@ const ProductsList: React.FC = () => {
       </div>
 
       {/* HERO SPACER */}
-      {/* <section className="h-[75v] relative bg-[linear-gradient(180deg,#faf5ff,rgba(250,246,255,0.6))] overflow-hidden"> */}
-
-      {/* <AutoCarousel slides={slides} /> */}
-      {/* </section> */}
       <section className="relative w-full h-[80vh] bg-transparent">
       </section>
 
@@ -186,31 +177,40 @@ const ProductsList: React.FC = () => {
 
           <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {collections.map((c, i) => (
-              <div key={i} className="bg-[#88876d] shadow hover:shadow-lg transition p-4 border border-[#D4AF37] rounded-lg">
-                <img src={c.main} alt={c.title} className="w-full h-48 object-cover rounded-lg border border-[#D4AF37]" />
-                <div className="mt-3">
-                  <h3 className="text-lg font-semibold text-[#1c1c1c]">{c.title}</h3>
-                  <p className="text-sm text-[#1c1c1c] mt-1">{c.desc}</p>
-                  <div className="mt-3 flex gap-2">
-                    <Button
-                      text="View"
-                      onClick={() => navigate(`/collections/${encodeURIComponent(c.title.toLowerCase())}`)}
-                      size="sm"
-                      className="hover:!bg-transparent"
-                    />
-                    <Button
-                      text="Request Quote"
-                      onClick={handleContactClick}
-                      size="sm"
-                      variant="outline"
-                    />
-                  </div>
-                </div>
-              </div>
+              <CollectionCard key={i} collection={c} />
             ))}
           </div>
         </div>
       </main>
+    </div>
+  );
+};
+
+const CollectionCard = ({ collection }: { collection: any }) => {
+  const navigate = useNavigate();
+
+  return (
+    <div className="bg-[#88876d] shadow hover:shadow-lg transition p-4 border border-[#D4AF37] rounded-lg group">
+      <div className="relative w-full h-48 rounded-lg overflow-hidden border border-[#D4AF37]">
+        <img
+          src={collection.main}
+          alt={collection.title}
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      <div className="mt-3">
+        <h3 className="text-xl font-bold text-[#1c1c1c]">{collection.title}</h3>
+        <p className="text-sm text-[#1c1c1c] mt-1">{collection.desc}</p>
+        <div className="mt-3 flex gap-2">
+          <Button
+            text="View"
+            onClick={() => navigate(`/collections/${encodeURIComponent(collection.title.toLowerCase())}`)}
+            size="sm"
+            className="hover:!bg-transparent"
+          />
+        </div>
+      </div>
     </div>
   );
 };

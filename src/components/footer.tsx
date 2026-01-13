@@ -27,13 +27,13 @@ const Footer = () => {
             Quick Links
           </h3>
           <ul className="space-y-2 text-lg">
-            {["Product", "Visit Us", "About Us", "Contact Us"].map((item) => (
+            {["Home", "Product", "About Us", "Contact Us"].map((item) => (
               <li key={item} className="flex items-center gap-2 group">
                 <ArrowRight
                   size={14}
                   className="text-[#D4AF37] group-hover:translate-x-1 transition"
                 />
-                <Link to="#" className="hover:text-[#D4AF37] transition-colors">
+                <Link to={item === "Home" ? "/" : item === "Product" ? "/collections" : item === "About Us" ? "/about" : "/contact"} className="hover:text-[#D4AF37] transition-colors">
                   {item}
                 </Link>
               </li>

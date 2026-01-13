@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -13,6 +13,7 @@ export interface Product {
   id: number | string;
   code: string;
   image: string;
+  images?: string[]; // Added support for multiple images
   color: string;
   surface: string;
   size: string;
@@ -199,42 +200,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({
         {currentProducts.length > 0 ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {currentProducts.map((product, i) => (
-              <div
-                key={i}
-                className="bg-[#88876d] shadow-lg hover:shadow-xl transition-all duration-300 p-2 md:p-3 border border-[#D4AF37] rounded-lg group hover:-translate-y-1"
-              >
-                {/* Image */}
-                <div className="relative overflow-hidden rounded-md border border-[#D4AF37] aspect-square">
-                  <img
-                    src={`https://ik.imagekit.io/shaileshImages/tiles/toWEBP/${product.image}`}
-                    alt={product.code}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300"></div>
-                </div>
-
-                {/* Details */}
-                <div className="mt-3 space-y-1 text-[#1c1c1c]">
-                  <div className="text-sm text-[#1c1c1c] space-y-1">
-                    <div className="flex justify-between border-b border-[#D4AF37]/30 pb-0.5">
-                      <span className="font-semibold">Size:</span>
-                      <span className="truncate ml-1">
-                        {product.size.split("(")[0].trim()}
-                      </span>
-                    </div>
-                    <div className="flex justify-between border-b border-[#D4AF37]/30 pb-0.5">
-                      <span className="font-semibold">Surface:</span>
-                      <span className="truncate ml-1">
-                        {product.surface.replace(" Finish", "")}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="font-semibold">Color:</span>
-                      <span>{product.color}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <ProductCard key={i} product={product} />
             ))}
           </div>
         ) : (
@@ -284,11 +250,10 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({
                     key={page}
                     onClick={() => setCurrentPage(page)}
                     className={`w-10 h-10 rounded-lg border font-semibold transition-all duration-300
-              ${
-                currentPage === page
-                  ? "bg-[#D4AF37] text-white border-[#D4AF37] shadow-md scale-105"
-                  : "bg-white/10 text-gray-400 border-gray-600 hover:border-[#D4AF37] hover:text-[#D4AF37]"
-              }`}
+              ${currentPage === page
+                        ? "bg-[#D4AF37] text-white border-[#D4AF37] shadow-md scale-105"
+                        : "bg-white/10 text-gray-400 border-gray-600 hover:border-[#D4AF37] hover:text-[#D4AF37]"
+                      }`}
                   >
                     {page}
                   </button>
@@ -343,6 +308,101 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({
           </div>
         </div>
       </footer>
+    </div>
+  );
+};
+
+const ProductCard = ({ product }: { product: Product }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const baseUrl = "https://ik.imagekit.io/shaileshImages/tiles/toWEBP/";
+
+  // Use images array if present, otherwise single image
+  const rawImages = product.images && product.images.length > 0
+    ? product.images
+    : [product.image];
+
+  // Auto-scroll effect ONLY on hover
+  useEffect(() => {
+    if (!isHovered || rawImages.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % rawImages.length);
+    }, 2000); // Change image every 2 seconds on hover
+
+    return () => clearInterval(interval);
+  }, [isHovered, rawImages.length]);
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev + 1) % rawImages.length);
+  };
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev - 1 + rawImages.length) % rawImages.length);
+  };
+
+  const currentImageSrc = rawImages[currentImageIndex].startsWith("http")
+    ? rawImages[currentImageIndex]
+    : `${baseUrl}${rawImages[currentImageIndex]}`;
+
+  return (
+    <div
+      className="bg-[#88876d] shadow-md p-2 md:p-3 border border-[#D4AF37] rounded-lg transition-transform duration-300"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        setCurrentImageIndex(0); // Optional: Reset to first image on leave? Or keep? Resetting feels cleaner for "showcase".
+      }}
+    >
+      <div className="relative overflow-hidden rounded-md border border-[#D4AF37] aspect-square group">
+        <img
+          src={currentImageSrc}
+          alt={product.code}
+          className="w-full h-full object-cover transition-opacity duration-500"
+        />
+        {/* Arrows - Only show if multiple images */}
+        {rawImages.length > 1 && (
+          <>
+            <button
+              onClick={prevImage}
+              className="absolute left-1 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-[#D4AF37] text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10"
+              aria-label="Previous Image"
+            >
+              <ChevronLeftIcon className="w-4 h-4" />
+            </button>
+            <button
+              onClick={nextImage}
+              className="absolute right-1 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-[#D4AF37] text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10"
+              aria-label="Next Image"
+            >
+              <ChevronRightIcon className="w-4 h-4" />
+            </button>
+          </>
+        )}
+      </div>
+
+      {/* Details */}
+      <div className="mt-3 space-y-2 text-[#1c1c1c]">
+        <h3 className="text-lg font-bold text-[#1c1c1c] leading-tight">
+          {product.code}
+        </h3>
+        <div className="text-sm text-[#1c1c1c] space-y-1">
+          <div className="flex justify-between border-b border-[#D4AF37]/30 pb-0.5">
+            <span className="font-semibold">V. Code:</span>
+            <span className="truncate ml-1">{product.code}</span>
+          </div>
+          <div className="flex justify-between border-b border-[#D4AF37]/30 pb-0.5">
+            <span className="font-semibold">Size:</span>
+            <span className="truncate ml-1">{product.size.split("(")[0].trim()}</span>
+          </div>
+          <div className="flex justify-between border-b border-[#D4AF37]/30 pb-0.5">
+            <span className="font-semibold">Surface:</span>
+            <span className="truncate ml-1">{product.surface.replace(" Finish", "")}</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

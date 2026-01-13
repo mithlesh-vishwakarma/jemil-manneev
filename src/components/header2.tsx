@@ -12,6 +12,7 @@ const Header2 = () => {
     { label: "About Us", href: "/about" },
     { label: "Collections", href: "/collections" },
     { label: "Brand Partners", href: "/brands" },
+    { label: "Our Partners", href: "/partners" },
     { label: "Contact Us", href: "/contact" },
   ];
 
@@ -46,7 +47,7 @@ const Header2 = () => {
 
             {/* Logo */}
             {/* <span className="text-lg md:text-xl font-semibold tracking-wide text-[#D4AF37] pr-5 z-50"> MANNEEV </span> */}
-            
+
             <div className="relative p-[3px] rounded-full group translate-y-6 z-30 bg-[#1C1C1C]">
               <img
                 src={logo}

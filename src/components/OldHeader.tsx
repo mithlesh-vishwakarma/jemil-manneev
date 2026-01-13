@@ -26,7 +26,7 @@ const Header = () => {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Products", href: "/products", submenu: productSubmenu },
-    { name: "Our Partners", href: "/partners" },
+
     { name: "Contact Us", href: "/contact" },
   ];
 
@@ -121,9 +121,8 @@ const Header = () => {
                   >
                     {item.name}
                     <svg
-                      className={`w-4 h-4 transition-transform ${
-                        isProductsDropdownOpen ? "rotate-180" : ""
-                      }`}
+                      className={`w-4 h-4 transition-transform ${isProductsDropdownOpen ? "rotate-180" : ""
+                        }`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -207,9 +206,8 @@ const Header = () => {
                     >
                       <span>{item.name}</span>
                       <i
-                        className={`fas fa-chevron-${
-                          isMobileProductsOpen ? "up" : "down"
-                        } text-sm`}
+                        className={`fas fa-chevron-${isMobileProductsOpen ? "up" : "down"
+                          } text-sm`}
                       ></i>
                     </button>
                     {isMobileProductsOpen && (

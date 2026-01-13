@@ -309,7 +309,7 @@ const AboutUs: React.FC = () => {
       {/* ---------- CTA ---------- */}
       <Section
         id="cta"
-        className="py-24 px-6 bg-[#000] text-center relative overflow-hidden border-t border-[#D4AF37]/20"
+        className="py-24 px-6 bg-[#00000] text-center relative overflow-hidden border-t border-[#D4AF37]/20"
       >
         <div className="absolute inset-0 opacity-20">
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#D4AF37] rounded-full blur-3xl opacity-20" />
