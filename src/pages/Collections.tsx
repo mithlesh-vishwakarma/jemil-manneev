@@ -140,6 +140,24 @@ const collections = [
 const ProductsList: React.FC = () => {
 
   const [currentMedia, setCurrentMedia] = React.useState<"video1" | "video2">("video1");
+  const [showOverlay, setShowOverlay] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const productsSection = document.getElementById('products');
+      if (productsSection) {
+        const rect = productsSection.getBoundingClientRect();
+        // Show overlay when products section is approaching the viewport (e.g., top is within 60% of viewport height)
+        const triggerPoint = window.innerHeight * 0.6;
+        setShowOverlay(rect.top < triggerPoint);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check on mount
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleVideoEnd = () => {
     setCurrentMedia((prev) => (prev === "video1" ? "video2" : "video1"));
@@ -156,6 +174,13 @@ const ProductsList: React.FC = () => {
           playsInline
           onEnded={handleVideoEnd}
           className="w-full h-full object-cover"
+        />
+        {/* Overlay for blur and darken effect */}
+        <div
+          className={`absolute inset-0 transition-all duration-1000 ease-in-out ${showOverlay
+              ? 'bg-black/60 backdrop-blur-sm'
+              : 'bg-transparent backdrop-blur-none'
+            }`}
         />
       </div>
 
@@ -190,12 +215,12 @@ const CollectionCard = ({ collection }: { collection: any }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-[#88876d] shadow hover:shadow-lg transition p-4 border border-[#D4AF37] rounded-lg group">
+    <div className="bg-[#88876d] shadow-lg p-4 border border-[#D4AF37] rounded-lg group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl hover:scale-105">
       <div className="relative w-full h-48 rounded-lg overflow-hidden border border-[#D4AF37]">
         <img
           src={collection.main}
           alt={collection.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
       </div>
 

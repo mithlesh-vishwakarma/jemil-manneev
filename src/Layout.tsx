@@ -6,21 +6,21 @@ import Home from "./Home";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import Collections from './pages/Collections';
-// import NotFound from "./pages/NotFound";
+import NotFound from "./pages/NotFound";
 import Gallery from "./pages/Gallery";
 
 import TopBar from "./components/TopBar";
-import Granites from "./pages/ProductCollections/Granites";
-import Marbles from "./pages/ProductCollections/Marbles";
-import NaturalStones from "./pages/ProductCollections/NaturalStones";
-import ItalianMarbles from "./pages/ProductCollections/ItalianMarbles";
+// import Granites from "./pages/ProductCollections/Granites";
+// import Marbles from "./pages/ProductCollections/Marbles";
+// import NaturalStones from "./pages/ProductCollections/NaturalStones";
+// import ItalianMarbles from "./pages/ProductCollections/ItalianMarbles";
 import Tiles from "./pages/ProductCollections/Tiles";
-import Slabs from "./pages/ProductCollections/Slabs";
-import Sinks from "./pages/ProductCollections/Sinks";
-import SanitaryWare from "./pages/ProductCollections/SanitaryWare";
-import OtherMaterials from "./pages/ProductCollections/OtherMaterials";
-import ConstructionChemicals from "./pages/ProductCollections/ConstructionChemicals";
-import CPFittings from "./pages/ProductCollections/CPFittings";
+// import Slabs from "./pages/ProductCollections/Slabs";
+// import Sinks from "./pages/ProductCollections/Sinks";
+// import SanitaryWare from "./pages/ProductCollections/SanitaryWare";
+// import OtherMaterials from "./pages/ProductCollections/OtherMaterials";
+// import ConstructionChemicals from "./pages/ProductCollections/ConstructionChemicals";
+// import CPFittings from "./pages/ProductCollections/CPFittings";
 
 
 const Layout: React.FC = () => {
@@ -57,29 +57,31 @@ const Layout: React.FC = () => {
           <Route path="/collections" element={<Collections />} />
           <Route path="/gallery" element={<Gallery />} />
 
+          <Route path="/partners" element={<NotFound />} />
+
           <Route path="/collections/tiles" element={<Tiles />} />
-          <Route path="/collections/granites" element={<Granites />} />
-          <Route path="/collections/marbles" element={<Marbles />} />
+          <Route path="/collections/granites" element={<NotFound />} />
+          <Route path="/collections/marbles" element={<NotFound />} />
           <Route
             path="/collections/natural stones"
-            element={<NaturalStones />}
+            element={<NotFound />}
           />
           <Route
             path="/collections/italian marbles"
-            element={<ItalianMarbles />}
+            element={<NotFound />}
           />
-          <Route path="/collections/slabs" element={<Slabs />} />
-          <Route path="/collections/sink" element={<Sinks />} />
-          <Route path="/collections/sanitary ware" element={<SanitaryWare />} />
+          <Route path="/collections/slabs" element={<NotFound />} />
+          <Route path="/collections/sink" element={<NotFound />} />
+          <Route path="/collections/sanitary ware" element={<NotFound />} />
           <Route
             path="/collections/other materials"
-            element={<OtherMaterials />}
+            element={<NotFound />}
           />
           <Route
             path="/collections/construction chemicals"
-            element={<ConstructionChemicals />}
+            element={<NotFound />}
           />
-          <Route path="/collections/cp fittings" element={<CPFittings />} />
+          <Route path="/collections/cp fittings" element={<NotFound />} />
         </Routes>
       </div>
 
