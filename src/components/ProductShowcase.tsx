@@ -331,6 +331,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = React.memo(
 const ProductCard = ({ product }: { product: Product }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [isControlHovered, setIsControlHovered] = useState(false);
   const baseUrl = "https://ik.imagekit.io/shaileshImages/tiles/toWEBP/";
 
   // Use images array if present, otherwise single image
@@ -341,14 +342,14 @@ const ProductCard = ({ product }: { product: Product }) => {
 
   // Auto-scroll effect ONLY on hover
   useEffect(() => {
-    if (!isHovered || rawImages.length <= 1) return;
+    if (!isHovered || isControlHovered || rawImages.length <= 1) return;
 
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % rawImages.length);
-    }, 2000); // Change image every 2 seconds on hover
+    }, 1200); // Change image every 2 seconds on hover
 
     return () => clearInterval(interval);
-  }, [isHovered, rawImages.length]);
+  }, [isHovered, isControlHovered, rawImages.length]);
 
   const nextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -362,10 +363,6 @@ const ProductCard = ({ product }: { product: Product }) => {
     );
   };
 
-  const currentImageSrc = rawImages[currentImageIndex].startsWith("http")
-    ? rawImages[currentImageIndex]
-    : `${baseUrl}${rawImages[currentImageIndex]}`;
-
   return (
     <div
       className="bg-[#88876d] shadow-md p-2 md:p-3 border border-[#D4AF37] rounded-lg transition-transform duration-300"
@@ -376,16 +373,25 @@ const ProductCard = ({ product }: { product: Product }) => {
       }}
     >
       <div className="relative overflow-hidden rounded-md border border-[#D4AF37] aspect-square group">
-        <img
-          src={currentImageSrc}
-          alt={product.code}
-          className="w-full h-full object-cover transition-opacity duration-500"
-        />
+        {rawImages.map((src, index) => (
+          <img
+            key={src}
+            src={`${baseUrl}${src}`}
+            alt={product.code}
+            className={`
+        absolute inset-0 w-full h-full object-cover
+        transition-opacity duration-700 ease-in-out
+        ${index === currentImageIndex ? "opacity-100" : "opacity-0"}
+      `}
+          />
+        ))}
         {/* Arrows - Only show if multiple images */}
         {rawImages.length > 1 && (
           <>
             <button
               onClick={prevImage}
+              onMouseEnter={() => setIsControlHovered(true)}
+              onMouseLeave={() => setIsControlHovered(false)}
               className="absolute left-1 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-[#D4AF37] text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10"
               aria-label="Previous Image"
             >
@@ -393,6 +399,8 @@ const ProductCard = ({ product }: { product: Product }) => {
             </button>
             <button
               onClick={nextImage}
+              onMouseEnter={() => setIsControlHovered(true)}
+              onMouseLeave={() => setIsControlHovered(false)}
               className="absolute right-1 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-[#D4AF37] text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10"
               aria-label="Next Image"
             >
