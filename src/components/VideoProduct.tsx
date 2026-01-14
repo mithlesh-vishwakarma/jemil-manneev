@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // import Button from "./ui/Button";
+import videoSrc from "../assets/section-1.mp4";
 
 const VideoProduct: React.FC = () => {
   return (
@@ -32,14 +33,16 @@ const VideoProduct: React.FC = () => {
         </div>
 
         {/* Right Side Video */}
-        <div className="w-full">
+        <div className="w-full relative">
           <div className="overflow-hidden">
             <video
-              src="https://www.shutterstock.com/shutterstock/videos/1092222915/preview/stock-footage-modern-interior-design-of-the-kitchen-stylish-interior-of-the-kitchen-countertop-breakfast-room.webm"
+              src={videoSrc}
               autoPlay
               loop
               muted
-              className="w-full h-auto object-cover"
+              playsInline
+              preload="auto"
+              className="w-full h-100vh object-cover"
             />
           </div>
         </div>
