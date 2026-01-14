@@ -126,8 +126,7 @@ const productData = {
           id: 17,
           code: "102 SATVARIO",
           image: "glossy017.webp",
-          images: ["glossy017.webp", "glossy018.webp", "glossy019.webp"],
-          color: "White/Light",
+          color: "White",
         },
         {
           id: 18,
@@ -390,6 +389,18 @@ const productData = {
           images: ["carving010.webp", "carving001.webp", "carving002.webp"],
           color: "CROWN",
         },
+        {
+          id: 11,
+          code: "Denish White",
+          image: "carving011.webp",
+          color: "White",
+        },
+        {
+          id: 12,
+          code: "Antonio Pearl",
+          image: "carving012.webp",
+          color: "Pearl",
+        },
       ],
     },
     sinker: {
@@ -435,6 +446,181 @@ const productData = {
           image: "sinker006.webp",
           images: ["sinker006.webp", "sinker001.webp", "sinker002.webp"],
           color: "Multi-color",
+        },
+      ],
+    },
+    woodPunch: {
+      title: "Wood Punch Finish",
+      products: [
+        {
+          id: 1,
+          code: "Spanish Walnut",
+          image: "woodPunch001.webp",
+          color: "Walnut",
+        },
+        {
+          id: 2,
+          code: "Agatha Brown",
+          image: "woodPunch002.webp",
+          color: "Brown",
+        },
+        {
+          id: 3,
+          code: "Denish Beach",
+          image: "woodPunch003.webp",
+          color: "Beach",
+        },
+        {
+          id: 4,
+          code: "Ghana Walnut",
+          image: "woodPunch004.webp",
+          color: "Walnut",
+        },
+        {
+          id: 5,
+          code: "Plank Natural",
+          image: "woodPunch005.webp",
+          color: "Natural",
+        },
+      ],
+    },
+    woodPlain: {
+      title: "Wood Plain Finish",
+      products: [
+        {
+          id: 1,
+          code: "African Natural",
+          image: "woodPlain001.webp",
+          color: "Natural",
+        },
+        {
+          id: 2,
+          code: "Swisso Natural",
+          image: "woodPlain002.webp",
+          color: "Natural",
+        },
+        {
+          id: 3,
+          code: "Touchwood Brown",
+          image: "woodPlain003.webp",
+          color: "Brown",
+        },
+      ],
+    },
+    plain: {
+      title: "Plain Finish",
+      products: [
+        {
+          id: 1,
+          code: "Madley Russet",
+          image: "plain001.webp",
+          color: "Russet",
+        },
+        {
+          id: 2,
+          code: "Madley Silver",
+          image: "plain002.webp",
+          color: "Silver",
+        },
+        {
+          id: 3,
+          code: "Samara Gris",
+          image: "plain003.webp",
+          color: "Gris",
+        },
+        {
+          id: 4,
+          code: "Samara Pearl",
+          image: "plain004.webp",
+          color: "Pearl",
+        },
+        {
+          id: 5,
+          code: "Sambawood Natural",
+          image: "plain005.webp",
+          color: "Natural",
+        },
+        {
+          id: 6,
+          code: "Durian Teak",
+          image: "plain006.webp",
+          color: "Teak",
+        },
+        {
+          id: 7,
+          code: "Iris Mist",
+          image: "plain007.webp",
+          color: "Mist",
+        },
+      ],
+    },
+    marblePlain: {
+      title: "Marble Plain Finish",
+      products: [
+        {
+          id: 1,
+          code: "Marquery Grey",
+          image: "marblePlain001.webp",
+          color: "Grey",
+        },
+        {
+          id: 2,
+          code: "Antico Choco",
+          image: "marblePlain002.webp",
+          color: "Choco",
+        },
+        {
+          id: 3,
+          code: "Antico Marfil",
+          image: "marblePlain003.webp",
+          color: "Marfil",
+        },
+        {
+          id: 4,
+          code: "Iris Wenge",
+          image: "marblePlain004.webp",
+          color: "Brown",
+        },
+      ],
+    },
+    crystal: {
+      title: "Crystal Finish",
+      products: [
+        {
+          id: 1,
+          code: "Grandur Marfil",
+          image: "crystal001.webp",
+          color: "Marfil",
+        },
+        {
+          id: 2,
+          code: "Parquet Natural",
+          image: "crystal002.webp",
+          color: "Natural",
+        },
+        {
+          id: 3,
+          code: "Pulpis Pine",
+          image: "crystal003.webp",
+          color: "Pine",
+        },
+        {
+          id: 4,
+          code: "Sunrise Beige",
+          image: "crystal004.webp",
+          color: "Beige",
+        },
+        {
+          id: 5,
+          code: "Arista Beige",
+          image: "crystal005.webp",
+          color: "Beige",
+        },
+        {
+          id: 6,
+          code: "Envave Pearl",
+          image: "crystal006.webp",
+          color: "Pearl",
         },
       ],
     },

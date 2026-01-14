@@ -15,12 +15,15 @@ const KeywordScroll: React.FC = () => {
   ];
 
   return (
-    <div className="relative w-full overflow-hidden bg-[#1C1C1C] py-8">
+    <div className="relative w-full overflow-hidden bg-[#1C1C1C] py-3">
       <div className="flex whitespace-nowrap animate-scroll">
         {[...keywords, ...keywords].map((word, i) => (
-          <span key={i} className="flex items-center text-[#D4AF37] text-[25px] font-semibold mx-6">
+          <span
+            key={i}
+            className="flex items-center text-[#D4AF37] text-[25px] font-semibold mx-4"
+          >
+            <span className="mx-3 text-[#D4AF37]/60">✦</span>
             {word}
-            <span className="mx-6 text-[#D4AF37]/60">✦</span>
           </span>
         ))}
       </div>
