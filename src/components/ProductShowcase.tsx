@@ -392,7 +392,7 @@ const ProductCard = ({ product }: { product: Product }) => {
               onClick={prevImage}
               onMouseEnter={() => setIsControlHovered(true)}
               onMouseLeave={() => setIsControlHovered(false)}
-              className="absolute left-1 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-[#D4AF37] text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10"
+              className="absolute left-1 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-[#D4AF37] text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10 cursor-pointer"
               aria-label="Previous Image"
             >
               <ChevronLeftIcon className="w-4 h-4" />
@@ -401,7 +401,7 @@ const ProductCard = ({ product }: { product: Product }) => {
               onClick={nextImage}
               onMouseEnter={() => setIsControlHovered(true)}
               onMouseLeave={() => setIsControlHovered(false)}
-              className="absolute right-1 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-[#D4AF37] text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10"
+              className="absolute right-1 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-[#D4AF37] text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10 cursor-pointer"
               aria-label="Next Image"
             >
               <ChevronRightIcon className="w-4 h-4" />
