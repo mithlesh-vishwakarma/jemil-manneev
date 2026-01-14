@@ -52,7 +52,7 @@ const TopBar = () => {
             <FaFacebookF size={12} />
           </Link> */}
           <Link
-            to="https://www.instagram.com/cb_westend/"
+            to="https://www.instagram.com/manneeventerprise?igsh=cjVlYWQ0ZDdoOGtr"
             target="_blank"
             rel="noreferrer"
             className="text-[#1C1C1C] hover:text-[#725e03] transition"

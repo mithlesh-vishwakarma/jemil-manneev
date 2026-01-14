@@ -27,16 +27,16 @@ const Header = () => {
             <img
               src={logo}
               alt="Logo"
-              className="h-12 w-12 xl:h-14 xl:w-14 object-contain rounded-full relative z-10"
+              className="h-12 w-12 xl:h-14 xl:w-14 object-contain relative z-10"
             />
             {/* Dashed rotating border */}
-            <span className="absolute inset-0 rounded-full border-2 border-dashed border-[#D4AF37]/60 rotate-border" />
+            {/* <span className="absolute inset-0 rounded-full border-2 border-dashed border-[#D4AF37]/60 rotate-border" /> */}
           </div>
 
           {/* Text stacked vertically */}
           <div className="flex flex-col leading-tight">
             <span className="text-lg xl:text-xl font-semibold tracking-wide text-[#D4AF37]">
-              MANNEEV ENTERPRISES
+              MANNEEV
             </span>
             <span className="text-sm tracking-wide text-[#D4AF37]/80">
               The Built-up Solution

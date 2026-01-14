@@ -10,7 +10,7 @@ const Footer = () => {
         <div>
           <img src={logo} alt="Manneev Enterprises" className="h-16 mb-4" />
           <h2 className="text-[#F5F5F5] font-semibold text-xl ">
-            MANNEEV ENTERPRISES
+            MANNEEV
           </h2>
           <span className="text-[#B0B0B0]">The Built-Up Solution</span>
 
@@ -78,7 +78,7 @@ const Footer = () => {
             <li className="flex items-start gap-2">
               <MapPin className="text-[#D4AF37] mt-1 shrink-0 w-6 h-6 md:w-5 md:h-5" />
               <span>
-                Shop No 13,Dattani park building no 1 Opp Gokul Concord Tower,
+                Shop No 13,Dattani Park Building No. 1, Opp Gokul Concord Tower,
                 Thakur Village, Kandivali East, Mumbai, Maharashtra 400101
               </span>
             </li>
