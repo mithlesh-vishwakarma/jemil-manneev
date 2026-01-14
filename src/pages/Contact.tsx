@@ -2,6 +2,10 @@ import { useState, useEffect, useRef } from "react";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
 import Background from "../assets/bg-main (2).webp";
 import { Link } from "react-router-dom";
+import emailjs from "@emailjs/browser";
+
+
+
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +15,7 @@ const Contact: React.FC = () => {
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
   const [visible, setVisible] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -26,10 +31,48 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
-    setFormData({ name: "", email: "", phone: "", message: "" });
+
+    if (!formRef.current) return;
+    setIsSending(true)
+
+    emailjs.sendForm(
+      "service_ka7381n",
+      "template_toxpm0j",
+      formRef.current,
+      "QaYZ3tMqo672ZZUka"
+    );
+    emailjs
+      .sendForm(
+        "service_ka7381n",
+        "template_vnig8hb",
+        formRef.current,
+        "QaYZ3tMqo672ZZUka"
+      )
+      .then(
+        () => {
+          setIsSubmitted(true);
+          setTimeout(() => setIsSubmitted(false), 3000);
+
+
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            message: "",
+          });
+        },
+        (error) => {
+          console.error("EmailJS error:", error);
+          alert("Something went wrong. Please try again.");
+        }
+
+      ).finally(() => {
+        setIsSending(false);
+      });
+
+
   };
+
 
   const contactDetails = [
     {
@@ -105,9 +148,8 @@ const Contact: React.FC = () => {
             {contactDetails.map((c, i) => (
               <div
                 key={i}
-                className={`bg-[#1C1C1C] p-8 rounded-2xl border border-[#D4AF37]/20 hover:border-[#D4AF37] shadow-md hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 cursor-pointer flex items-center ${
-                  visible ? "animate-fadeUp" : "opacity-0"
-                }`}
+                className={`bg-[#1C1C1C] p-8 rounded-2xl border border-[#D4AF37]/20 hover:border-[#D4AF37] shadow-md hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 cursor-pointer flex items-center ${visible ? "animate-fadeUp" : "opacity-0"
+                  }`}
                 style={{ animationDelay: `${i * 0.15}s` }}
               >
                 <div className="w-16 h-16 bg-[#D4AF37]/10 rounded-2xl flex items-center justify-center mr-6 animate-float shrink-0 border border-[#D4AF37]/30">
@@ -125,9 +167,8 @@ const Contact: React.FC = () => {
           </div>
           <div className="w-full">
             <div
-              className={`bg-[#1C1C1C] p-8 rounded-xl border border-[#D4AF37]/20 hover:border-[#D4AF37] shadow-md hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 cursor-pointer flex items-center ${
-                visible ? "animate-fadeUp" : "opacity-0"
-              }`}
+              className={`bg-[#1C1C1C] p-8 rounded-xl border border-[#D4AF37]/20 hover:border-[#D4AF37] shadow-md hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 cursor-pointer flex items-center ${visible ? "animate-fadeUp" : "opacity-0"
+                }`}
               style={{ animationDelay: "0.45s" }}
             >
               <div className="w-16 h-16 bg-[#D4AF37]/10 rounded-xl flex items-center justify-center mr-6 animate-float shrink-0 border border-[#D4AF37]/30">
@@ -203,9 +244,12 @@ const Contact: React.FC = () => {
             <div className="sm:col-span-2 flex justify-center">
               <button
                 type="submit"
-                className="bg-[#D4AF37] text-black px-10 py-4 rounded-xl font-bold hover:bg-[#c5a028] transition-all duration-300 flex items-center gap-2 transform hover:scale-105"
+                disabled={isSending}
+                className="bg-[#D4AF37] text-black px-10 py-4 rounded-xl font-bold hover:bg-[#c5a028] transition-all duration-300 flex items-center gap-2 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitted ? (
+                {isSending ? (
+                  "Sending..."
+                ) : isSubmitted ? (
                   <>
                     <CheckCircle2 className="w-5 h-5" /> Message Sent!
                   </>
