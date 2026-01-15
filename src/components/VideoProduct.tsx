@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import Button from "./ui/Button";
-import videoSrc from "../assets/section-1.mp4";
+import videoSrc from "../assets/section-1(1).webm";
 
 const VideoProduct: React.FC = () => {
   return (

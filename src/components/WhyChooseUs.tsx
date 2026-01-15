@@ -2,10 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, Gem, Clock, Users } from "lucide-react";
 
-import UncompromisedQualityVideo from "../assets/UncompromisedQuality.mp4";
-import PremiumCraftsmanshipVideo from "../assets/PremiumCraftsmanship.mp4";
-import OnTimeDeliveryVideo from "../assets/On-TimeDelivery.mp4";
-import TrustedByCustomersVideo from "../assets/TrustedByCustomers.mp4";
+import UncompromisedQualityVideo from "../assets/UncompromisedQuality1.webm";
+import PremiumCraftsmanshipVideo from "../assets/PremiumCraftsmanship1.webm";
+import OnTimeDeliveryVideo from "../assets/On-TimeDelivery1.webm";
+import TrustedByCustomersVideo from "../assets/TrustedByCustomers1.webm";
 
 const WhyChooseUs: React.FC = () => {
   const features = [
@@ -52,10 +52,11 @@ const WhyChooseUs: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className={`relative flex flex-col xl:flex-row items-center overflow-hidden transition-all duration-500 bg-[#1c1c1c] ${index % 2 === 1
-                ? "xl:flex-row-reverse xl:translate-x-20"
-                : "xl:-translate-x-20"
-                }`}
+              className={`relative flex flex-col xl:flex-row items-center overflow-hidden transition-all duration-500 bg-[#1c1c1c] ${
+                index % 2 === 1
+                  ? "xl:flex-row-reverse xl:translate-x-20"
+                  : "xl:-translate-x-20"
+              }`}
             >
               {/* Video Side */}
               <div className="xl:w-1/2 w-full h-[300px] overflow-hidden">

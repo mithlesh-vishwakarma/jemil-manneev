@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import KeywordScroll from "./components/KeywordScroll";
 
-import Video1 from "./assets/2-video-sample.mp4";
-import Video2 from "./assets/3-video-sample.mp4";
+import Video1 from "./assets/2-video-sample1.webm";
+import Video2 from "./assets/3-video-sample1.webm";
 import WhyChooseUs from "./components/WhyChooseUs";
 import StatsSection from "./components/StatesSection";
 import VideoProduct from "./components/VideoProduct";
