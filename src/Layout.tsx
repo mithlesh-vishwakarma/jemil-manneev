@@ -55,7 +55,7 @@ const Layout: React.FC = () => {
       </div>
 
       {/* Main Content - Padded to clear fixed header */}
-      <div className="pt-[140px]">
+      <div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />

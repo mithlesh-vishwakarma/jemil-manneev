@@ -33,7 +33,7 @@ const LandingPage: React.FC = () => {
       </div>
 
       {/* Main Website Content */}
-      <div className="relative">
+      <div className="relative pt-[140px]">
         {/* Hero Section (Content Scrolls) */}
         <section className="relative w-full h-[80vh] flex flex-col items-center justify-center text-center px-6">
           <div className="relative z-10">
