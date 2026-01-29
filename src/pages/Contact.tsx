@@ -78,8 +78,8 @@ const Contact: React.FC = () => {
     {
       icon: Phone,
       title: "Call Us",
-      info: "+91 98765 43210",
-      sub: "Mon–Sun, 9:30AM–7:30PM",
+      info: "+91 9326947550",
+      sub: "Everyday, 9:30AM–7:30PM",
     },
     {
       icon: Mail,
@@ -90,8 +90,8 @@ const Contact: React.FC = () => {
     {
       icon: Clock,
       title: "Working Hours",
-      info: "Mon–Sun: 9:30AM–7:30PM",
-      sub: "Everyday: Open",
+      info: "Everyday: 9:30AM–7:30PM",
+      // sub: "Everyday: Open",
     },
   ];
 

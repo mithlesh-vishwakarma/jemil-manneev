@@ -54,9 +54,9 @@ const StatItem = ({ value, suffix, label }: any) => {
 
 const StatsSection: React.FC = () => {
   return (
-    <section className="relative bg-[#725e03] text-[#1c1c1c] py-20 px-6 overflow-hidden">
+    <section className="relative bg-[#725e03] text-[#1c1c1c] min-h-[30vh] px-6 overflow-hidden flex items-center">
       <div className="max-w-6xl mx-auto relative z-10 text-center">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-10 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-10 sm:gap-40">
           {stats.map((item, index) => (
             <StatItem
               key={index}

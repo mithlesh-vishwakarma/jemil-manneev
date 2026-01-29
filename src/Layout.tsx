@@ -3,18 +3,18 @@ import { Routes, Route, Link } from "react-router-dom";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Home from "./Home";
-import AboutUs from "./pages/AboutUs";
+// import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
-import Collections from './pages/Collections';
+// import Collections from './pages/Collections';
 import NotFound from "./pages/NotFound";
-import Gallery from "./pages/Gallery";
+// import Gallery from "./pages/Gallery";
 
 import TopBar from "./components/TopBar";
 // import Granites from "./pages/ProductCollections/Granites";
 // import Marbles from "./pages/ProductCollections/Marbles";
 // import NaturalStones from "./pages/ProductCollections/NaturalStones";
 // import ItalianMarbles from "./pages/ProductCollections/ItalianMarbles";
-import Tiles from "./pages/ProductCollections/Tiles";
+// import Tiles from "./pages/ProductCollections/Tiles";
 // import Slabs from "./pages/ProductCollections/Slabs";
 // import Sinks from "./pages/ProductCollections/Sinks";
 // import SanitaryWare from "./pages/ProductCollections/SanitaryWare";
@@ -38,28 +38,34 @@ const Layout: React.FC = () => {
 
   return (
     <div>
-      {/* TopBar - Hidden when scrolled */}
-      {!isScrolled && <TopBar />}
+      {/* Fixed Header Wrapper */}
+      <div className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center">
+        {/* Animated TopBar Wrapper */}
+        <div
+          className={`w-full overflow-hidden transition-all duration-300 ease-in-out ${isScrolled ? "max-h-0 opacity-0" : "max-h-12 opacity-100"
+            }`}
+        >
+          <TopBar />
+        </div>
 
-      {/* Header - Sticky when scrolled, relative when at top */}
-      <div
-        className={isScrolled ? "fixed top-0 left-0 right-0 z-50" : "relative"}
-      >
-        <Header />
+        {/* Header */}
+        <div className="w-full">
+          <Header />
+        </div>
       </div>
 
-      {/* Main Content - Add top padding when Header is sticky */}
-      <div className={isScrolled ? "pt-16" : ""}>
+      {/* Main Content - Padded to clear fixed header */}
+      <div className="pt-[140px]">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/collections" element={<Collections />} />
-          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/about" element={<NotFound />} />
+          <Route path="/collections" element={<NotFound />} />
+          <Route path="/gallery" element={<NotFound />} />
 
           <Route path="/partners" element={<NotFound />} />
 
-          <Route path="/collections/tiles" element={<Tiles />} />
+          <Route path="/collections/tiles" element={<NotFound />} />
           <Route path="/collections/granites" element={<NotFound />} />
           <Route path="/collections/marbles" element={<NotFound />} />
           <Route

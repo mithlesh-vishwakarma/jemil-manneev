@@ -18,8 +18,10 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-[#1C1C1C] text-[#F5F5F5] border-b border-[#F5F5F5]/20 shadow-sm">
-      <div className="mx-auto flex items-center justify-between py-3 px-4 md:px-20 xl:py-4">
+    <header className="bg-[#1C1C1C] text-[#F5F5F5] border-b border-[#F5F5F5]/20 shadow-sm h-[80px]">
+
+      <div className="mx-auto flex items-center justify-between h-full px-4 md:px-20">
+
 
         {/* Logo */}
         <Link to="/" className="relative flex items-center gap-3">
@@ -34,11 +36,11 @@ const Header = () => {
           </div>
 
           {/* Text stacked vertically */}
-          <div className="flex flex-col leading-tight">
-            <span className="text-lg xl:text-xl font-semibold tracking-wide text-[#D4AF37]">
+          <div className="flex flex-col leading-none">
+            <span className="text-xl xl:text-2xl font-semibold tracking-wide text-[#D4AF37]">
               MANNEEV
             </span>
-            <span className="text-sm tracking-wide text-[#D4AF37]/80">
+            <span className="text-sm xl:text-sm tracking-wide text-[#D4AF37]/80">
               The Built-up Solution
             </span>
           </div>
@@ -68,7 +70,7 @@ const Header = () => {
         <div className="hidden xl:flex items-center">
           <Link
             to="/contact"
-            className="px-5 py-2.5 text-sm lg:text-base font-semibold bg-[#D4AF37] text-[#1C1C1C] rounded-full border border-transparent hover:bg-[#F5F5F5] hover:text-[#1C1C1C] hover:border-[#D4AF37] transition-all duration-300"
+            className="px-4 py-2 text-sm font-semibold bg-[#D4AF37] text-[#1C1C1C] rounded-full border border-transparent hover:bg-[#F5F5F5] hover:text-[#1C1C1C] hover:border-[#D4AF37] transition-all duration-300"
           >
             Appointment
           </Link>
@@ -79,7 +81,7 @@ const Header = () => {
           className="xl:hidden text-[#D4AF37]"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <Menu size={35} />
+          <Menu size={28} />
         </button>
       </div>
 

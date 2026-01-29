@@ -178,11 +178,10 @@ const ProductsList: React.FC = () => {
         />
         {/* Overlay for blur and darken effect */}
         <div
-          className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-            showOverlay
-              ? "bg-black/60 backdrop-blur-sm"
-              : "bg-transparent backdrop-blur-none"
-          }`}
+          className={`absolute inset-0 transition-all duration-1000 ease-in-out ${showOverlay
+            ? "bg-black/60 backdrop-blur-sm"
+            : "bg-transparent backdrop-blur-none"
+            }`}
         />
       </div>
 
