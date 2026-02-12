@@ -1,131 +1,148 @@
-
 import { motion } from "framer-motion";
+import { FaRocket, FaEye, FaGem } from "react-icons/fa";
 
-const fadeIn = (direction: "left" | "right") => ({
-  hidden: { opacity: 0, x: direction === "left" ? -60 : 60 },
-  show: { opacity: 1, x: 0 },
-});
+const cardVariants = {
+  hidden: { opacity: 0, y: 60 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
 
 const MissionVisionValues = () => {
   return (
-    <section className="max-w-6xl mx-auto py-20 px-2 md:px-4 lg:px-0 bg-transparent">
-      {/* Main Title */}
+    <section className="relative max-w-7xl mx-auto py-24 px-4 overflow-hidden">
+      {/* Background Pattern */}
+      {/* <div className="absolute inset-0 -z-10 opacity-[0.04] 
+  bg-[linear-gradient(to_right,#D4AF37_1px,transparent_1px),
+      linear-gradient(to_bottom,#D4AF37_1px,transparent_1px)]
+  bg-[size:60px_60px]" /> */}
+
+      {/* Background Glow */}
+      <div className="absolute top-0 left-1/2 w-[600px] h-[600px] bg-[#D4AF37]/10 blur-[150px] -translate-x-1/2 -z-10" />
+
+      {/* Title */}
       <motion.h2
-        initial={{ opacity: 0, y: -30 }}
+        initial={{ opacity: 0, y: -40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-4xl font-bold text-center text-white mb-16"
+        className="text-4xl font-bold text-center text-white mb-20"
       >
         Our <span className="text-[#D4AF37]">Mission, Vision & Values</span>
       </motion.h2>
 
-      {/* Mission Section */}
-      <div className="flex flex-col md:flex-row items-center justify-between gap-10 mb-20">
-        <motion.div
-          variants={fadeIn("left")}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="flex-1 text-left"
-        >
-          <h3 className="text-2xl font-bold text-white mb-4 underline decoration-[#D4AF37]">Our <span className="text-2xl text-[#D4AF37]">Mission</span></h3>
-          <p className="text-gray-300 leading-relaxed text-lg">
-            Our mission is to empower businesses and individuals by delivering
-            innovative, reliable, and scalable web solutions that help them grow
-            and thrive in the digital world.
-          </p>
-        </motion.div>
+      <div className="grid md:grid-cols-3 gap-10">
 
+        {/* Mission */}
         <motion.div
-          variants={fadeIn("right")}
+          variants={cardVariants}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="flex-1"
+          className="relative flex flex-col items-center text-center 
+bg-gradient-to-b from-[#111] to-[#0a0a0a] 
+p-8 rounded-3xl 
+border border-transparent 
+bg-clip-padding 
+before:absolute before:inset-0 before:rounded-3xl 
+before:p-[1px] before:bg-gradient-to-br 
+before:from-[#D4AF37]/40 before:to-transparent 
+before:-z-10
+shadow-[0_0_40px_rgba(212,175,55,0.08)] 
+hover:shadow-[0_0_80px_rgba(212,175,55,0.25)] 
+transition-all duration-500"
         >
-          <div className="relative animate-float">
-            <div className="bg-[#111] p-2 rounded-3xl shadow-2xl border border-[#D4AF37]/30 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1622905810727-9cc3126d712e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1pc3Npb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=500"
-                alt="Mission"
-                className="rounded-2xl object-cover w-full h-64 opacity-90 hover:opacity-100 transition-opacity duration-300"
-              />
-            </div>
+          <div className="absolute top-6 left-6 w-10 h-10 border-t-2 border-l-2 border-[#D4AF37]/40 rounded-tl-xl" />
+
+          <div className="w-16 h-16 flex items-center justify-center 
+          bg-[#D4AF37]/10 rounded-2xl mb-6">
+            <FaRocket className="text-[#D4AF37] text-2xl" />
           </div>
-        </motion.div>
-      </div>
 
-      {/* Vision Section */}
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 mb-20">
-        <motion.div
-          variants={fadeIn("left")}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="flex-1"
-        >
-          <div className="relative animate-float">
-            <div className="bg-[#111] p-2 rounded-3xl shadow-2xl border border-[#D4AF37]/30 overflow-hidden">
-              <img
-                src="https://media.istockphoto.com/id/1686497935/photo/business-man-running-on-arrow-shaped-bridge-to-the-light.webp?a=1&b=1&s=612x612&w=0&k=20&c=ZptNdZTfzPsm_wNJAZvrlaPRSP5fEqiHEBDXT1x45LY="
-                alt="Vision"
-                className="rounded-2xl object-cover w-full h-64 opacity-90 hover:opacity-100 transition-opacity duration-300"
-              />
-            </div>
-          </div>
-        </motion.div>
+          <h3 className="text-2xl font-bold text-white mb-4">
+            Our <span className="text-[#D4AF37]">Mission</span>
+          </h3>
 
-        <motion.div
-          variants={fadeIn("right")}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="flex-1 text-right md:pl-12"
-        >
-          <h3 className="text-2xl font-bold text-white mb-4 underline decoration-[#D4AF37]">Our <span className="text-2xl text-[#D4AF37]">Vision</span></h3>
-          <p className="text-gray-300 leading-relaxed text-lg">
-            We envision a future where technology bridges creativity and
-            functionality seamlessly, transforming ideas into impactful digital
-            experiences across the world.
+          <p className="text-gray-300 leading-relaxed">
+            Our mission is to deliver landmark real estate developments built with the highest quality materials, uncompromising construction standards, and meticulous attention to detail. We are committed to executing large-scale projects that stand as symbols of strength, durability, and architectural excellence, creating long-term value for investors, communities, and future generations.
           </p>
-        </motion.div>
-      </div>
+          <div className="absolute bottom-6 right-6 w-10 h-10 border-b-2 border-r-2 border-[#D4AF37]/40 rounded-br-xl" />
 
-      {/* Values Section */}
-      <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+
+        </motion.div>
+
+        {/* Vision */}
         <motion.div
-          variants={fadeIn("left")}
+          variants={cardVariants}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="flex-1 text-left"
+          className="relative flex flex-col items-center text-center 
+bg-gradient-to-b from-[#111] to-[#0a0a0a] 
+p-8 rounded-3xl 
+border border-transparent 
+bg-clip-padding 
+before:absolute before:inset-0 before:rounded-3xl 
+before:p-[1px] before:bg-gradient-to-br 
+before:from-[#D4AF37]/40 before:to-transparent 
+before:-z-10
+shadow-[0_0_40px_rgba(212,175,55,0.08)] 
+hover:shadow-[0_0_80px_rgba(212,175,55,0.25)] 
+transition-all duration-500"
         >
-          <h3 className="text-2xl font-bold text-white mb-4 underline decoration-[#D4AF37]">Our <span className="text-2xl text-[#D4AF37]">Values</span></h3>
-          <p className="text-gray-300 leading-relaxed text-lg">
-            Integrity, innovation, and collaboration are at the core of
-            everything we do. We believe in building trust, delivering quality,
-            and continuously evolving to exceed client expectations.
-          </p>
-        </motion.div>
+          <div className="absolute top-6 left-6 w-10 h-10 border-t-2 border-l-2 border-[#D4AF37]/40 rounded-tl-xl" />
 
-        <motion.div
-          variants={fadeIn("right")}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="flex-1"
-        >
-          <div className="relative animate-float">
-            <div className="bg-[#111] p-2 rounded-3xl shadow-2xl border border-[#D4AF37]/30 overflow-hidden">
-              <img
-                src="https://media.istockphoto.com/id/2170991268/photo/values-word-cloud.jpg?s=612x612&w=0&k=20&c=H8i59ge3ZnCkdd2xL2NOFjA-z04WaxMVzA45es0nkfw="
-                alt="Values"
-                className="rounded-2xl object-cover w-full h-64 opacity-90 hover:opacity-100 transition-opacity duration-300"
-              />
-            </div>
+          <div className="w-16 h-16 flex items-center justify-center 
+          bg-[#D4AF37]/10 rounded-2xl mb-6">
+            <FaEye className="text-[#D4AF37] text-2xl" />
           </div>
+
+          <h3 className="text-2xl font-bold text-white mb-4">
+            Our <span className="text-[#D4AF37]">Vision</span>
+          </h3>
+
+          <p className="text-gray-300 leading-relaxed">
+            Our vision is to become a trusted leader in premium real estate development, known for executing large and complex projects with superior craftsmanship and innovation. We aim to shape modern skylines through sustainable practices, structural integrity, and world-class infrastructure that defines the future of urban living.
+          </p>
+          <div className="absolute bottom-6 right-6 w-10 h-10 border-b-2 border-r-2 border-[#D4AF37]/40 rounded-br-xl" />
+
+
         </motion.div>
+
+        {/* Values */}
+        <motion.div
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="relative flex flex-col items-center text-center 
+bg-gradient-to-b from-[#111] to-[#0a0a0a] 
+p-8 rounded-3xl 
+border border-transparent 
+bg-clip-padding 
+before:absolute before:inset-0 before:rounded-3xl 
+before:p-[1px] before:bg-gradient-to-br 
+before:from-[#D4AF37]/40 before:to-transparent 
+before:-z-10
+shadow-[0_0_40px_rgba(212,175,55,0.08)] 
+hover:shadow-[0_0_80px_rgba(212,175,55,0.25)] 
+transition-all duration-500"
+        >
+          <div className="absolute top-6 left-6 w-10 h-10 border-t-2 border-l-2 border-[#D4AF37]/40 rounded-tl-xl" />
+
+          <div className="w-16 h-16 flex items-center justify-center 
+          bg-[#D4AF37]/10 rounded-2xl mb-6">
+            <FaGem className="text-[#D4AF37] text-2xl" />
+          </div>
+
+          <h3 className="text-2xl font-bold text-white mb-4">
+            Our <span className="text-[#D4AF37]">Values</span>
+          </h3>
+
+          <p className="text-gray-300 leading-relaxed">
+            Quality, integrity, and precision form the foundation of everything we build. We believe in using only the finest materials, maintaining strict project discipline, and upholding transparency at every stage. Our commitment to excellence ensures that each development reflects durability, safety, and long-term investment strength.
+          </p>
+          <div className="absolute bottom-6 right-6 w-10 h-10 border-b-2 border-r-2 border-[#D4AF37]/40 rounded-br-xl" />
+
+        </motion.div>
+
       </div>
     </section>
   );

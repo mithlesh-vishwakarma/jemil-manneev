@@ -33,62 +33,140 @@ const AboutUs: React.FC = () => {
   );
 
   return (
-    <div className="bg-[#0a0a0a] min-h-screen text-white">
+    <div className="bg-[#0a0a0a]  min-h-screen text-white">
       {/* ---------- Hero Section ---------- */}
       <Section
         id="about-hero"
-        className="relative bg-cover bg-center bg-no-repeat py-32 sm:py-40 lg:py-48 text-center overflow-hidden"
+        className="relative bg-cover bg-center bg-no-repeat py-32 sm:py-40 lg:py-48 text-center overflow-hidden bg-black/40 backdrop-blur-md shadow-lg"
         style={{ backgroundImage: `url(${Background})` }}
       >
         <div className="absolute inset-0 bg-black/70 animated-blur -z-10"></div>
 
         <div className="max-w-4xl mx-auto px-6 relative">
-          <div className="inline-block px-6 py-4 rounded-2xl bg-black/40 backdrop-blur-md shadow-lg border border-[#D4AF37]/30 mb-6">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white">
-              About <span className="text-[#D4AF37]">MANNEEV</span>
-            </h1>
-          </div>
-          <p className="text-lg sm:text-xl text-[#D4AF37] max-w-2xl mx-auto border border-[#D4AF37]/30 p-4 rounded-2xl bg-black/60">
-            We are redefining how construction materials reach your site —
-            combining quality, trust, and innovation to build the future
-            together.
+          {/* <div className="inline-block px-6 py-4 rounded-2xl bg-black/40 backdrop-blur-md shadow-lg border border-[#D4AF37]/30 mb-6"> */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-300 mb-6">
+            About <span className="text-[#D4AF37]">MANNEEV</span>
+          </h1>
+          {/* </div> */}
+          <p className="text-lg sm:text-xl text-white max-w-2xl mx-auto border border-[#D4AF37]/30 p-4">
+            We are a trusted construction materials dealer supplying large-scale real estate and infrastructure projects across India, ensuring consistent quality, dependable delivery, and execution certainty at every stage of construction.
           </p>
         </div>
       </Section>
 
       {/* ---------- Our Story ---------- */}
-      <Section id="story" className="py-24 px-6 bg-[#111]">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Our <span className="text-[#D4AF37]">Journey</span>
-            </h2>
-            <p className="text-gray-300 leading-relaxed">
-              Founded with a vision to simplify material procurement for
-              builders,
-              <span className="font-semibold text-[#D4AF37]"> MANNEEV </span>
-              began as a small team determined to connect top manufacturers with
-              construction professionals seamlessly.
+      <Section
+        id="story"
+        className="relative py-28 px-6 bg-gradient-to-b from-[#0e0e0e] to-[#151515] overflow-hidden"
+      >
+        {/* Background Accent */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-[#D4AF37]/10 rounded-full blur-3xl -z-0"></div>
+
+        <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-stretch">
+
+          {/* LEFT CONTENT */}
+          <div className="space-y-8 flex flex-col justify-center">
+
+            <div className="flex items-center gap-4">
+              <div className="w-1 h-12 bg-[#D4AF37]"></div>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-wide">
+                Our <span className="text-[#D4AF37]">Journey</span>
+              </h2>
+            </div>
+
+            <p className="leading-relaxed text-lg text-gray-300">
+              <span className="font-semibold text-[#D4AF37]">MANNEEV</span> was founded with a clear vision to redefine how construction materials are sourced and delivered for modern real estate and infrastructure projects.
             </p>
-            <p className="text-gray-300 leading-relaxed">
-              Today, we proudly serve thousands of builders, delivering premium
-              materials, trusted logistics, and unmatched technical support —
-              all powered by passion, precision, and people.
+
+            <p className="leading-relaxed text-lg text-gray-300">
+              What began as a focused initiative has grown into a trusted materials partner for large residential developments, commercial complexes, industrial facilities, and infrastructure ventures. From high-rise towers to expansive townships, every project is supported through precision-driven procurement and dependable supply systems.
             </p>
+
+            <p className="leading-relaxed text-lg text-gray-300">
+              Over time, we have built strategic alliances with leading manufacturers and established a streamlined supply network designed to manage scale, complexity, and demanding timelines.
+            </p>
+
+            <div className="bg-[#1C1C1C] p-6 rounded-2xl border border-[#D4AF37]/20 shadow-xl">
+              <p className="text-lg font-semibold text-white mb-4">
+                We Deals In:
+              </p>
+
+              {/* <ul className="space-y-3 text-gray-300">
+                <li className="flex items-start">
+                  <span className="text-[#D4AF37] mr-3">✓</span>
+                  Premium-grade construction materials
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#D4AF37] mr-3">✓</span>
+                  Structured procurement for large-scale developments
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#D4AF37] mr-3">✓</span>
+                  Reliable logistics and time-bound delivery
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#D4AF37] mr-3">✓</span>
+                  Technical and execution-level coordination
+                </li>
+              </ul> */}
+              <ul className="space-y-3 text-gray-300">
+                <li className="flex items-start">
+                  <span className="text-[#D4AF37] mr-3">✓</span>
+                  Deals in large-scale high-rise and multi-tower projects
+                </li>
+
+                <li className="flex items-start">
+                  <span className="text-[#D4AF37] mr-3">✓</span>
+                  Deals in integrated township and master-planned developments
+                </li>
+
+                <li className="flex items-start">
+                  <span className="text-[#D4AF37] mr-3">✓</span>
+                  Deals in premium commercial and mixed-use real estate projects
+                </li>
+
+                <li className="flex items-start">
+                  <span className="text-[#D4AF37] mr-3">✓</span>
+                  Deals in major infrastructure and industrial-scale ventures
+                </li>
+              </ul>
+
+            </div>
+
+            <p className="leading-relaxed text-lg text-gray-300">
+              Each milestone reflects our commitment to performance, accountability, and long-term partnerships. As the industry evolves, MANNEEV continues to power landmark projects with quality, consistency, and confidence.
+            </p>
+
           </div>
-          <div className="relative animate-float">
-            <div className="bg-[#1C1C1C] p-2 rounded-3xl shadow-2xl border border-[#D4AF37]/30">
+
+          {/* RIGHT IMAGE */}
+          <div className="relative flex">
+
+            <div className="absolute -inset-10 bg-[#D4AF37]/10 blur-3xl rounded-full"></div>
+
+            <div className="relative w-full h-full bg-[#1C1C1C] p-3 rounded-3xl shadow-2xl border border-[#D4AF37]/30">
+
               <img
-                src="https://media.istockphoto.com/id/2167132114/photo/man-on-the-top-of-stair-reach-star-achieve-dream-career-growth-reach-goal-success-ladder.jpg?s=612x612&w=0&k=20&c=DqlP2Q6hCPp55IVvCaG3XsI53Oryh0PPe7C2M1wxFNo="
-                alt="Construction team"
-                className="rounded-2xl object-cover opacity-90 hover:opacity-100 transition-opacity duration-300"
+                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+                alt="Real estate construction project"
+                className="rounded-2xl object-cover w-full h-full min-h-[600px]"
               />
+
             </div>
           </div>
+
         </div>
       </Section>
 
-      <MissionVisionValues />
+      <Section
+        id="story"
+        className="relative py-28 px-6 bg-gradient-to-b from-[#0e0e0e] to-[#151515] overflow-hidden"
+      >
+        {/* Background Accent */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-[#D4AF37]/10 rounded-full blur-3xl -z-0"></div>
+
+        <MissionVisionValues />
+      </Section>
 
       {/* ---------- Core Strengths ---------- */}
       <Section id="strengths" className="py-24 px-6 bg-[#0a0a0a] strengths-bg">
@@ -229,14 +307,13 @@ const AboutUs: React.FC = () => {
         <div className="w-full flex justify-center px-4">
           <div
             className="
-    grid 
-    grid-cols-1 
-    sm:grid-cols-2 
-    lg:grid-cols-4 
-    gap-18 
+    flex 
+    flex-wrap 
+    justify-center 
+    gap-10 
     lg:gap-20
     max-w-6xl
-    justify-items-center
+    w-full
   "
           >
             {[
@@ -283,18 +360,18 @@ const AboutUs: React.FC = () => {
                   src={member.img}
                   alt={member.name}
                   className="
-            w-32 h-32 
-            sm:w-36 sm:h-36
+            w-full aspect-square 
             mx-auto 
-            rounded-full 
+            rounded-2xl 
             object-cover 
-            mb-3 
-            border-4 
-            border-[#D4AF37]/50 
+            mb-4 
+            border-2 
+            border-[#D4AF37]/30 
             shadow-md
+            grayscale hover:grayscale-0 transition-all duration-500
           "
                 />
-                <h3 className="text-white font-semibold text-base">
+                <h3 className="text-white font-bold text-xl mt-4">
                   {member.name}
                 </h3>
                 <p className="text-[#D4AF37] text-sm font-medium">

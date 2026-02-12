@@ -3,7 +3,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Home from "./Home";
-// import AboutUs from "./pages/AboutUs";
+import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 // import Collections from './pages/Collections';
 import NotFound from "./pages/NotFound";
@@ -59,7 +59,7 @@ const Layout: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<NotFound />} />
+          <Route path="/about" element={<AboutUs />} />
           <Route path="/collections" element={<NotFound />} />
           <Route path="/gallery" element={<NotFound />} />
 
