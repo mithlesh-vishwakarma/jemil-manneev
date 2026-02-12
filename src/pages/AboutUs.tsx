@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Award, Shield, Truck, Leaf, CheckCircle2 } from "lucide-react";
 import Background from "../assets/background-original.png";
+import OurJourneyImg from "../assets/our-journey.png";
 import MissionVisionValues from "../components/MissionVisionValues";
 import { Link } from "react-router-dom";
 
@@ -140,20 +141,50 @@ const AboutUs: React.FC = () => {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="relative flex">
+          {/* Premium Image Section */}
+          <div className="relative mt-10">
 
-            <div className="absolute -inset-10 bg-[#D4AF37]/10 blur-3xl rounded-full"></div>
+            {/* Gold Glow Behind */}
+            <div className="absolute -inset-10 bg-[#D4AF37]/10 blur-3xl rounded-3xl"></div>
 
-            <div className="relative w-full h-full bg-[#1C1C1C] p-3 rounded-3xl shadow-2xl border border-[#D4AF37]/30">
+            <div className="relative rounded-3xl overflow-hidden border border-[#D4AF37]/20 shadow-2xl">
 
+              {/* Image */}
               <img
-                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
-                alt="Real estate construction project"
-                className="rounded-2xl object-cover w-full h-full min-h-[600px]"
+                src={OurJourneyImg}
+                alt="Luxury Real Estate Project"
+                className="w-full h-[800px] object-cover transition-transform duration-700 hover:scale-105"
               />
 
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+
+              {/* Glass Info Card */}
+              <div className="absolute bottom-12 left-12 bg-white/5 backdrop-blur-xl 
+      border border-[#D4AF37]/30 rounded-2xl p-8 max-w-lg shadow-xl">
+
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Premium Construction & Material Supply
+                </h3>
+
+                <p className="text-gray-300 leading-relaxed">
+                  Delivering high-grade certified materials and executing large-scale
+                  residential, commercial, and infrastructure developments with
+                  uncompromising quality, structural integrity, and long-term durability.
+                </p>
+
+                <div className="mt-6 h-[2px] w-20 bg-[#D4AF37]"></div>
+              </div>
+
             </div>
+
           </div>
+
+
+
+
+
+
 
         </div>
       </Section>
