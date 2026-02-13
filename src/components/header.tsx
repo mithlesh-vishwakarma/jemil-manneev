@@ -1,5 +1,5 @@
 import { Menu } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom"; // <-- Add this
 import logo from "../assets/logo-manneev.png";
 // import Button from "./ui/Button";
@@ -7,6 +7,32 @@ import logo from "../assets/logo-manneev.png";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation(); // <-- Detect current path
+  const menuRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -79,6 +105,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button
           className="xl:hidden text-[#D4AF37]"
+          ref={buttonRef}
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <Menu size={28} />
@@ -87,7 +114,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="xl:hidden bg-[#2E2E2E] px-5 pb-5 space-y-3 animate-fadeIn">
+        <div ref={menuRef} className="xl:hidden bg-[#2E2E2E] px-5 pb-5 space-y-3 animate-fadeIn">
           {navItems.map((item) => {
             const isActive = location.pathname === item.href;
             return (

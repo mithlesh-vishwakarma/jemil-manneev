@@ -38,7 +38,7 @@ const AboutUs: React.FC = () => {
       {/* ---------- Hero Section ---------- */}
       <Section
         id="about-hero"
-        className="relative bg-cover bg-center bg-no-repeat py-32 sm:py-40 lg:py-48 text-center overflow-hidden bg-black/40 backdrop-blur-md shadow-lg"
+        className="relative bg-cover bg-center bg-no-repeat pt-48 pb-32 sm:py-40 lg:py-48 text-center overflow-hidden bg-black/40 backdrop-blur-md shadow-lg"
         style={{ backgroundImage: `url(${Background})` }}
       >
         <div className="absolute inset-0 bg-black/70 animated-blur -z-10"></div>
