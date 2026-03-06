@@ -89,7 +89,7 @@ const AboutUs: React.FC = () => {
 
             <div className="bg-[#1C1C1C] p-6 rounded-2xl border border-[#D4AF37]/20 shadow-xl">
               <p className="text-lg font-semibold text-white mb-4">
-                We Deals In:
+                We Serves In:
               </p>
 
               {/* <ul className="space-y-3 text-gray-300">
@@ -113,26 +113,28 @@ const AboutUs: React.FC = () => {
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-start">
                   <span className="text-[#D4AF37] mr-3">✓</span>
-                  Deals in large-scale high-rise and multi-tower projects
+                  Large-scale high-rise and multi-tower projects
                 </li>
 
                 <li className="flex items-start">
                   <span className="text-[#D4AF37] mr-3">✓</span>
-                  Deals in integrated township and master-planned developments
+                  Integrated township and master-planned developments
                 </li>
 
                 <li className="flex items-start">
                   <span className="text-[#D4AF37] mr-3">✓</span>
-                  Deals in premium commercial and mixed-use real estate projects
+                  Premium commercial and mixed-use real estate projects
                 </li>
 
                 <li className="flex items-start">
                   <span className="text-[#D4AF37] mr-3">✓</span>
-                  Deals in major infrastructure and industrial-scale ventures
+                  Major infrastructure and industrial-scale ventures
                 </li>
               </ul>
 
             </div>
+
+
 
             <p className="leading-relaxed text-lg text-gray-300">
               Each milestone reflects our commitment to performance, accountability, and long-term partnerships. As the industry evolves, MANNEEV continues to power landmark projects with quality, consistency, and confidence.
@@ -142,41 +144,45 @@ const AboutUs: React.FC = () => {
 
           {/* RIGHT IMAGE */}
           {/* Premium Image Section */}
-          <div className="relative mt-10">
+          <div className="flex flex-col gap-10 mt-10">
 
-            {/* Gold Glow Behind */}
-            <div className="absolute -inset-10 bg-[#D4AF37]/10 blur-3xl rounded-3xl"></div>
+            <div className="relative w-full">
+              {/* Gold Glow Behind */}
+              <div className="absolute -inset-10 bg-[#D4AF37]/10 blur-3xl rounded-3xl"></div>
 
-            <div className="relative rounded-3xl overflow-hidden border border-[#D4AF37]/20 shadow-2xl">
+              <div className="relative rounded-3xl overflow-hidden border border-[#D4AF37]/20 shadow-2xl">
 
-              {/* Image */}
-              <img
-                src={OurJourneyImg}
-                alt="Luxury Real Estate Project"
-                className="w-full h-[800px] object-cover transition-transform duration-700 hover:scale-105"
-              />
+                {/* Image */}
+                <img
+                  src={OurJourneyImg}
+                  alt="Luxury Real Estate Project"
+                  className="w-full h-[800px] object-cover transition-transform duration-700 hover:scale-105"
+                />
 
-              {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
 
-              {/* Glass Info Card */}
-              <div className="absolute bottom-12 left-12 bg-white/5 backdrop-blur-xl 
-      border border-[#D4AF37]/30 rounded-2xl p-8 max-w-lg shadow-xl">
+                {/* Glass Info Card */}
+                <div className="absolute bottom-12 left-12 bg-white/5 backdrop-blur-xl 
+        border border-[#D4AF37]/30 rounded-2xl p-8 max-w-lg shadow-xl">
 
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  Premium Construction & Material Supply
-                </h3>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    Premium Construction & Material Supply
+                  </h3>
 
-                <p className="text-gray-300 leading-relaxed">
-                  Delivering high-grade certified materials and executing large-scale
-                  residential, commercial, and infrastructure developments with
-                  uncompromising quality, structural integrity, and long-term durability.
-                </p>
+                  <p className="text-gray-300 leading-relaxed">
+                    Delivering high-grade certified materials and executing large-scale
+                    residential, commercial, and infrastructure developments with
+                    uncompromising quality, structural integrity, and long-term durability.
+                  </p>
 
-                <div className="mt-6 h-[2px] w-20 bg-[#D4AF37]"></div>
+                  <div className="mt-6 h-[2px] w-20 bg-[#D4AF37]"></div>
+                </div>
+
               </div>
-
             </div>
+
+
 
           </div>
 
@@ -185,6 +191,92 @@ const AboutUs: React.FC = () => {
 
 
 
+
+        </div>
+      </Section>
+
+      {/* ---------- What Makes Us Different & Commitments ---------- */}
+      <Section
+        id="different-commitments"
+        className="relative pb-28 px-6 bg-gradient-to-b from-[#151515] to-[#0e0e0e] overflow-hidden"
+      >
+        <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-stretch">
+
+          <div className="bg-[#1C1C1C] p-6 rounded-2xl border border-[#D4AF37]/20 shadow-xl w-full">
+            <p className="text-lg font-semibold text-white mb-4">
+              What Makes Us Different:
+            </p>
+
+            <ul className="space-y-3 text-gray-300">
+              <li className="flex items-start">
+                <span className="text-[#D4AF37] mr-3">✓</span>
+                Experienced Designers & Technicians
+              </li>
+
+              <li className="flex items-start">
+                <span className="text-[#D4AF37] mr-3">✓</span>
+                Customized Designs as per Your Budget
+              </li>
+
+              <li className="flex items-start">
+                <span className="text-[#D4AF37] mr-3">✓</span>
+                Use of Premium & Branded Material
+              </li>
+
+              <li className="flex items-start">
+                <span className="text-[#D4AF37] mr-3">✓</span>
+                Transparent Pricing
+              </li>
+
+              <li className="flex items-start">
+                <span className="text-[#D4AF37] mr-3">✓</span>
+                Dedicated Project Manager
+              </li>
+
+              <li className="flex items-start">
+                <span className="text-[#D4AF37] mr-3">✓</span>
+                Fast & Hassle-Free Work Execution
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-[#1C1C1C] p-6 rounded-2xl border border-[#D4AF37]/20 shadow-xl w-full">
+            <p className="text-lg font-semibold text-white mb-4">
+              We Deals In:
+            </p>
+
+            <ul className="space-y-3 text-gray-300">
+              <li className="flex items-start">
+                <span className="text-[#D4AF37] mr-3">✓</span>
+                Premium Tiles & Granites
+              </li>
+
+              <li className="flex items-start">
+                <span className="text-[#D4AF37] mr-3">✓</span>
+                Italian & Natural Marbles
+              </li>
+
+              <li className="flex items-start">
+                <span className="text-[#D4AF37] mr-3">✓</span>
+                Sanitary Ware & Sinks
+              </li>
+
+              <li className="flex items-start">
+                <span className="text-[#D4AF37] mr-3">✓</span>
+                Construction Chemicals & CP Fittings
+              </li>
+
+              <li className="flex items-start">
+                <span className="text-[#D4AF37] mr-3">✓</span>
+                High-Quality Stone Slabs
+              </li>
+
+              <li className="flex items-start">
+                <span className="text-[#D4AF37] mr-3">✓</span>
+                Other Premium Building Materials
+              </li>
+            </ul>
+          </div>
 
         </div>
       </Section>

@@ -98,7 +98,7 @@ const Contact: React.FC = () => {
   const visitUsDetail = {
     icon: MapPin,
     title: "Visit Us",
-    info: "Shop No 13,Dattani park building no 1 Opp Gokul Concord Tower, Thakur Village, Kandivali East, Mumbai, Maharashtra 400101",
+    info: "13,Dattani park building no 1 Opp Gokul Concord Tower, Thakur Village, Kandivali East, Mumbai, Maharashtra 400101",
     sub: "Kandivali East, Mumbai",
   };
 

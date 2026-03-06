@@ -61,7 +61,9 @@ transition-all duration-500"
           </h3>
 
           <p className="text-gray-300 leading-relaxed">
-            Our mission is to deliver landmark real estate developments built with the highest quality materials, uncompromising construction standards, and meticulous attention to detail. We are committed to executing large-scale projects that stand as symbols of strength, durability, and architectural excellence, creating long-term value for investors, communities, and future generations.
+            To develop landmark real estate projects that set new benchmarks in quality, design, and structural excellence. We are committed to delivering large-scale developments built with world-class materials, advanced engineering practices, and uncompromising construction standards.
+
+            Through disciplined execution and meticulous attention to detail, we aim to create enduring assets that deliver long-term value to investors, elevate urban infrastructure, and enrich the communities we serve.
           </p>
           <div className="absolute bottom-6 right-6 w-10 h-10 border-b-2 border-r-2 border-[#D4AF37]/40 rounded-br-xl" />
 
@@ -99,7 +101,9 @@ transition-all duration-500"
           </h3>
 
           <p className="text-gray-300 leading-relaxed">
-            Our vision is to become a trusted leader in premium real estate development, known for executing large and complex projects with superior craftsmanship and innovation. We aim to shape modern skylines through sustainable practices, structural integrity, and world-class infrastructure that defines the future of urban living.
+            To be recognized as a leading name in premium real estate development, shaping modern skylines through innovation, sustainability, and superior craftsmanship.
+
+            Our vision is to execute complex and high-value developments that reflect architectural distinction, structural strength, and world-class infrastructure while contributing to the future of progressive urban living.
           </p>
           <div className="absolute bottom-6 right-6 w-10 h-10 border-b-2 border-r-2 border-[#D4AF37]/40 rounded-br-xl" />
 
@@ -137,7 +141,7 @@ transition-all duration-500"
           </h3>
 
           <p className="text-gray-300 leading-relaxed">
-            Quality, integrity, and precision form the foundation of everything we build. We believe in using only the finest materials, maintaining strict project discipline, and upholding transparency at every stage. Our commitment to excellence ensures that each development reflects durability, safety, and long-term investment strength.
+            Our core values are built on quality, integrity, and precision. We are committed to maintaining the highest standards in materials, construction practices, and project execution to ensure strength, safety, and lasting performance. Through transparency, disciplined planning, and attention to detail, we strive to deliver developments that create enduring value for investors, communities, and future generations while upholding excellence in every stage of development
           </p>
           <div className="absolute bottom-6 right-6 w-10 h-10 border-b-2 border-r-2 border-[#D4AF37]/40 rounded-br-xl" />
 
